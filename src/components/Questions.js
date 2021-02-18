@@ -38,12 +38,24 @@ answers: [
 },
 ]
 
+const antwoord = [];
+
 
 const [currentQuestion, setCurrentQuestion] = useState(0)
 const [showResult, setShowResult] = useState(false)
 
+const [userAnswers, setUserAnswers] = useState(null)
 
-function handleAnswer(){
+function handleAnswer(answer, check){
+
+  
+  setUserAnswers({"vraag" : currentQuestion+1, "antwoord" : check, "check" : answer}) 
+  console.log(antwoord)
+
+
+console.log(check)
+console.log(answer)
+
     const nextQuestion = currentQuestion + 1
   if(nextQuestion < quiz.length){
     setCurrentQuestion(currentQuestion + 1)
@@ -65,7 +77,7 @@ function handleAnswer(){
 					</div>
 					<div className='answer-section'>
 						{quiz[currentQuestion].answers.map(answers =>
-            <button onClick={handleAnswer}>{answers.answer}</button>
+            <button className='btn btn-primary' onClick={ () =>handleAnswer(answers.check, answers.answer)}>{answers.answer}</button>
             )}
 
 					</div>

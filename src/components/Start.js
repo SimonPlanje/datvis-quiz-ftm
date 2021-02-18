@@ -10,7 +10,7 @@ export default function Start({setStartQuiz}) {
 
         <h1>Welke politieke partijen focussen op de doelgroep waarin jij valt?</h1>
         <p>Op google en facebook kunnen advertenties worden geplaatst gefocust op een specifieke doelgroep. Weet jij welke partijen jouw als belangrijke doelgroep zien? Doe de korte quiz...</p>
-        <button onClick={handleStart}>Start Quiz</button>
+        <button className='btn btn-primary' onClick={handleStart}>Start Quiz</button>
     </div>
   );
 }
