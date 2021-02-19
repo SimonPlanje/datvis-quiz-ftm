@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 
-export default function Questions() {
+export default function Questions({setAntwoord, antwoorden}) {
 
 const quiz = [
   {
@@ -38,7 +38,6 @@ answers: [
 },
 ]
 
-const antwoord = [];
 
 
 const [currentQuestion, setCurrentQuestion] = useState(0)
@@ -48,9 +47,9 @@ const [userAnswers, setUserAnswers] = useState(null)
 
 function handleAnswer(answer, check){
 
-  
-  setUserAnswers({"vraag" : currentQuestion+1, "antwoord" : check, "check" : answer}) 
-  console.log(antwoord)
+antwoorden.push({"vraag" : currentQuestion+1, "antwoord" : check, "check" : answer})
+
+
 
 
 console.log(check)
