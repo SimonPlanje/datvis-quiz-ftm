@@ -80,7 +80,7 @@ if(currentAns){
   return (
     <div className="Questions">
 			{showResult ? (
-				<Check antwoorden={antwoorden} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion}/>
+				<Check antwoorden={antwoorden}/>
 			) : (
 				<>
 					<div className='question-section'>
