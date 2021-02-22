@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 
+import Check from './Check'
 
 export default function Questions({setAntwoord, antwoorden}) {
 
@@ -42,33 +43,44 @@ answers: [
 
 const [currentQuestion, setCurrentQuestion] = useState(0)
 const [showResult, setShowResult] = useState(false)
-
-const [userAnswers, setUserAnswers] = useState(null)
-
-function handleAnswer(answer, check){
-
-antwoorden.push({"vraag" : currentQuestion+1, "antwoord" : check, "check" : answer})
+const [currentAns, setCurrentAns] = useState(null)
 
 
+function handleAnswer(check, answer){
 
+
+// document.getElementsByClassName(answer)[0].className = "selected"
+
+
+
+  setCurrentAns({"vraag" : quiz[currentQuestion].question, "antwoord" : answer, "check" : check})
 
 console.log(check)
 console.log(answer)
 
-    const nextQuestion = currentQuestion + 1
-  if(nextQuestion < quiz.length){
-    setCurrentQuestion(currentQuestion + 1)
-  }else{
-    setShowResult(true)
-  }
-
-
 }
 
+function handleNext(){
+
+if(currentAns){
+  antwoorden.push(currentAns)
+
+  const nextQuestion = currentQuestion + 1
+  if(nextQuestion < quiz.length){
+    setCurrentQuestion(currentQuestion + 1)
+    setCurrentAns(null)
+  }else{
+    setCurrentQuestion(0)
+    setShowResult(true)
+  }
+}else{
+  alert('Selecteer eerst een antwoord!')
+}
+}
   return (
     <div className="Questions">
 			{showResult ? (
-				<div className='score-section'>You reached the end of the quizzzzzz</div>
+				<Check antwoorden={antwoorden} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion}/>
 			) : (
 				<>
 					<div className='question-section'>
@@ -76,8 +88,9 @@ console.log(answer)
 					</div>
 					<div className='answer-section'>
 						{quiz[currentQuestion].answers.map(answers =>
-            <button className='btn btn-primary' onClick={ () =>handleAnswer(answers.check, answers.answer)}>{answers.answer}</button>
+            <button className={answers.answer} onClick={() =>handleAnswer(answers.check, answers.answer)}>{answers.answer}</button>
             )}
+            <button className='noAns' onClick={handleNext}>Volgende</button>
 
 					</div>
 				</>
