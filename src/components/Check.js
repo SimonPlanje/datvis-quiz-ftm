@@ -31,8 +31,8 @@ function handlePrevious(){
         <div className='check-section'>
           <h2>Jouw antwoord was {ans[checkCounter].antwoord}</h2>
           {ans[checkCounter].check
-        ? <h2>Juist</h2>
-        : <h2>Onjuist</h2>
+        ? <h2>Dit antwoord is juist</h2>
+        : <h2>Dit antwoord is onjuist</h2>
       } 
       <button className='noAns' onClick={handlePrevious}>Vorige</button>
       <button className='noAns' onClick={handleNext}>Volgende</button>

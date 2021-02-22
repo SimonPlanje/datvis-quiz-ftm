@@ -48,8 +48,10 @@ const [currentAns, setCurrentAns] = useState(null)
 
 function handleAnswer(check, answer){
 
-
-// document.getElementsByClassName(answer)[0].className = "selected"
+  if(document.querySelector(`button.selected`)){
+    document.querySelector(`button.selected`).classList.toggle('selected')
+  }
+  document.querySelector(`button[data-value=${answer}]`).classList.toggle('selected')
 
 
 
@@ -88,7 +90,7 @@ if(currentAns){
 					</div>
 					<div className='answer-section'>
 						{quiz[currentQuestion].answers.map(answers =>
-            <button className={answers.answer} onClick={() =>handleAnswer(answers.check, answers.answer)}>{answers.answer}</button>
+            <button data-value={answers.answer} onClick={() =>handleAnswer(answers.check, answers.answer)}>{answers.answer}</button>
             )}
             <button className='noAns' onClick={handleNext}>Volgende</button>
 
