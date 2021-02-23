@@ -25,7 +25,7 @@ const quiz = [
   question: 'De 27-jarige Sanne uit Groningen houdt ervan om na een lange dag werken bij de gemeente als … om lekker op de bank door haar Facebook-feed te scrollen. Van welke partij komt zij de meeste advertenties tegen tijdens het scrollen?',
   answers: [
     {answer: 'D66', check: false},
-    {answer: 'Groen Links', check: true},
+    {answer: 'GroenLinks', check: true},
     {answer: 'FvD', check: false},
   ]
 },
@@ -54,7 +54,6 @@ function handleAnswer(check, answer){
   document.querySelector(`button[data-value=${answer}]`).classList.toggle('selected')
 
 
-
   setCurrentAns({"vraag" : quiz[currentQuestion].question, "antwoord" : answer, "check" : check})
 
 console.log(check)
@@ -63,6 +62,9 @@ console.log(answer)
 }
 
 function handleNext(){
+  if(document.querySelector(`button.selected`)){
+    document.querySelector(`button.selected`).classList.toggle('selected')
+  }
 
 if(currentAns){
   antwoorden.push(currentAns)
@@ -86,17 +88,21 @@ if(currentAns){
 			) : (
 				<>
 					<div className='question-section'>
-						<div className='question-text'>{quiz[currentQuestion].question}</div>
+						<div className='question-text'><h2>{quiz[currentQuestion].question}</h2></div>
 					</div>
 					<div className='answer-section'>
 						{quiz[currentQuestion].answers.map(answers =>
+            <>
+            <div className='button'>
+
             <button data-value={answers.answer} onClick={() =>handleAnswer(answers.check, answers.answer)}>{answers.answer}</button>
+            </div>
+            </>
             )}
-            <button className='noAns' onClick={handleNext}>Volgende</button>
+            <button className='nextBtn' onClick={handleNext}>Volgende</button>
 
 					</div>
 				</>
-
       )}
 
     </div>
