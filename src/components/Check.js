@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import End from './End'
 
 export default function Check({quiz}) {
 
@@ -6,13 +7,18 @@ const ans = JSON.parse(localStorage.getItem('antwoorden'));
 
 const [checkCounter, setCheckCounter] = useState(0)
 const [showChecks, setShowChecks] = useState(false)
+const [showBtn, setShowBtn] = useState(false)
+const [end, setEnd] = useState(false)
 
+console.log(ans.length)
+console.log(checkCounter)
 
 function handleNext(){
   const nextCheck = checkCounter + 1
   if(nextCheck < ans.length){
     setCheckCounter(checkCounter + 1)
   }else{
+    setShowBtn(true)
   }
 }
 
@@ -29,8 +35,16 @@ function handleChecks(){
   setShowChecks(true)
 }
 
+function handleEnd(){
+  setEnd(true)
+}
+
   return (
     <div className="CheckAns">
+      {end ? (<>
+      <End />
+      </>):(<>
+      
         {showChecks ? (
           <>
         <div className='question-section'>
@@ -72,8 +86,7 @@ function handleChecks(){
 
 					</div>
 
-
-
+          
         
                 {ans[checkCounter].check
       ? <h2>{ans[checkCounter].antwoord} is het goede antwoord!</h2>
@@ -82,7 +95,10 @@ function handleChecks(){
     <div className="checkBtns">
     <button className='prevBtn' onClick={handlePrevious}>Vorige</button>
     <button className='nextBtn' onClick={handleNext}>Volgende</button>
-    </div>
+    {showBtn &&
+        <button onClick={handleEnd}>Afronden</button>
+    }
+    </div>    
       </div>    			</>) : (
 				<>
         <div>
@@ -92,6 +108,9 @@ function handleChecks(){
 				</>
 
       )}
+      
+      </>)}
+
   </div>
   );
 }
