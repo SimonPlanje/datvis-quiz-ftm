@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/datavis-quiz-ftm/static/css/main.5aca6af5.chunk.css",
-    "main.js": "/datavis-quiz-ftm/static/js/main.95b766bb.chunk.js",
-    "main.js.map": "/datavis-quiz-ftm/static/js/main.95b766bb.chunk.js.map",
-    "runtime-main.js": "/datavis-quiz-ftm/static/js/runtime-main.7874167d.js",
-    "runtime-main.js.map": "/datavis-quiz-ftm/static/js/runtime-main.7874167d.js.map",
-    "static/js/2.aebecf3b.chunk.js": "/datavis-quiz-ftm/static/js/2.aebecf3b.chunk.js",
-    "static/js/2.aebecf3b.chunk.js.map": "/datavis-quiz-ftm/static/js/2.aebecf3b.chunk.js.map",
-    "static/js/3.17dd748c.chunk.js": "/datavis-quiz-ftm/static/js/3.17dd748c.chunk.js",
-    "static/js/3.17dd748c.chunk.js.map": "/datavis-quiz-ftm/static/js/3.17dd748c.chunk.js.map",
-    "index.html": "/datavis-quiz-ftm/index.html",
-    "static/css/main.5aca6af5.chunk.css.map": "/datavis-quiz-ftm/static/css/main.5aca6af5.chunk.css.map",
-    "static/js/2.aebecf3b.chunk.js.LICENSE.txt": "/datavis-quiz-ftm/static/js/2.aebecf3b.chunk.js.LICENSE.txt"
+    "main.css": "/datvis-quiz-ftm/static/css/main.5aca6af5.chunk.css",
+    "main.js": "/datvis-quiz-ftm/static/js/main.95b766bb.chunk.js",
+    "main.js.map": "/datvis-quiz-ftm/static/js/main.95b766bb.chunk.js.map",
+    "runtime-main.js": "/datvis-quiz-ftm/static/js/runtime-main.d3078817.js",
+    "runtime-main.js.map": "/datvis-quiz-ftm/static/js/runtime-main.d3078817.js.map",
+    "static/js/2.aebecf3b.chunk.js": "/datvis-quiz-ftm/static/js/2.aebecf3b.chunk.js",
+    "static/js/2.aebecf3b.chunk.js.map": "/datvis-quiz-ftm/static/js/2.aebecf3b.chunk.js.map",
+    "static/js/3.17dd748c.chunk.js": "/datvis-quiz-ftm/static/js/3.17dd748c.chunk.js",
+    "static/js/3.17dd748c.chunk.js.map": "/datvis-quiz-ftm/static/js/3.17dd748c.chunk.js.map",
+    "index.html": "/datvis-quiz-ftm/index.html",
+    "static/css/main.5aca6af5.chunk.css.map": "/datvis-quiz-ftm/static/css/main.5aca6af5.chunk.css.map",
+    "static/js/2.aebecf3b.chunk.js.LICENSE.txt": "/datvis-quiz-ftm/static/js/2.aebecf3b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7874167d.js",
+    "static/js/runtime-main.d3078817.js",
     "static/js/2.aebecf3b.chunk.js",
     "static/css/main.5aca6af5.chunk.css",
     "static/js/main.95b766bb.chunk.js"
