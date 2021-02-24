@@ -5,6 +5,7 @@
   --ftm-red: #dd3230;
   --ftm-grey: #f6f6f6;
   --ftm-blue: #d1e8ea;
+  --form-grey: #8f8f8f;
 }
 
 @font-face {
@@ -49,19 +50,29 @@ h2 {
 .answer-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 button {
+  margin: 0em 0em -0.1em 3em;
   font-family: 'IBM Plex Sans';
   padding: 1em 2em;
   border: none;
 }
 
+.button {
+  display: flex;
+  text-align: center;
+}
+
 .button button {
+  color: var(--form-grey);
+
+  width: 12em;
   background: transparent;
-  border: 2px lightgrey solid;
+  border: 2px var(--form-grey) solid;
   padding: 1em 2em;
+  text-align: left;
+  height: 52px;
 }
 
 .nextBtn {
@@ -69,9 +80,15 @@ button {
   color: white;
   font-weight: bold;
   margin-top: 2em;
+  width: 10em;
 }
+
 button:hover {
   cursor: pointer;
+}
+
+button:focus {
+  outline-style: none;
 }
 
 .nextBtn:hover {
@@ -80,7 +97,51 @@ button:hover {
 
 .prevBtn {
   margin-right: 2em;
-  background-color: lightgrey;
+  background-color: var(--form-grey);
+}
+
+.cls-1 {
+  display: inline-block;
+  position: absolute;
+  width: 4em;
+  height: 4em;
+}
+
+.cls-2 {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 4.5px;
+  padding-left: 1em;
+}
+
+.viewRed .cls-2 {
+  stroke: var(--ftm-red);
+}
+
+.cls-3 {
+  fill: transparent;
+}
+
+.cls-12,
+.cls-14 {
+  fill: #fff;
+}
+
+.cls-12 {
+  stroke: var(--form-grey);
+  stroke-width: 2px;
+}
+
+.cls-13 {
+  fill: var(--form-grey);
+}
+
+.cls-15 {
+  stroke: none;
+}
+
+.cls-16 {
+  fill: none;
 }
 
 /* 
