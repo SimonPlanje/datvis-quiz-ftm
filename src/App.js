@@ -9,7 +9,7 @@ export default function App() {
     {
       question: 'Op welk platform konden politieke partijen geen advertenties kopen?',
       answers: [
-        {answer: 'Facbook', check: false},
+        {answer: 'Facebook', check: false},
         {answer: 'Twitter', check: true},
         {answer: 'Google', check: false},
       ],
