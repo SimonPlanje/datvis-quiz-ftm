@@ -3,6 +3,7 @@
   --link-color: #39b2b1;
   --link-hover: #2a8585;
   --ftm-red: #dd3230;
+  --ftm-green: #198400;
   --ftm-grey: #f6f6f6;
   --ftm-blue: #d1e8ea;
   --form-grey: #8f8f8f;
@@ -59,6 +60,14 @@ button {
   border: none;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+button:focus {
+  outline-style: none;
+}
+
 .button {
   display: flex;
   text-align: center;
@@ -76,6 +85,8 @@ button {
 }
 
 .nextBtn {
+  text-transform: uppercase;
+
   background-color: var(--ftm-red);
   color: white;
   font-weight: bold;
@@ -83,23 +94,19 @@ button {
   width: 10em;
 }
 
-button:hover {
-  cursor: pointer;
-}
-
-button:focus {
-  outline-style: none;
-}
-
 .nextBtn:hover {
-  background-color: #c20300;
+  background-color: var(--ftm-red);
 }
 
 .prevBtn {
+  text-transform: uppercase;
+  color: white;
+  width: 10em;
   margin-right: 2em;
   background-color: var(--form-grey);
 }
 
+/* STYLING FOR THE FORM TABEL */
 .cls-1 {
   display: inline-block;
   position: absolute;
@@ -144,31 +151,6 @@ button:focus {
   fill: none;
 }
 
-/* 
-.button button {
-  background-color: transparent;
-  color: lightgrey;
-  border: lightgrey 2px solid;
-  width: 10em;
-  text-align: left;
+.istrue .cls-2 {
+  stroke: var(--ftm-green);
 }
-
-.button {
-  display: flex;
-}
-
-.checkbox {
-  height: 2em;
-  width: 2em;
-  border: 2px lightgrey solid;
-}
-
-.svg {
-  fill: none;
-  stroke: #dd3230;
-  stroke-linecap: round;
-  stroke-width: 2.7px;
-  border: none;
-  position: absolute;
-  left: 0.5em;
-} */
