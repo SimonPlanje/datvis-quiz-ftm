@@ -59,8 +59,9 @@ if(currentAns){
 }
 }
   return (
+    <div>
+    <ProgressBar barWidth={barWidth} />
     <div className="Questions">
-      <ProgressBar barWidth={barWidth} />
 			{showResult ? (
 				<Check quiz={quiz}/>
 			) : (
@@ -102,6 +103,7 @@ if(currentAns){
 				</>
       )}
 
+    </div>
     </div>
   );
 }

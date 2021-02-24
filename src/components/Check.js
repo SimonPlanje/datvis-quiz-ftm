@@ -96,7 +96,7 @@ function handleEnd(){
     <button className='prevBtn' onClick={handlePrevious}>Vorige</button>
     <button className='nextBtn' onClick={handleNext}>Volgende</button>
     {showBtn &&
-        <button onClick={handleEnd}>Afronden</button>
+        <button className='endBtn' onClick={handleEnd}>Afronden</button>
     }
     </div>    
       </div>    			</>) : (

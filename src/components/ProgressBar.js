@@ -19,8 +19,6 @@ const bar = {
   return (
     <div style={containerStyles} className="ProgressBar">
         <div style={bar} className='bar'>
-        <span></span>
-
         </div>
     </div>
   );
