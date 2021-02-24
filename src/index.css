@@ -9,6 +9,12 @@
   --form-grey: #8f8f8f;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: 'IBM Plex Sans';
   font-style: normal;

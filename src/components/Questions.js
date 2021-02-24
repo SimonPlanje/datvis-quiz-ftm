@@ -1,14 +1,18 @@
 import React, {useState} from 'react'
 
 import Check from './Check'
+import ProgressBar from './ProgressBar'
 
 export default function Questions({setAntwoord, antwoorden, quiz}) {
 
+let completed = 100/(quiz.length+1)
 
 
 const [currentQuestion, setCurrentQuestion] = useState(0)
 const [showResult, setShowResult] = useState(false)
 const [currentAns, setCurrentAns] = useState(null)
+
+const [barWidth, setBarWidth] = useState(completed)
 
 
 function handleAnswer(check, answer){
@@ -32,13 +36,14 @@ console.log(answer)
 }
 
 function handleNext(){
+
   if(document.querySelector(`button.selected`)){
     document.querySelector(`button.selected`).classList.toggle('selected')
     document.querySelector(`span.viewRed`).classList.toggle('viewRed')
-
   }
 
 if(currentAns){
+  setBarWidth(barWidth + completed)
   antwoorden.push(currentAns)
 
   const nextQuestion = currentQuestion + 1
@@ -55,6 +60,7 @@ if(currentAns){
 }
   return (
     <div className="Questions">
+      <ProgressBar barWidth={barWidth} />
 			{showResult ? (
 				<Check quiz={quiz}/>
 			) : (
