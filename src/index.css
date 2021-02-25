@@ -46,22 +46,37 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 
-p {
-  font-family: 'IBM Plex Sans';
-}
-
-h1,
-h2,
-h3 {
-  font-family: 'Open Sans Condensed', sans-serif;
-}
-
 .Questions,
 .Start {
   margin: 2em 2em 0em 2em;
 }
 
+@media screen and (min-width: 1200px) {
+  .Questions,
+  .Start {
+    margin: 2em 20em 0em 20em;
+  }
+}
+
+p,
+h2 {
+  font-family: 'IBM Plex Sans';
+  font-weight: 400;
+  font-size: medium;
+}
+
+h1,
+h3 {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.question-text {
+  display: flex;
+  justify-content: center;
+}
+
 .answer-section {
+  margin: 2em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -79,6 +94,12 @@ button:hover {
 
 button:focus {
   outline-style: none;
+}
+
+.button {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 .button button {
@@ -101,7 +122,17 @@ button:focus {
   bottom: 10%;
 }
 
-.nextBtn {
+.nextBtn,
+.clickNext {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nextBtn,
+.clickNext,
+.C-nextBtn {
   text-transform: uppercase;
   background-color: var(--ftm-red);
   color: white;
@@ -111,12 +142,7 @@ button:focus {
 }
 
 .clickNext {
-  text-transform: uppercase;
   background-color: var(--ftm-red-low-opacity);
-  color: white;
-  width: 10em;
-  font-weight: bold;
-  margin-top: 2em;
 }
 
 .endBtn {
