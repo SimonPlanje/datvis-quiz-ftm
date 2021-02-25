@@ -1,7 +1,9 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import Barchart from './BarChart';
 import End from './End'
 
 export default function Check({quiz}) {
+
 
 const ans = JSON.parse(localStorage.getItem('antwoorden'));
 
@@ -10,13 +12,25 @@ const [showChecks, setShowChecks] = useState(false)
 const [showBtn, setShowBtn] = useState(false)
 const [end, setEnd] = useState(false)
 
+const [showScenario, setShowScenario] = useState('kennis')
+
+console.log(quiz[checkCounter].type)
+
+
+
 console.log(ans.length)
 console.log(checkCounter)
 
 function handleNext(){
+
+  
+
   const nextCheck = checkCounter + 1
   if(nextCheck < ans.length){
+    setShowScenario(quiz[checkCounter+1].type)
+
     setCheckCounter(checkCounter + 1)
+
   }else{
     setShowBtn(true)
   }
@@ -27,6 +41,8 @@ function handlePrevious(){
 
   const prevCheck = checkCounter - 1
   if(prevCheck > 0){
+    setShowScenario(quiz[checkCounter-1].type)
+
     setCheckCounter(checkCounter - 1)
   }else{
     setCheckCounter(0)
@@ -55,7 +71,10 @@ function handleEnd(){
       <div className='check-section'>
 
         <div className='answer-section'>
-						{quiz[checkCounter].answers.map(answers =>
+
+
+          {showScenario === 'kennis' ? (<>
+          		{quiz[checkCounter].answers.map(answers =>
             <>
             <div className='button'>
 
@@ -83,7 +102,17 @@ function handleEnd(){
             </>
             )}
 
-					</div>
+					
+          
+          </>) : (<>
+          
+          <Barchart />
+          
+          
+          </>)}
+
+
+          </div>
 
           <h3>Jouw antwoord was {ans[checkCounter].antwoord}</h3>
             {ans[checkCounter].check

@@ -1,7 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import Questions from './components/Questions'
 import Start from './components/Start'
+import fetchData from './helper/data'
+
 
 export default function App() {
 
@@ -14,7 +16,7 @@ export default function App() {
         {answer: 'Google', check: false},
       ],
       correct: 'Twitter',
-      img: '',
+      type: 'kennis'
   },
   {
     question: 'Welke partij adverteerde online met de campagne #10jaarRutte?',
@@ -23,7 +25,9 @@ export default function App() {
       {answer: 'VVD', check: false},
       {answer: 'FvD', check: true},
     ],
-    correct: 'FvD'
+    correct: 'FvD',
+    type: 'kennis'
+
   },
   {
     question: 'De 27-jarige Sanne uit Groningen houdt ervan om na een lange dag werken bij de gemeente als … om lekker op de bank door haar Facebook-feed te scrollen. Van welke partij komt zij de meeste advertenties tegen tijdens het scrollen?',
@@ -32,7 +36,9 @@ export default function App() {
       {answer: 'GroenLinks', check: true},
       {answer: 'FvD', check: false},
     ],
-    correct: 'GroenLinks'
+    correct: 'GroenLinks',
+    type: 'scenario'
+
   },
   {
   question: 'De 19-jarige Dennis kijkt op zondag altijd alle voetbalwedstrijden in zijn studentenkamer in Amsterdam. Zo nu en dan pakt hij zijn mobiel en zit hij op Instagram. Van welke partij ziet hij de meeste advertenties voorbij komen tijdens het scrollen?',
@@ -41,7 +47,8 @@ export default function App() {
     {answer: 'PvdA', check: false},
     {answer: 'DENK', check: true},
   ],
-  correct: 'DENK'
+  correct: 'DENK',
+  type: 'scenario'
   },
   ]
 
@@ -50,6 +57,16 @@ const [startQuiz, setStartQuiz] = useState(true)
 const [antwoorden, setAntwoord] = useState([])
 
 
+//Barchartload state
+const [dataState, setDataState] = useState('loading')
+
+useEffect(() => {
+
+  async function getData(){
+  await fetchData(setDataState)
+}
+getData()
+  }, [])
 
 
   return (
