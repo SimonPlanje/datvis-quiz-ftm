@@ -1,5 +1,5 @@
 
-const ProgressBar =(props) => {
+const ProgressBar = (props) => {
 const {barWidth} = props;
 
 const containerStyles = {

@@ -23,6 +23,8 @@ function handleNext(){
 }
 
 function handlePrevious(){
+  setShowBtn(false)
+
   const prevCheck = checkCounter - 1
   if(prevCheck > 0){
     setCheckCounter(checkCounter - 1)
@@ -51,9 +53,6 @@ function handleEnd(){
         <h2 className='question-text'>{ans[checkCounter].vraag}</h2>
       </div>
       <div className='check-section'>
-        <h2>Jouw antwoord was {ans[checkCounter].antwoord}</h2>
-
-
 
         <div className='answer-section'>
 						{quiz[checkCounter].answers.map(answers =>
@@ -86,17 +85,15 @@ function handleEnd(){
 
 					</div>
 
-          
-        
-                {ans[checkCounter].check
-      ? <h2>{ans[checkCounter].antwoord} is het goede antwoord!</h2>
-      : <h2>{ans[checkCounter].antwoord} is onjuist, het goed antwoord was {ans[checkCounter].ans}</h2>
+          <h3>Jouw antwoord was {ans[checkCounter].antwoord}</h3>
+            {ans[checkCounter].check
+      ? <h3>dit is het goede antwoord!</h3>
+      : <h3>het goed antwoord was {ans[checkCounter].ans}</h3>
     } 
     <div className="checkBtns">
     <button className='prevBtn' onClick={handlePrevious}>Vorige</button>
-    <button className='nextBtn' onClick={handleNext}>Volgende</button>
-    {showBtn &&
-        <button className='endBtn' onClick={handleEnd}>Afronden</button>
+    {showBtn ? <button className='nextBtn' onClick={handleEnd}>Afronden</button>
+             : <button className='nextBtn' onClick={handleNext}>Volgende</button>
     }
     </div>    
       </div>    			</>) : (

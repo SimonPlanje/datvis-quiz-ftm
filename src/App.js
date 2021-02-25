@@ -13,7 +13,8 @@ export default function App() {
         {answer: 'Twitter', check: true},
         {answer: 'Google', check: false},
       ],
-      correct: 'Twitter'
+      correct: 'Twitter',
+      img: '',
   },
   {
     question: 'Welke partij adverteerde online met de campagne #10jaarRutte?',

@@ -17,8 +17,15 @@ const [barWidth, setBarWidth] = useState(completed)
 
 function handleAnswer(check, answer){
 
+
+  if(document.querySelector(`button.clickNext`)){
+    document.querySelector(`button.clickNext`).classList.replace("clickNext", 'nextBtn')
+  }
+
+
   if(document.querySelector(`button.selected`)){
     document.querySelector(`button.selected`).classList.toggle('selected')
+  }else{
   }
   document.querySelector(`button[data-value=${answer}]`).classList.toggle('selected')
 
@@ -37,12 +44,16 @@ console.log(answer)
 
 function handleNext(){
 
+
+
   if(document.querySelector(`button.selected`)){
     document.querySelector(`button.selected`).classList.toggle('selected')
     document.querySelector(`span.viewRed`).classList.toggle('viewRed')
   }
 
 if(currentAns){
+  document.querySelector(`button.nextBtn`).classList.replace("nextBtn", 'clickNext')
+
   setBarWidth(barWidth + completed)
   antwoorden.push(currentAns)
 
@@ -97,7 +108,7 @@ if(currentAns){
             </div>
             </>
             )}
-            <button className='nextBtn' onClick={handleNext}>Volgende</button>
+            <button className='clickNext' onClick={handleNext}>Volgende</button>
 
 					</div>
 				</>

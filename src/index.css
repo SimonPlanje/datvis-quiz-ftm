@@ -3,6 +3,7 @@
   --link-color: #39b2b1;
   --link-hover: #2a8585;
   --ftm-red: #dd3230;
+  --ftm-red-low-opacity: #dd33307c;
   --ftm-green: #198400;
   --ftm-grey: #f6f6f6;
   --ftm-blue: #d1e8ea;
@@ -50,7 +51,8 @@ p {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -92,12 +94,25 @@ button:focus {
 
 .checkBtns {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  position: absolute;
+  max-width: 30em;
+  width: 80%;
+  bottom: 10%;
 }
 
 .nextBtn {
   text-transform: uppercase;
   background-color: var(--ftm-red);
+  color: white;
+  width: 10em;
+  font-weight: bold;
+  margin-top: 2em;
+}
+
+.clickNext {
+  text-transform: uppercase;
+  background-color: var(--ftm-red-low-opacity);
   color: white;
   width: 10em;
   font-weight: bold;
