@@ -73,7 +73,7 @@ export default function BarChart({ans, checkCounter, quiz}) {
         .attr("width", x.bandwidth())
         .attr("y", d => y(d.percentageTotaal))
         .attr("height", d => height - y(d.percentageTotaal))
-        .attr("fill", function(d,i){
+        .attr("fill", function(d){
             if(ans[checkCounter].antwoord === d.partij){
               return 'var(--ftm-red)'
             }else if(ans[checkCounter].ans === d.partij){
@@ -96,8 +96,6 @@ export default function BarChart({ans, checkCounter, quiz}) {
       // add the y Axis
       // svg.append("g")
       //    .call(axisLeft(y));
-
-        
     }
   });
 
