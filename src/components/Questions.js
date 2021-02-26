@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 
 import Check from './Check'
 import ProgressBar from './ProgressBar'
+import ShowImg from './ShowImg'
 
 export default function Questions({setAntwoord, antwoorden, quiz}) {
 
@@ -44,8 +45,6 @@ console.log(answer)
 
 function handleNext(){
 
-
-
   if(document.querySelector(`button.selected`)){
     document.querySelector(`button.selected`).classList.toggle('selected')
     document.querySelector(`span.viewRed`).classList.toggle('viewRed')
@@ -72,11 +71,14 @@ if(currentAns){
   return (
     <div>
     <ProgressBar barWidth={barWidth} />
+
     <div className="Questions">
 			{showResult ? (
 				<Check quiz={quiz}/>
 			) : (
 				<>
+                <ShowImg quiz={quiz} currentQuestion={currentQuestion}/>
+
 					<div className='question-section'>
 						<div className='question-text'><h2>{quiz[currentQuestion].question}</h2></div>
 					</div>

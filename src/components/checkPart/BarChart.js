@@ -1,5 +1,5 @@
 import * as d3 from "d3"
-import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group, scaleOrdinal, scaleSequential } from "d3"
+import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group } from "d3"
 import { useEffect } from "react"
 
 
@@ -7,25 +7,15 @@ import { useEffect } from "react"
 export default function BarChart({ans, checkCounter, quiz}) {
 
   useEffect(() => {
+
     //Formatting data---------------------------------------------------
     const ImportedData = JSON.parse(localStorage.getItem('data'))
-    // console.log(ImportedData)
-
-    console.log(checkCounter)
-    console.log(quiz[checkCounter].category.gender)
-    console.log(quiz[checkCounter].category.age)
-    console.log(quiz[checkCounter].category.geo)
-
-
 
     const groupGender = group(ImportedData, d=> d.gender).get(quiz[checkCounter].category.gender)
-    console.log(groupGender)
     const groupGeo = group(groupGender, d=> d.geo).get(quiz[checkCounter].category.geo)
     const groupAge = group(groupGeo, d=> d.age).get(quiz[checkCounter].category.age)
 
     const sortData = groupAge.slice().sort((a, b) => d3.descending(a.percentageTotaal, b.percentageTotaal))
-
-    // sortData.map(item => item.percentageTotaal = item.percentageTotaal.replace('/,/', '.') )
 
     removeComma(sortData)
     fixNums(sortData)
@@ -39,7 +29,6 @@ export default function BarChart({ans, checkCounter, quiz}) {
     }
 
     const data = sortData
-    console.log(data)
 
 
     //Create barchart--------------------------------------------------------
@@ -92,7 +81,8 @@ export default function BarChart({ans, checkCounter, quiz}) {
             }else{
               return 'var(--form-grey)'
             }
-        }  )
+        })
+        .exit().remove()
 
       // add the x Axis
       svg.append("g")

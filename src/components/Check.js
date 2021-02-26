@@ -1,6 +1,7 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import Barchart from './checkPart/BarChart'
 import CheckForm from './checkPart/CheckForm'
+import ShowImg from './ShowImg'
 import End from './End'
 
 export default function Check({quiz}) {
@@ -17,20 +18,24 @@ const [showScenario, setShowScenario] = useState('kennis')
 
 console.log(quiz[checkCounter].type)
 
-console.log(ans.length)
-console.log(checkCounter)
+
 
 function handleNext(){
 
   
 
   const nextCheck = checkCounter + 1
-  if(nextCheck < ans.length){
-    setShowScenario(quiz[checkCounter+1].type)
 
+  console.log('limit ' + ans.length)
+console.log('counter ' + checkCounter)
+console.log('next ' + nextCheck)
+
+  if(nextCheck < ans.length-1){
+    setShowScenario(quiz[checkCounter+1].type)
     setCheckCounter(checkCounter + 1)
 
   }else{
+    setCheckCounter(checkCounter + 1)
     setShowBtn(true)
   }
 }
@@ -55,6 +60,8 @@ function handleChecks(){
 function handleEnd(){
   setEnd(true)
 }
+
+console.log(checkCounter)
   return (
     <div className="CheckAns">
       {end ? (<>
@@ -63,6 +70,7 @@ function handleEnd(){
       
         {showChecks ? (
           <>
+        <ShowImg quiz={quiz} currentQuestion={checkCounter}/>
         <div className='question-section'>
         <h2 className='question-text'>{ans[checkCounter].vraag}</h2>
       </div>
@@ -79,7 +87,9 @@ function handleEnd(){
             )}
 
           </>) : (<>
+    
                     <Barchart ans={ans} quiz={quiz} checkCounter={checkCounter}/>
+
           </>)}
 
 

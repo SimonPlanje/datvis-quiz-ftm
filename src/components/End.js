@@ -1,5 +1,3 @@
-import Check from './Check'
-
 export default function End() {
 
 

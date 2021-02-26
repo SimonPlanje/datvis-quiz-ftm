@@ -1,4 +1,3 @@
-
 const ProgressBar = (props) => {
 const {barWidth} = props;
 
