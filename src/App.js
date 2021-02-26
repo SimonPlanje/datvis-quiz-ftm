@@ -61,7 +61,6 @@ const [antwoorden, setAntwoord] = useState([])
 const [dataState, setDataState] = useState('loading')
 
 useEffect(() => {
-
   async function getData(){
   await fetchData(setDataState)
 }
@@ -73,7 +72,7 @@ getData()
     <div className="App">
       {startQuiz ? 
       (<Start setStartQuiz={setStartQuiz}/>) : 
-      (<Questions setAntwoord={setAntwoord} antwoorden={antwoorden} quiz={quiz}/>)
+      (<Questions setAntwoord={setAntwoord} antwoorden={antwoorden} quiz={quiz} dataState={dataState}/>)
     }
     </div>
   );

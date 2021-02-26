@@ -1,10 +1,15 @@
 import * as d3 from "d3"
-import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group, sort } from "d3"
+import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group, scaleOrdinal, scaleSequential } from "d3"
 
-export default function Barchart() {
 
+
+export default function Barchart({ans, checkCounter}) {
+  console.log(checkCounter)
+
+
+//Formatting data---------------------------------------------------
 const ImportedData = JSON.parse(localStorage.getItem('data'))
-console.log(ImportedData)
+// console.log(ImportedData)
 
 const groupGender = group(ImportedData, d=> d.gender).get('vrouw')
 const groupGeo = group(groupGender, d=> d.geo).get('Groningen')
@@ -17,42 +22,31 @@ const sortData = groupAge.slice().sort((a, b) => d3.descending(a.percentageTotaa
 removeComma(sortData)
 fixNums(sortData)
 
-
 function removeComma(data){
- return data.map((item, index) => item.percentageTotaal = item.percentageTotaal.replace(',', '.'))
+return data.map(d => d.percentageTotaal = d.percentageTotaal.replace(',', '.'))
 }
 
 function fixNums(data){
-  return data.map((item, index) => item.percentageTotaal = +item.percentageTotaal)
+  return data.map(d => d.percentageTotaal = +d.percentageTotaal)
  }
 
-console.log(sortData)
-
-// console.log(pointData)
-
-// function fixNums(data){
-//   data.map(d => +d.percentageTotaal)
-//   return
-// }
-
-
-
-  // const fixComma = sortData.map(d => d.percentageTotaal.replace(',', '.'))
-  // console.log(fixComma)
-  // const numData = fixComma.map(d => +d.percentageTotaal)
-
-
-
-
 const data = sortData
+console.log(data)
 
-// console.log(data)
+
+//Create barchart--------------------------------------------------------
 
 // set the dimensions and margins of the graph
 const margin = {top: 20, right: 20, bottom: 70, left: 40},
     width = 600 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom
 
+    // var myColor = d3.scaleOrdinal()
+    // .domain(["GroenLinks", "PvdD", 'PvdA', "ChristenUnie", 'DENK', "D66", "CDA", "SGP", "FvD", "VVD", "SP", "50Plus"])
+    // .range(["red", "grey", "grey", "grey", "grey", 'grey', "grey", "grey", "grey", "grey", 'grey', "grey"])
+
+// console.log(myColor.domain())
+// console.log(myColor.range())
 
 // set the ranges
   const x = scaleBand()
@@ -85,15 +79,30 @@ const svg = select(".barchartdiv").append("svg")
  .attr("width", x.bandwidth())
  .attr("y", d => y(d.percentageTotaal))
  .attr("height", d => height - y(d.percentageTotaal))
+ .attr("fill", function(d,i){
+    if(ans[checkCounter].antwoord === d.partij){
+      return 'red'
+    }else if(ans[checkCounter].ans === d.partij){
+      return 'green'
+    }else{
+      return 'grey'
+    }
+ }  )
+
+ console.log(ans)
 
    // add the x Axis
    svg.append("g")
    .attr("transform", "translate(0," + height + ")")
    .call(axisBottom(x));
 
+   svg.selectAll('.domain').remove()
+   svg.selectAll('.tick line').remove()
+
+//OPTIONAL ADD Y AXIS (no need i think)
 // add the y Axis
-svg.append("g")
-   .call(axisLeft(y));
+// svg.append("g")
+//    .call(axisLeft(y));
 
   return (
     <div className="barchartdiv" width='100%' height={height} >
