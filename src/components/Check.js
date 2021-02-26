@@ -3,7 +3,7 @@ import Barchart from './checkPart/BarChart'
 import CheckForm from './checkPart/CheckForm'
 import End from './End'
 
-export default function Check({quiz, dataState}) {
+export default function Check({quiz}) {
 
 
 const ans = JSON.parse(localStorage.getItem('antwoorden'));
@@ -55,7 +55,6 @@ function handleChecks(){
 function handleEnd(){
   setEnd(true)
 }
-
   return (
     <div className="CheckAns">
       {end ? (<>
@@ -79,14 +78,8 @@ function handleEnd(){
             </>
             )}
 
-					
-          
           </>) : (<>
-          {dataState === "finished" &&
-                    <Barchart ans={ans} checkCounter={checkCounter}/>
-          }
-          
-          
+                    <Barchart ans={ans} quiz={quiz} checkCounter={checkCounter}/>
           </>)}
 
 

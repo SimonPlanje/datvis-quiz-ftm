@@ -37,7 +37,12 @@ export default function App() {
       {answer: 'FvD', check: false},
     ],
     correct: 'GroenLinks',
-    type: 'scenario'
+    type: 'scenario',
+    category: {
+      gender: 'vrouw',
+      age: '25-34',
+      geo: 'Groningen',
+  }
 
   },
   {
@@ -48,7 +53,12 @@ export default function App() {
     {answer: 'DENK', check: true},
   ],
   correct: 'DENK',
-  type: 'scenario'
+  type: 'scenario',
+  category: {
+    gender: 'man',
+    age: '18-24',
+    geo: 'Noord-Holland',
+}
   },
   ]
 

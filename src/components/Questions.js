@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import Check from './Check'
 import ProgressBar from './ProgressBar'
 
-export default function Questions({setAntwoord, antwoorden, quiz, dataState}) {
+export default function Questions({setAntwoord, antwoorden, quiz}) {
 
 let completed = 100/(quiz.length+1)
 
@@ -74,7 +74,7 @@ if(currentAns){
     <ProgressBar barWidth={barWidth} />
     <div className="Questions">
 			{showResult ? (
-				<Check quiz={quiz} dataState={dataState}/>
+				<Check quiz={quiz}/>
 			) : (
 				<>
 					<div className='question-section'>
