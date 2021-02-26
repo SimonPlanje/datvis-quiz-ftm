@@ -11,27 +11,37 @@ const groupGeo = group(groupGender, d=> d.geo).get('Groningen')
 const groupAge = group(groupGeo, d=> d.age).get('25-34')
 
 const sortData = groupAge.slice().sort((a, b) => d3.descending(a.percentageTotaal, b.percentageTotaal))
-console.log(sortData)
 
-function fixComma(data){
-  data.map(d => d.percentageTotaal.replace(',', '.'))
-  return fixComma
+// sortData.map(item => item.percentageTotaal = item.percentageTotaal.replace('/,/', '.') )
+
+removeComma(sortData)
+fixNums(sortData)
+
+
+function removeComma(data){
+ return data.map((item, index) => item.percentageTotaal = item.percentageTotaal.replace(',', '.'))
 }
 
 function fixNums(data){
-  data.map(d => +d.percentageTotaal)
-  return
-}
+  return data.map((item, index) => item.percentageTotaal = +item.percentageTotaal)
+ }
 
-fixComma(sortData)
-fixNums(sortData)
+console.log(sortData)
+
+// console.log(pointData)
+
+// function fixNums(data){
+//   data.map(d => +d.percentageTotaal)
+//   return
+// }
+
+
 
   // const fixComma = sortData.map(d => d.percentageTotaal.replace(',', '.'))
   // console.log(fixComma)
   // const numData = fixComma.map(d => +d.percentageTotaal)
 
 
-  console.log(sortData)
 
 
 const data = sortData
@@ -74,7 +84,7 @@ const svg = select(".barchartdiv").append("svg")
  .attr("x", d => x(d.partij))
  .attr("width", x.bandwidth())
  .attr("y", d => y(d.percentageTotaal))
- .attr("height", d => y(d.percentageTotaal));
+ .attr("height", d => height - y(d.percentageTotaal))
 
    // add the x Axis
    svg.append("g")
