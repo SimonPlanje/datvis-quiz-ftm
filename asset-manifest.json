@@ -1,22 +1,27 @@
 {
   "files": {
-    "main.css": "/datvis-quiz-ftm/static/css/main.9fc73cc8.chunk.css",
-    "main.js": "/datvis-quiz-ftm/static/js/main.587f0438.chunk.js",
-    "main.js.map": "/datvis-quiz-ftm/static/js/main.587f0438.chunk.js.map",
-    "runtime-main.js": "/datvis-quiz-ftm/static/js/runtime-main.abd6ab9e.js",
-    "runtime-main.js.map": "/datvis-quiz-ftm/static/js/runtime-main.abd6ab9e.js.map",
-    "static/js/2.dbfd3a41.chunk.js": "/datvis-quiz-ftm/static/js/2.dbfd3a41.chunk.js",
-    "static/js/2.dbfd3a41.chunk.js.map": "/datvis-quiz-ftm/static/js/2.dbfd3a41.chunk.js.map",
-    "static/js/3.ea8dfae3.chunk.js": "/datvis-quiz-ftm/static/js/3.ea8dfae3.chunk.js",
-    "static/js/3.ea8dfae3.chunk.js.map": "/datvis-quiz-ftm/static/js/3.ea8dfae3.chunk.js.map",
-    "index.html": "/datvis-quiz-ftm/index.html",
-    "static/css/main.9fc73cc8.chunk.css.map": "/datvis-quiz-ftm/static/css/main.9fc73cc8.chunk.css.map",
-    "static/js/2.dbfd3a41.chunk.js.LICENSE.txt": "/datvis-quiz-ftm/static/js/2.dbfd3a41.chunk.js.LICENSE.txt"
+    "main.css": "./static/css/main.e0db9705.chunk.css",
+    "main.js": "./static/js/main.b0822c24.chunk.js",
+    "main.js.map": "./static/js/main.b0822c24.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.27750777.js",
+    "runtime-main.js.map": "./static/js/runtime-main.27750777.js.map",
+    "static/js/2.a942c8a9.chunk.js": "./static/js/2.a942c8a9.chunk.js",
+    "static/js/2.a942c8a9.chunk.js.map": "./static/js/2.a942c8a9.chunk.js.map",
+    "static/js/3.8bb23c95.chunk.js": "./static/js/3.8bb23c95.chunk.js",
+    "static/js/3.8bb23c95.chunk.js.map": "./static/js/3.8bb23c95.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.e0db9705.chunk.css.map": "./static/css/main.e0db9705.chunk.css.map",
+    "static/js/2.a942c8a9.chunk.js.LICENSE.txt": "./static/js/2.a942c8a9.chunk.js.LICENSE.txt",
+    "static/media/icon1.216e3b8f.PNG": "./static/media/icon1.216e3b8f.PNG",
+    "static/media/icon2.d31cb951.PNG": "./static/media/icon2.d31cb951.PNG",
+    "static/media/icon3.7a08d16c.PNG": "./static/media/icon3.7a08d16c.PNG",
+    "static/media/icon4.145cb42b.PNG": "./static/media/icon4.145cb42b.PNG",
+    "static/media/icon5.589837df.PNG": "./static/media/icon5.589837df.PNG"
   },
   "entrypoints": [
-    "static/js/runtime-main.abd6ab9e.js",
-    "static/js/2.dbfd3a41.chunk.js",
-    "static/css/main.9fc73cc8.chunk.css",
-    "static/js/main.587f0438.chunk.js"
+    "static/js/runtime-main.27750777.js",
+    "static/js/2.a942c8a9.chunk.js",
+    "static/css/main.e0db9705.chunk.css",
+    "static/js/main.b0822c24.chunk.js"
   ]
 }
