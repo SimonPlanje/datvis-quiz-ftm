@@ -30,6 +30,7 @@ function handleAnswer(check, answer){
   }
   document.querySelector(`button[data-value=${answer}]`).classList.toggle('selected')
 
+
   if(document.querySelector(`span.viewRed`)){
     document.querySelector(`span.viewRed`).classList.toggle('viewRed')
   }

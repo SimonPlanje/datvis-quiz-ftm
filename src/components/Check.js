@@ -16,19 +16,11 @@ const [end, setEnd] = useState(false)
 
 const [showScenario, setShowScenario] = useState('kennis')
 
-console.log(quiz[checkCounter].type)
-
-
 
 function handleNext(){
 
-  
-
   const nextCheck = checkCounter + 1
 
-  console.log('limit ' + ans.length)
-console.log('counter ' + checkCounter)
-console.log('next ' + nextCheck)
 
   if(nextCheck < ans.length-1){
     setShowScenario(quiz[checkCounter+1].type)
@@ -92,13 +84,12 @@ console.log(checkCounter)
 
           </>)}
 
-
           </div>
 
-          <h3>Jouw antwoord was {ans[checkCounter].antwoord}</h3>
+          <h3>Jouw antwoord was <span className={`color${ans[checkCounter].check}`}>{ans[checkCounter].antwoord}</span></h3>
             {ans[checkCounter].check
       ? <h3>dit is het goede antwoord!</h3>
-      : <h3>het goed antwoord was {ans[checkCounter].ans}</h3>
+      : <h3>het goed antwoord was <span className='colortrue'>{ans[checkCounter].ans}</span></h3>
     } 
     <div className="checkBtns">
     <button className='prevBtn' onClick={handlePrevious}>Vorige</button>

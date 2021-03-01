@@ -1,5 +1,6 @@
+import { render } from "@testing-library/react";
 import * as d3 from "d3"
-import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group } from "d3"
+import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group, merge } from "d3"
 import { useEffect } from "react"
 
 
@@ -34,9 +35,9 @@ export default function BarChart({ans, checkCounter, quiz}) {
     //Create barchart--------------------------------------------------------
     if(data){
       // set the dimensions and margins of the graph
-      const margin = {top: 20, right: 20, bottom: 70, left: 40},
-          width = 600 - margin.left - margin.right,
-          height = 300 - margin.top - margin.bottom
+      const margin = {top: 0, right: 0, bottom: 20, left: 0},
+          width = 300 - margin.left - margin.right,
+          height = 200 - margin.top - margin.bottom
 
 
       // console.log(myColor.domain())
@@ -66,24 +67,37 @@ export default function BarChart({ans, checkCounter, quiz}) {
 
       y.domain([0, max(data, d => d.percentageTotaal)])
 
-      svg.selectAll('rect')
-        .data(data)
-        .enter().append("rect")
-        .attr("x", d => x(d.partij))
-        .attr("width", x.bandwidth())
-        .attr("y", d => y(d.percentageTotaal))
-        .attr("height", d => height - y(d.percentageTotaal))
-        .attr("fill", function(d){
-            if(ans[checkCounter].antwoord === d.partij){
-              return 'var(--ftm-red)'
-            }else if(ans[checkCounter].ans === d.partij){
-              return 'green'
-            }else{
-              return 'var(--form-grey)'
-            }
+      const rect = svg.selectAll('rect').data(data)
+      rect
+      .enter().append("rect")
+      .attr("x", d => x(d.partij))
+      .attr("width", x.bandwidth())
+      .attr("y", d => y(d.percentageTotaal))
+      .attr("height", d => height - y(d.percentageTotaal))
+      .attr("fill", function(d){
+          if(ans[checkCounter].antwoord === d.partij){
+            return 'var(--ftm-red)'
+          }else if(ans[checkCounter].ans === d.partij){
+            return 'green'
+          }else{
+            return 'var(--form-grey)'
+          }
         })
+        .merge(rect)
+        .attr("fill", function(d){
+          if(ans[checkCounter].antwoord === d.partij){
+            return 'var(--ftm-red)'
+          }else if(ans[checkCounter].ans === d.partij){
+            return 'green'
+          }else{
+            return 'var(--form-grey)'
+          }
+        })
+        rect
         .exit().remove()
+    
 
+      
       // add the x Axis
       svg.append("g")
       .attr("transform", "translate(0," + height + ")")

@@ -17,7 +17,7 @@ export default function App() {
       ],
       correct: 'Twitter',
       type: 'kennis',
-      image: 'https://drive.google.com/u/0/uc?id=1Yc6tj-YfpJkpDH93Iyd4RQOchkzJTrMB&export=download'
+      image: '/static/media/icon1.216e3b8f.PNG'
   },
   {
     question: 'Welke partij adverteerde online met de campagne #10jaarRutte?',
@@ -28,7 +28,7 @@ export default function App() {
     ],
     correct: 'FvD',
     type: 'kennis',
-    image: 'https://drive.google.com/u/0/uc?id=1lfVl5NPFUP846Q5JZ1E0RVz--G6oK03m&export=download'
+    image: '/static/media/icon2.d31cb951.PNG'
 
 
   },
@@ -41,7 +41,7 @@ export default function App() {
     ],
     correct: 'GroenLinks',
     type: 'scenario',
-    image: 'https://drive.google.com/u/0/uc?id=1h-7PjB0KOuUzhqFYCIJO6bJ80nVRfmPi&export=download',
+    image: '/static/media/icon3.7a08d16c.PNG',
     category: {
       gender: 'vrouw',
       age: '25-34',
@@ -58,7 +58,7 @@ export default function App() {
   ],
   correct: 'DENK',
   type: 'scenario',
-  image: 'https://drive.google.com/u/0/uc?id=1AaKTGahmSAgBjNKjwOw7R2yxJ2YQA5RP&export=download',
+  image: '/static/media/icon4.145cb42b.PNG',
   category: {
     gender: 'man',
     age: '18-24',
