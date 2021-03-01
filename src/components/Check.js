@@ -3,6 +3,7 @@ import Barchart from './checkPart/BarChart'
 import CheckForm from './checkPart/CheckForm'
 import ShowImg from './ShowImg'
 import End from './End'
+import icon5 from '../images/icon5.PNG'
 
 export default function Check({quiz}) {
 
@@ -91,17 +92,19 @@ console.log(checkCounter)
       ? <h3>dit is het goede antwoord!</h3>
       : <h3>het goed antwoord was <span className='colortrue'>{ans[checkCounter].ans}</span></h3>
     } 
+    </div>  
     <div className="checkBtns">
     <button className='prevBtn' onClick={handlePrevious}>Vorige</button>
     {showBtn ? <button className='C-nextBtn'  onClick={handleEnd}>Afronden</button>
              : <button className='C-nextBtn' onClick={handleNext}>Volgende</button>
     }
     </div>    
-      </div>    			</>) : (
+        			</>) : (
 				<>
-        <div>
-        <h2>Je bent door de vragen heen, nu kan je kijken hoeveel je er goed had!</h2>
-        <button className='nextBtn' onClick={handleChecks}>Volgende</button>
+        <div className="gotocheck">
+          <img src={icon5} alt='check icon'></img>
+          <h2>Je bent door de vragen heen, nu kan je kijken hoeveel je er goed had!</h2>
+          <button className='nextBtn' onClick={handleChecks}>Volgende</button>
         </div>
 				</>
 

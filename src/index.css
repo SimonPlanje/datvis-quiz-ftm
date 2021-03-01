@@ -46,6 +46,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 
+/* Q & A PART */
 .ShowImg {
   display: flex;
   flex-direction: column;
@@ -57,9 +58,11 @@
   color: var(--form-grey);
   font-style: italic;
 }
-.ShowImg img {
+
+img {
   width: 50%;
-  max-width: 20em;
+  max-width: 40em;
+  margin-bottom: 2em;
 }
 
 .Questions,
@@ -79,6 +82,21 @@
   .Start {
     margin: 2em 20em 0em 20em;
   }
+}
+
+.CheckAns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkBtns {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  max-width: 30em;
+  width: 80%;
+  bottom: 10%;
 }
 
 p,
@@ -102,7 +120,7 @@ h3 {
   margin: 2em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -120,7 +138,6 @@ button:focus {
 }
 
 .button {
-  display: inline-block;
   display: flex;
   justify-content: center;
 }
@@ -134,15 +151,6 @@ button:focus {
   padding: 1em 2em;
   text-align: left;
   height: 52px;
-}
-
-.checkBtns {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  max-width: 30em;
-  width: 80%;
-  bottom: 10%;
 }
 
 .nextBtn,
@@ -183,6 +191,14 @@ button:focus {
   width: 10em;
   background-color: var(--form-grey);
   margin-top: 2em;
+}
+
+/* GO TO CHECK PAGE */
+
+.gotocheck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* STYLING FOR THE FORM TABEL */

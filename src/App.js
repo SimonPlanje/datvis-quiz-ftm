@@ -4,6 +4,12 @@ import Questions from './components/Questions'
 import Start from './components/Start'
 import fetchData from './helper/data'
 
+import icon1 from './images/icon1.PNG'
+import icon2 from './images/icon2.PNG'
+import icon3 from './images/icon3.PNG'
+import icon4 from './images/icon4.PNG'
+import icon5 from './images/icon5.PNG'
+
 
 export default function App() {
 
@@ -17,7 +23,7 @@ export default function App() {
       ],
       correct: 'Twitter',
       type: 'kennis',
-      image: '/static/media/icon1.216e3b8f.PNG'
+      image: icon1
   },
   {
     question: 'Welke partij adverteerde online met de campagne #10jaarRutte?',
@@ -28,7 +34,7 @@ export default function App() {
     ],
     correct: 'FvD',
     type: 'kennis',
-    image: '/static/media/icon2.d31cb951.PNG'
+    image: icon2
 
 
   },
@@ -41,7 +47,7 @@ export default function App() {
     ],
     correct: 'GroenLinks',
     type: 'scenario',
-    image: '/static/media/icon3.7a08d16c.PNG',
+    image: icon3,
     category: {
       gender: 'vrouw',
       age: '25-34',
@@ -58,7 +64,7 @@ export default function App() {
   ],
   correct: 'DENK',
   type: 'scenario',
-  image: '/static/media/icon4.145cb42b.PNG',
+  image: icon4,
   category: {
     gender: 'man',
     age: '18-24',
@@ -87,7 +93,7 @@ getData()
     <div className="App">
       {startQuiz ? 
       (<Start setStartQuiz={setStartQuiz}/>) : 
-      (<Questions setAntwoord={setAntwoord} antwoorden={antwoorden} quiz={quiz} dataState={dataState}/>)
+      (<Questions setAntwoord={setAntwoord} antwoorden={antwoorden} quiz={quiz} dataState={dataState} checkIcon={icon5}/>)
     }
     </div>
   );

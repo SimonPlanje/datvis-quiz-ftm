@@ -1,11 +1,13 @@
 import { render } from "@testing-library/react";
 import * as d3 from "d3"
-import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group, merge } from "d3"
+import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group, merge, selectAll } from "d3"
 import { useEffect } from "react"
 
 
 
 export default function BarChart({ans, checkCounter, quiz}) {
+
+  select('.barchartdiv').selectAll('svg').remove()
 
   useEffect(() => {
 
@@ -35,9 +37,9 @@ export default function BarChart({ans, checkCounter, quiz}) {
     //Create barchart--------------------------------------------------------
     if(data){
       // set the dimensions and margins of the graph
-      const margin = {top: 0, right: 0, bottom: 20, left: 0},
+      const margin = {top: 0, right: 0, bottom: 80, left: 0},
           width = 300 - margin.left - margin.right,
-          height = 200 - margin.top - margin.bottom
+          height = 150 - margin.top - margin.bottom
 
 
       // console.log(myColor.domain())
@@ -65,10 +67,10 @@ export default function BarChart({ans, checkCounter, quiz}) {
       // Scale the range of the data in the domains
       x.domain(data.map(d => d.partij))
 
+
       y.domain([0, max(data, d => d.percentageTotaal)])
 
-      const rect = svg.selectAll('rect').data(data)
-      rect
+svg.selectAll('rect').data(data)
       .enter().append("rect")
       .attr("x", d => x(d.partij))
       .attr("width", x.bandwidth())
@@ -83,7 +85,6 @@ export default function BarChart({ans, checkCounter, quiz}) {
             return 'var(--form-grey)'
           }
         })
-        .merge(rect)
         .attr("fill", function(d){
           if(ans[checkCounter].antwoord === d.partij){
             return 'var(--ftm-red)'
@@ -93,8 +94,7 @@ export default function BarChart({ans, checkCounter, quiz}) {
             return 'var(--form-grey)'
           }
         })
-        rect
-        .exit().remove()
+
     
 
       
@@ -102,6 +102,13 @@ export default function BarChart({ans, checkCounter, quiz}) {
       svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(axisBottom(x));
+
+      svg.selectAll('text')
+      .attr("y", 0)
+      .attr("x", 9)
+      .attr("dy", ".35em")
+      .attr("transform", "rotate(90)")
+      .style("text-anchor", "start");
 
       svg.selectAll('.domain').remove()
       svg.selectAll('.tick line').remove()

@@ -1,4 +1,3 @@
-
 export default function Start({setStartQuiz}) {
 
     function handleStart(){
