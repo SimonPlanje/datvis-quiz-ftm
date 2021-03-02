@@ -54,7 +54,6 @@ function handleEnd(){
   setEnd(true)
 }
 
-console.log(checkCounter)
   return (
     <div className="CheckAns">
       {end ? (<>

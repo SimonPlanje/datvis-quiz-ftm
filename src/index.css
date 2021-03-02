@@ -66,6 +66,7 @@
 .ShowImg p {
   color: var(--form-grey);
   font-style: italic;
+  font-weight: 200;
 }
 
 img {
@@ -111,6 +112,11 @@ h2 {
   font-size: medium;
 }
 
+.question-section {
+  display: flex;
+  justify-content: center;
+}
+
 .question-text {
   margin-bottom: 1em;
 }
@@ -123,12 +129,6 @@ h3 {
 .question-text {
   display: flex;
   justify-content: center;
-}
-
-.answer-section {
-  margin-bottom: 1em;
-  display: flex;
-  flex-direction: column;
 }
 
 button {
@@ -264,7 +264,43 @@ button:focus {
   align-items: center;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 600px) {
+  .Questions,
+  .Start {
+    margin: 2em 10em 0em 10em;
+  }
+  .checkBtns {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    max-width: 30em;
+    width: 80%;
+    bottom: 20%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .Questions,
+  .Start {
+    margin: 2em 15em 0em 15em;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .Questions,
+  .Start {
+    margin: 2em 20em 0em 20em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Questions,
+  .Start {
+    margin: 2em 25em 0em 25em;
+  }
+}
+
+@media screen and (min-width: 1600px) {
   .Questions,
   .Start {
     margin: 2em 35em 0em 35em;
@@ -277,14 +313,7 @@ button:focus {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  .checkBtns {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    max-width: 30em;
-    width: 80%;
-    bottom: 20%;
-  }
+
   .question-text {
     margin-bottom: 3em;
   }

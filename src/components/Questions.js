@@ -38,10 +38,6 @@ function handleAnswer(check, answer){
 
 
   setCurrentAns({"vraag" : quiz[currentQuestion].question, "antwoord" : answer, "check" : check, 'ans': quiz[currentQuestion].correct})
-
-console.log(check)
-console.log(answer)
-
 }
 
 function handleNext(){
