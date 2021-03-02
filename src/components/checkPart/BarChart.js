@@ -5,7 +5,7 @@ import { useEffect } from "react"
 
 
 
-export default function BarChart({ans, checkCounter, quiz}) {
+export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correctAns}) {
 
   select('.barchartdiv').selectAll('svg').remove()
 
@@ -20,6 +20,8 @@ export default function BarChart({ans, checkCounter, quiz}) {
 
     const sortData = groupAge.slice().sort((a, b) => d3.descending(a.percentageTotaal, b.percentageTotaal))
 
+    setCorrectAns(sortData[0].partij)
+
     removeComma(sortData)
     fixNums(sortData)
 
@@ -33,7 +35,6 @@ export default function BarChart({ans, checkCounter, quiz}) {
 
     const data = sortData
     const vw = document.querySelector('.CheckAns').offsetWidth
-    console.log(vw)
 
     //Create barchart--------------------------------------------------------
     if(data){
@@ -90,22 +91,12 @@ svg.selectAll('rect').data(data)
       .attr("fill", function(d){
           if(ans[checkCounter].antwoord === d.partij){
             return 'var(--ftm-red)'
-          }else if(ans[checkCounter].ans === d.partij){
+          }else if(correctAns === d.partij){
             return 'green'
           }else{
             return 'var(--form-grey)'
           }
         })
-        .attr("fill", function(d){
-          if(ans[checkCounter].antwoord === d.partij){
-            return 'var(--ftm-red)'
-          }else if(ans[checkCounter].ans === d.partij){
-            return 'green'
-          }else{
-            return 'var(--form-grey)'
-          }
-        })
-
     
     
       

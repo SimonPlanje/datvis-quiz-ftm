@@ -45,7 +45,6 @@ export default function App() {
       {answer: 'GroenLinks', check: true},
       {answer: 'FvD', check: false},
     ],
-    correct: 'GroenLinks',
     type: 'scenario',
     image: icon3,
     category: {
@@ -62,7 +61,6 @@ export default function App() {
     {answer: 'PvdA', check: false},
     {answer: 'DENK', check: true},
   ],
-  correct: 'DENK',
   type: 'scenario',
   image: icon4,
   category: {

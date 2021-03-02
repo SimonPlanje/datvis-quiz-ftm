@@ -15,6 +15,8 @@ const [showChecks, setShowChecks] = useState(false)
 const [showBtn, setShowBtn] = useState(false)
 const [end, setEnd] = useState(false)
 
+const [correctAns, setCorrectAns] = useState(null)
+
 const [showScenario, setShowScenario] = useState('kennis')
 
 
@@ -80,7 +82,7 @@ function handleEnd(){
 
           </>) : (<>
     
-                    <Barchart ans={ans} quiz={quiz} checkCounter={checkCounter}/>
+                    <Barchart ans={ans} quiz={quiz} checkCounter={checkCounter} setCorrectAns={setCorrectAns} correctAns={correctAns}/>
 
           </>)}
 
@@ -89,7 +91,7 @@ function handleEnd(){
           <h3>Jouw antwoord was <span className={`color${ans[checkCounter].check}`}>{ans[checkCounter].antwoord}</span></h3>
             {ans[checkCounter].check
       ? <h3>dit is het goede antwoord!</h3>
-      : <h3>het goed antwoord was <span className='colortrue'>{ans[checkCounter].ans}</span></h3>
+      : <h3>het goed antwoord was <span className='colortrue'>{correctAns}</span></h3>
     } 
     </div>  
     <div className="checkBtns">
