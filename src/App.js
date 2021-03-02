@@ -92,7 +92,7 @@ getData()
   return (
     <div className="App">
       {startQuiz ? 
-      (<Start setStartQuiz={setStartQuiz}/>) : 
+      (<Start setStartQuiz={setStartQuiz} quiz={quiz}/>) : 
       (<Questions setAntwoord={setAntwoord} antwoorden={antwoorden} quiz={quiz} dataState={dataState} checkIcon={icon5}/>)
     }
     </div>

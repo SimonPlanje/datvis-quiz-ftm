@@ -46,12 +46,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 
+.time {
+  text-align: right;
+  margin: 2em 0em;
+}
+
+.time span {
+  font-weight: bold;
+  font-size: 4em;
+}
+
 /* Q & A PART */
 .ShowImg {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 2em;
 }
 
 .ShowImg p {
@@ -61,7 +70,7 @@
 
 img {
   width: 50%;
-  max-width: 40em;
+  max-width: 15em;
   margin-bottom: 2em;
 }
 
@@ -77,26 +86,22 @@ img {
   color: var(--ftm-red);
 }
 
-@media screen and (min-width: 1200px) {
-  .Questions,
-  .Start {
-    margin: 2em 20em 0em 20em;
-  }
-}
-
 .CheckAns {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .checkBtns {
   display: flex;
-  justify-content: space-between;
-  position: absolute;
+  justify-content: space-around;
+  position: fixed;
   max-width: 30em;
-  width: 80%;
-  bottom: 10%;
+  bottom: 3%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.checkBtns button {
+  margin: 0em 1em;
 }
 
 p,
@@ -104,6 +109,10 @@ h2 {
   font-family: 'IBM Plex Sans';
   font-weight: 400;
   font-size: medium;
+}
+
+.question-text {
+  margin-bottom: 1em;
 }
 
 h1,
@@ -117,10 +126,9 @@ h3 {
 }
 
 .answer-section {
-  margin: 2em;
+  margin-bottom: 1em;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 button {
@@ -248,4 +256,36 @@ button:focus {
 
 .istrue .cls-2 {
   stroke: var(--ftm-green);
+}
+
+.check-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 1400px) {
+  .Questions,
+  .Start {
+    margin: 2em 35em 0em 35em;
+  }
+
+  .nextBtn,
+  .clickNext {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .checkBtns {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    max-width: 30em;
+    width: 80%;
+    bottom: 20%;
+  }
+  .question-text {
+    margin-bottom: 3em;
+  }
 }

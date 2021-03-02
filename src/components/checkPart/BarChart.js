@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import * as d3 from "d3"
-import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group, merge, selectAll } from "d3"
+import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group} from "d3"
 import { useEffect } from "react"
 
 
@@ -32,23 +32,33 @@ export default function BarChart({ans, checkCounter, quiz}) {
     }
 
     const data = sortData
-
+    const vw = document.querySelector('.CheckAns').offsetWidth
+    console.log(vw)
 
     //Create barchart--------------------------------------------------------
     if(data){
+
       // set the dimensions and margins of the graph
-      const margin = {top: 0, right: 0, bottom: 80, left: 0},
-          width = 300 - margin.left - margin.right,
+        const margin = {top: 0, right: 0, bottom: 80, left: 0},
+          width = vw - margin.left - margin.right,
           height = 150 - margin.top - margin.bottom
 
+          // if(vw > 1000){
+          //  const margin = {top: 0, right: 0, bottom: 80, left: 0},
+          // width = 300 - margin.left - margin.right,
+          // height = 150 - margin.top - margin.bottom
+          // }
 
-      // console.log(myColor.domain())
-      // console.log(myColor.range())
 
       // set the ranges
       const x = scaleBand()
         .range([0, width])
         .padding(0.1);
+
+      // set the ranges
+      const x2 = scaleBand()
+      .range([0, width])
+      .padding(0.1);
 
       const y = scaleLinear()
         .range([height, 0])
@@ -66,6 +76,7 @@ export default function BarChart({ans, checkCounter, quiz}) {
 
       // Scale the range of the data in the domains
       x.domain(data.map(d => d.partij))
+      x2.domain(data.map(d => d.partij))
 
 
       y.domain([0, max(data, d => d.percentageTotaal)])
@@ -96,7 +107,7 @@ svg.selectAll('rect').data(data)
         })
 
     
-
+    
       
       // add the x Axis
       svg.append("g")
@@ -117,6 +128,12 @@ svg.selectAll('rect').data(data)
       // add the y Axis
       // svg.append("g")
       //    .call(axisLeft(y));
+
+      // svg.append('g')
+      //   .call(axisBottom(x2))
+      //   .y(function(d){
+      //     console.log(d)
+      //   })
     }
   });
 
