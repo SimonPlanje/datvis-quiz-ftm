@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import Questions from './components/Questions'
 import Start from './components/Start'
 import fetchData from './helper/data'
+import formatBarData from './helper/formatBarData'
 
 import icon1 from './images/icon1.PNG'
 import icon2 from './images/icon2.PNG'
@@ -46,6 +47,7 @@ export default function App() {
       {answer: 'FvD', check: false},
     ],
     type: 'scenario',
+    indextype: 0,
     image: icon3,
     category: {
       gender: 'vrouw',
@@ -62,6 +64,7 @@ export default function App() {
     {answer: 'DENK', check: true},
   ],
   type: 'scenario',
+  indextype: 1,
   image: icon4,
   category: {
     gender: 'man',
@@ -76,6 +79,9 @@ const [startQuiz, setStartQuiz] = useState(true)
 const [antwoorden, setAntwoord] = useState([])
 
 
+const [dynamicAns, setDynamicAns] = useState([])
+
+
 //Barchartload state
 const [dataState, setDataState] = useState('loading')
 
@@ -84,14 +90,16 @@ useEffect(() => {
   await fetchData(setDataState)
 }
 getData()
-  }, [])
+
+formatBarData(quiz, dynamicAns, setDynamicAns)
+  }, [setDataState])
 
 
   return (
     <div className="App">
       {startQuiz ? 
       (<Start setStartQuiz={setStartQuiz} quiz={quiz}/>) : 
-      (<Questions setAntwoord={setAntwoord} antwoorden={antwoorden} quiz={quiz} dataState={dataState} checkIcon={icon5}/>)
+      (<Questions dynamicAns={dynamicAns} setDynamicAns={setDynamicAns} setAntwoord={setAntwoord} antwoorden={antwoorden} quiz={quiz} dataState={dataState} checkIcon={icon5}/>)
     }
     </div>
   );
