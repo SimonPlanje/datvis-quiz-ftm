@@ -2,7 +2,7 @@ const ProgressBar = (props) => {
 const {barWidth} = props;
 
 const containerStyles = {
-    height: 10,
+    height: 5,
     width: '100%',
     backgroundColor: 'transparent',
   }

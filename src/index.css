@@ -124,6 +124,7 @@ h2 {
 h1,
 h3 {
   font-family: 'Open Sans Condensed', sans-serif;
+  margin-top: 0.5em;
 }
 
 .question-text {
@@ -270,12 +271,17 @@ button:focus {
     margin: 2em 10em 0em 10em;
   }
   .checkBtns {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    max-width: 30em;
-    width: 80%;
     bottom: 20%;
+  }
+  .nextBtn,
+  .clickNext {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .question-text {
+    margin-bottom: 3em;
   }
 }
 
@@ -305,16 +311,21 @@ button:focus {
   .Start {
     margin: 2em 35em 0em 35em;
   }
+}
 
-  .nextBtn,
-  .clickNext {
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+/*------------------------
+LEGENDA STYLING BARCHART
+--------------------------*/
 
-  .question-text {
-    margin-bottom: 3em;
-  }
+.legenda {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.legenda-rect {
+  height: 1em;
+  width: 1em;
+  background-color: var(--ftm-red);
+  margin-right: 0.5em;
 }

@@ -70,29 +70,34 @@ function handleEnd(){
       </div>
       <div className='check-section'>
 
-        <div className='answer-section'>
+       <div className='answer-section'>
 
 
           {showScenario === 'kennis' ? (<>
           		{quiz[checkCounter].answers.map(answers =>
             <>
            <CheckForm answers={answers}/>
+
             </>
             )}
+                      <h3>Jouw antwoord was <span className={`color${ans[checkCounter].check}`}>{ans[checkCounter].antwoord}</span></h3>
+            {ans[checkCounter].check
+      ? <h3>dit is het goede antwoord!</h3>
+      : <h3>het goed antwoord was <span className='colortrue'>{ans[checkCounter].ans}</span></h3>
+    } 
 
           </>) : (<>
-    
+            <div className="legenda">
+        <div className="legenda-rect"></div>
+          <p>Jouw keuze: {ans[checkCounter].antwoord}</p>
+        </div>
+            
                     <Barchart ans={ans} quiz={quiz} checkCounter={checkCounter} setCorrectAns={setCorrectAns} correctAns={correctAns}/>
 
           </>)}
 
           </div>
 
-          <h3>Jouw antwoord was <span className={`color${ans[checkCounter].check}`}>{ans[checkCounter].antwoord}</span></h3>
-            {ans[checkCounter].check
-      ? <h3>dit is het goede antwoord!</h3>
-      : <h3>het goed antwoord was <span className='colortrue'>{correctAns}</span></h3>
-    } 
     </div>  
     <div className="checkBtns">
     <button className='prevBtn' onClick={handlePrevious}>Vorige</button>
