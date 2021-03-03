@@ -27,7 +27,6 @@ quiz.map((d,index) =>{
     }
 
     let cleanData = sortData
-    console.log(cleanData)
     
     dataState.push(cleanData)     
     
