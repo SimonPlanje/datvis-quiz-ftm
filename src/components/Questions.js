@@ -90,7 +90,7 @@ const indexType = quiz[currentQuestion].indextype
             <div className='button'>
             {quiz[currentQuestion].type === 'scenario' ? (
               <>
-              <span onClick={() =>handleAnswer(dynamicAns[indexType][0].check, dynamicAns[indexType][0].partij)}>
+              <span onClick={() =>handleAnswer(dynamicAns[indexType][index].check, dynamicAns[indexType][index].partij)}>
               <svg id="Artboard_2" data-name="Artboard â€“ 2" className="cls-1">
     <rect className="cls-14" width="52" height="52"/>
     <g id="Rectangle_116" data-name="Rectangle 116" className="cls-12">
