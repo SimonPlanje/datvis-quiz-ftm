@@ -16,7 +16,17 @@ function formatBarData(quiz, currentQuestion, dynamicAns, setDynamicAns){
       
         const sortData = groupAge.slice().sort((a, b) => d3.descending(a.percentageTotaal, b.percentageTotaal))
     
-        dynamicAns.push(sortData[0].partij, sortData[1].partij, sortData[2].partij)
+        dynamicAns.push(
+            {'partij': sortData[0].partij,
+            'check' : true
+            },
+            {'partij': sortData[1].partij,
+            'check' : false
+            },
+            {'partij': sortData[2].partij,
+            'check' : false
+            },
+            )
       
       console.log(sortData)
     }
