@@ -101,7 +101,8 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.checkBtns button, .checkBtns .btn {
+.checkBtns button,
+.checkBtns .btn {
   margin: 0em 1em;
 }
 
@@ -132,17 +133,20 @@ h3 {
   justify-content: center;
 }
 
-button, .btn {
+button,
+.btn {
   font-family: 'IBM Plex Sans';
   padding: 1em 2em;
   border: none;
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
   cursor: pointer;
 }
 
-button:focus, .btn:focus {
+button:focus,
+.btn:focus {
   outline-style: none;
 }
 

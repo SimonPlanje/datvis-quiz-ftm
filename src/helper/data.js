@@ -2,12 +2,6 @@ import * as d3 from "d3"
 
 async function fetchData(setDataState){
 
-    if(localStorage.data){
-        console.log('all clear')
-        setDataState('finished')
-
-        return
-    }else{
         const fbData = "https://docs.google.com/spreadsheets/d/119KqNUnKmnSKvQazSW4hv84UF0GgB5hp8ti_n_G4YGU/export?format=csv"
     
         async function getData(name){
@@ -18,16 +12,15 @@ async function fetchData(setDataState){
         async function getAllData() {
                 const eventData = await getData(fbData)
 
-
-                localStorage.setItem("data", JSON.stringify(eventData))
-                setDataState('finished')
+                // localStorage.setItem("data", JSON.stringify(eventData))
+                setDataState(eventData)
+                return eventData
         }
-    
-        getAllData().catch((err) => {
+        
+        return getAllData().catch((err) => {
             console.log(err)
             console.log("handled!") 
         })
-    }
 
 } 
 

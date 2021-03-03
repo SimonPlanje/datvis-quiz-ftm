@@ -1,13 +1,13 @@
 import * as d3 from "d3"
 import {  group } from "d3"
 
-async function formatBarData(quiz, dynamicAns, setDynamicAns){
-    const ImportedData = JSON.parse(localStorage.getItem('data'))
+async function formatBarData(quiz, dynamicAns, setDynamicAns, data){
+    // const ImportedData = JSON.parse(localStorage.getItem('data'))
 
 quiz.map((d,index) =>{
-console.log(index)
+console.log(d)
     if(d.type === 'scenario'){
-        const groupGender = group(ImportedData, d=> d.gender).get(d.category.gender)
+        const groupGender = group(data, d=> d.gender).get(d.category.gender)
         const groupGeo = group(groupGender, d=> d.geo).get(d.category.geo)
         const groupAge = group(groupGeo, d=> d.age).get(d.category.age)
       

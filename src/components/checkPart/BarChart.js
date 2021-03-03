@@ -4,14 +4,14 @@ import { useEffect } from "react"
 
 
 
-export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correctAns}) {
+export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correctAns, dataState}) {
 
   select('.barchartdiv').selectAll('svg').remove()
 
   useEffect(() => {
 
     //Formatting data---------------------------------------------------
-    const ImportedData = JSON.parse(localStorage.getItem('data'))
+    const ImportedData = dataState
 
     const groupGender = group(ImportedData, d=> d.gender).get(quiz[checkCounter].category.gender)
     const groupGeo = group(groupGender, d=> d.geo).get(quiz[checkCounter].category.geo)
