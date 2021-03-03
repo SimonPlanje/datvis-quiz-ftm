@@ -1,4 +1,3 @@
-import { render } from "@testing-library/react";
 import * as d3 from "d3"
 import { select, max, scaleBand, scaleLinear, axisBottom, axisLeft, group} from "d3"
 import { useEffect } from "react"

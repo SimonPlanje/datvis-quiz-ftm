@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import Check from './Check'
 import ProgressBar from './ProgressBar'
 import ShowImg from './ShowImg'
+import formatBarData from '../helper/formatBarData'
 
 export default function Questions({setAntwoord, antwoorden, quiz}) {
 
@@ -13,11 +14,12 @@ const [currentQuestion, setCurrentQuestion] = useState(0)
 const [showResult, setShowResult] = useState(false)
 const [currentAns, setCurrentAns] = useState(null)
 
+const [dynamicAns, setDynamicAns] = useState([])
+
 const [barWidth, setBarWidth] = useState(completed)
 
 
 function handleAnswer(check, answer){
-
 
   if(document.querySelector(`button.clickNext`)){
     document.querySelector(`button.clickNext`).classList.replace("clickNext", 'nextBtn')
@@ -41,6 +43,7 @@ function handleAnswer(check, answer){
 }
 
 function handleNext(){
+  formatBarData(quiz, currentQuestion, dynamicAns, setDynamicAns)
 
   if(document.querySelector(`button.selected`)){
     document.querySelector(`button.selected`).classList.toggle('selected')
@@ -65,13 +68,17 @@ if(currentAns){
   alert('Selecteer eerst een antwoord!')
 }
 }
+
+
+
+
   return (
     <div>
     <ProgressBar barWidth={barWidth} />
 
     <div className="Questions">
 			{showResult ? (
-				<Check quiz={quiz}/>
+				<Check quiz={quiz} />
 			) : (
 				<>
                 <ShowImg quiz={quiz} currentQuestion={currentQuestion}/>
@@ -80,7 +87,7 @@ if(currentAns){
 						<div className='question-text'><h2>{quiz[currentQuestion].question}</h2></div>
 					</div>
 					<div className='answer-section'>
-						{quiz[currentQuestion].answers.map(answers =>
+						{quiz[currentQuestion].answers.map((answers, index) =>
             <>
             <div className='button'>
 
@@ -103,7 +110,12 @@ if(currentAns){
   </svg>
 
               </span>
-            <button data-value={answers.answer} onClick={() =>handleAnswer(answers.check, answers.answer)}>{answers.answer}</button>
+              {quiz[currentQuestion].type === 'scenario' ? (
+                            <button data-value={answers.answer} onClick={() =>handleAnswer(answers.check, answers.answer)}>{dynamicAns[index]}</button>
+              
+              ) : (
+                <button data-value={answers.answer} onClick={() =>handleAnswer(answers.check, answers.answer)}>{answers.answer}</button>
+              )}
             </div>
             </>
             )}
