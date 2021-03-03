@@ -78,12 +78,12 @@ export default function App() {
   const [dynamicAns, setDynamicAns] = useState([]);
 
   //Barchartload state
-  const [dataState, setDataState] = useState(null);
+  const [dataState, setDataState] = useState([]);
 
   useEffect(() => {
     async function getData() {
       const data = await fetchData(setDataState);
-      await formatBarData(quiz, dynamicAns, setDynamicAns, data);
+      await formatBarData(quiz, dynamicAns, setDynamicAns, data, dataState);
     }
     getData();
   }, []);

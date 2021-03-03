@@ -1,34 +1,50 @@
 import * as d3 from "d3"
 import {  group } from "d3"
 
-async function formatBarData(quiz, dynamicAns, setDynamicAns, data){
+async function formatBarData(quiz, dynamicAns, setDynamicAns, data, dataState){
     // const ImportedData = JSON.parse(localStorage.getItem('data'))
 
 quiz.map((d,index) =>{
-console.log(d)
+
     if(d.type === 'scenario'){
         const groupGender = group(data, d=> d.gender).get(d.category.gender)
         const groupGeo = group(groupGender, d=> d.geo).get(d.category.geo)
         const groupAge = group(groupGeo, d=> d.age).get(d.category.age)
       
         const sortData = groupAge.slice().sort((a, b) => d3.descending(a.percentageTotaal, b.percentageTotaal))
-        console.log(sortData)
-        
+
+    // setCorrectAns(sortData[0].partij)
+
+    removeComma(sortData)
+    fixNums(sortData)
+
+    function removeComma(data){
+      return data.map(d => d.percentageTotaal = d.percentageTotaal.replace(',', '.'))
+    }
+
+    function fixNums(data){
+      return data.map(d => d.percentageTotaal = +d.percentageTotaal)
+    }
+
+    let cleanData = sortData
+    console.log(cleanData)
+    
+    dataState.push(cleanData)     
+    
         dynamicAns.push([
-            {'partij': sortData[0].partij,
+            {'partij': cleanData[0].partij,
             'check' : true
             },
-            {'partij': sortData[1].partij,
+            {'partij': cleanData[1].partij,
             'check' : false
             },
-            {'partij': sortData[2].partij,
+            {'partij': cleanData[2].partij,
             'check' : false
             },
         ])
 
       
-      console.log(dynamicAns)
-    }else{console.log('error')}
+    }else{console.log('Dit is geen kennis vraag')}
 
 
 

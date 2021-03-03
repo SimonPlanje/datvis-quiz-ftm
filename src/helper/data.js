@@ -1,6 +1,6 @@
 import * as d3 from "d3"
 
-async function fetchData(setDataState){
+async function fetchData(){
 
         const fbData = "https://docs.google.com/spreadsheets/d/119KqNUnKmnSKvQazSW4hv84UF0GgB5hp8ti_n_G4YGU/export?format=csv"
     
@@ -13,7 +13,7 @@ async function fetchData(setDataState){
                 const eventData = await getData(fbData)
 
                 // localStorage.setItem("data", JSON.stringify(eventData))
-                setDataState(eventData)
+                // setDataState(eventData)
                 return eventData
         }
         
