@@ -20,7 +20,6 @@ const [barWidth, setBarWidth] = useState(completed)
 
 
 function handleAnswer(check, answer){
-console.log(check, answer)
   if(document.querySelector(`button.clickNext`)){
     document.querySelector(`button.clickNext`).classList.replace("clickNext", 'nextBtn')
   }
