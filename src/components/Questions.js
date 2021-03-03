@@ -90,7 +90,7 @@ const indexType = quiz[currentQuestion].indextype
             <div className='button'>
             {quiz[currentQuestion].type === 'scenario' ? (
               <>
-              <span onClick={() =>handleAnswer(dynamicAns[indexType][index].check, dynamicAns[indexType][index].partij)}>
+              <span onClick={() =>handleAnswer(dynamicAns[indexType][0].check, dynamicAns[indexType][0].partij)}>
               <svg id="Artboard_2" data-name="Artboard â€“ 2" className="cls-1">
     <rect className="cls-14" width="52" height="52"/>
     <g id="Rectangle_116" data-name="Rectangle 116" className="cls-12">
@@ -102,7 +102,7 @@ const indexType = quiz[currentQuestion].indextype
   </svg>
 
               </span>
-              <span data-value={dynamicAns[indexType][index].partij} onClick={() =>handleAnswer(dynamicAns[indexType][index].check, dynamicAns[indexType][index].partij)}>
+              <span data-value={dynamicAns[indexType][0].partij} onClick={() =>handleAnswer(dynamicAns[indexType][0].check, dynamicAns[indexType][index].partij)}>
               <svg id="Artboard_2" data-name="Artboard â€“ 2" className="cls-1">
     <rect className="cls-3" width="52" height="52"/>
     <path id="Path_43" data-name="Path 43" className="cls-2" d="M-3011.7,12604.991s11.39-7.488,12.615-5.355-11.808,14.413-7.713,13.893,24.095-19.039,24.095-15.975-24.095,25-24.095,28.232,19.814-14.014,24.095-15.29-6.976,10.194-6.976,10.194" transform="matrix(0.966, 0.259, -0.259, 0.966, 6184.751, -11378.36)"/>
@@ -134,7 +134,7 @@ const indexType = quiz[currentQuestion].indextype
 
               {quiz[currentQuestion].type === 'scenario' ? (
 
-                            <button data-value={dynamicAns[indexType][index].partij} onClick={() =>handleAnswer(dynamicAns[indexType][index].check, dynamicAns[indexType][index].partij)}>{dynamicAns[indexType][index].partij}</button>
+                            <button data-value={dynamicAns[indexType][0].partij} onClick={() =>handleAnswer(dynamicAns[indexType][0].check, dynamicAns[indexType][0].partij)}>{dynamicAns[indexType][0].partij}</button>
               
               ) : (
                 <button data-value={answers.answer} onClick={() =>handleAnswer(answers.check, answers.answer)}>{answers.answer}</button>

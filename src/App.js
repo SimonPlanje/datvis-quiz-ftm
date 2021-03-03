@@ -92,7 +92,7 @@ useEffect(() => {
 getData()
 
 formatBarData(quiz, dynamicAns, setDynamicAns)
-  }, [setDataState])
+  }, [])
 
 
   return (
