@@ -16,12 +16,14 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
   let count = quiz[checkCounter].indextype;
   let data = '';
   let yValue = '';
+  let xValue = ''
 
   if(quiz[checkCounter].type === 'gokken'){
     data = plotData
     yValue = d.midden
   }else if(quiz[checkCounter].type === 'scenario'){
     data = plotData[count]
+    yValue= d.percentageTotaal
   }
     const vw = document.querySelector('.CheckAns').offsetWidth
 
