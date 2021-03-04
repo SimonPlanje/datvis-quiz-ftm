@@ -155,14 +155,21 @@ export default function App() {
 
   useEffect(() => {
     async function getData() {
-      const fbData = await fetchData(setTotData);
+      const fbData =
+        'https://docs.google.com/spreadsheets/d/119KqNUnKmnSKvQazSW4hv84UF0GgB5hp8ti_n_G4YGU/export?format=csv';
+      const totaalData =
+        'https://docs.google.com/spreadsheets/d/1JQv_AlrbjDIEI1FjwQs8GBT5_HncMtMGbAFrWKhm-1Q/export?format=csv';
+
+      const data1 = await fetchData(fbData);
+      const data2 = await fetchData(totaalData);
       await formatBarData(
         quiz,
         dynamicAns,
-        fbData,
+        data1,
         dataState,
-        totData,
-        dynamicAnsMoney
+        data2,
+        dynamicAnsMoney,
+        setTotData
       );
     }
     getData();
@@ -175,7 +182,7 @@ export default function App() {
       ) : (
         <Questions
           dynamicAns={dynamicAns}
-          setDynamicAns={setDynamicAns}
+          dynamicAnsMoney={dynamicAnsMoney}
           setAntwoord={setAntwoord}
           antwoorden={antwoorden}
           quiz={quiz}

@@ -4,7 +4,7 @@ import { useEffect } from "react"
 
 
 
-export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correctAns, dataState}) {
+export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correctAns, plotData}) {
 
 
 
@@ -12,8 +12,17 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
 
   useEffect(() => {
 
-  let count = quiz[checkCounter].indextype
-  let data = dataState[count]
+
+  let count = quiz[checkCounter].indextype;
+  let data = '';
+  let yValue = '';
+
+  if(quiz[checkCounter].type === 'gokken'){
+    data = plotData
+    yValue = d.midden
+  }else if(quiz[checkCounter].type === 'scenario'){
+    data = plotData[count]
+  }
     const vw = document.querySelector('.CheckAns').offsetWidth
 
     //Create barchart--------------------------------------------------------
@@ -23,12 +32,6 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
         const margin = {top: 0, right: 0, bottom: 80, left: 0},
           width = vw - margin.left - margin.right,
           height = 150 - margin.top - margin.bottom
-
-          // if(vw > 1000){
-          //  const margin = {top: 0, right: 0, bottom: 80, left: 0},
-          // width = 300 - margin.left - margin.right,
-          // height = 150 - margin.top - margin.bottom
-          // }
 
 
       // set the ranges
@@ -56,6 +59,7 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
               "translate(" + margin.left + "," + margin.top + ")");
 
       // Scale the range of the data in the domains
+      console.log(data)
       x.domain(data.map(d => d.partij))
       x2.domain(data.map(d => d.partij))
 

@@ -5,7 +5,8 @@ import ShowImg from './ShowImg';
 import End from './End';
 import icon5 from '../images/icon5.jpg';
 
-export default function Check({ quiz, dataState }) {
+export default function Check({ quiz, dataState, totData }) {
+  console.log(dataState);
   const ans = JSON.parse(localStorage.getItem('antwoorden'));
 
   const [checkCounter, setCheckCounter] = useState(0);
@@ -15,7 +16,7 @@ export default function Check({ quiz, dataState }) {
 
   const [correctAns, setCorrectAns] = useState(null);
 
-  const [showScenario, setShowScenario] = useState('kennis');
+  const [showScenario, setShowScenario] = useState('gokken');
 
   function handleNext() {
     const nextCheck = checkCounter + 1;
@@ -62,7 +63,7 @@ export default function Check({ quiz, dataState }) {
               </div>
               <div className="check-section">
                 <div className="answer-section">
-                  {showScenario === 'kennis' ? (
+                  {showScenario === 'kennis' && (
                     <>
                       {quiz[checkCounter].answers.map((answers) => (
                         <>
@@ -86,7 +87,8 @@ export default function Check({ quiz, dataState }) {
                         </h3>
                       )}
                     </>
-                  ) : (
+                  )}{' '}
+                  {showScenario === 'scenario' && (
                     <>
                       <div className="legenda">
                         <div className="legenda-rect"></div>
@@ -94,7 +96,24 @@ export default function Check({ quiz, dataState }) {
                       </div>
 
                       <Barchart
-                        dataState={dataState}
+                        plotData={dataState}
+                        ans={ans}
+                        quiz={quiz}
+                        checkCounter={checkCounter}
+                        setCorrectAns={setCorrectAns}
+                        correctAns={correctAns}
+                      />
+                    </>
+                  )}
+                  {showScenario === 'gokken' && (
+                    <>
+                      <div className="legenda">
+                        <div className="legenda-rect"></div>
+                        <p>Jouw keuze: {ans[checkCounter].antwoord}</p>
+                      </div>
+
+                      <Barchart
+                        plotData={totData}
                         ans={ans}
                         quiz={quiz}
                         checkCounter={checkCounter}

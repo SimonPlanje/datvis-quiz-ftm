@@ -10,9 +10,11 @@ export default function Questions({
   antwoorden,
   quiz,
   dynamicAns,
-  setDynamicAns,
+  dynamicAnsMoney,
   dataState,
+  totData,
 }) {
+  console.log(totData);
   let completed = 100 / (quiz.length + 1);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -79,10 +81,8 @@ export default function Questions({
       alert('Selecteer eerst een antwoord!');
     }
   }
-  console.log(currentQuestion);
   //get the index of the type scenario from the quiz dataset
   const indexType = quiz[currentQuestion].indextype;
-  console.log(indexType);
 
   return (
     <div>
@@ -90,7 +90,7 @@ export default function Questions({
 
       <div className="Questions">
         {showResult ? (
-          <Check quiz={quiz} dataState={dataState} />
+          <Check quiz={quiz} dataState={dataState} totData={totData} />
         ) : (
           <>
             <ShowImg quiz={quiz} currentQuestion={currentQuestion} />
@@ -104,7 +104,7 @@ export default function Questions({
               {quiz[currentQuestion].answers.map((answers, index) => (
                 <>
                   <div className="button">
-                    {quiz[currentQuestion].type === 'scenario' ? (
+                    {quiz[currentQuestion].type === 'scenario' && (
                       <>
                         <span
                           onClick={() =>
@@ -179,7 +179,84 @@ export default function Questions({
                           </svg>
                         </span>
                       </>
-                    ) : (
+                    )}
+                    {quiz[currentQuestion].type === 'gokken' && (
+                      <>
+                        <span
+                          onClick={() =>
+                            handleAnswer(
+                              dynamicAnsMoney[0][index].check,
+                              dynamicAnsMoney[0][index].partij,
+                              dynamicAnsMoney[0][index].id
+                            )
+                          }
+                        >
+                          <svg
+                            id="Artboard_2"
+                            data-name="Artboard â€“ 2"
+                            className="cls-1"
+                          >
+                            <rect className="cls-14" width="52" height="52" />
+                            <g
+                              id="Rectangle_116"
+                              data-name="Rectangle 116"
+                              className="cls-12"
+                            >
+                              <rect className="cls-15" width="52" height="52" />
+                              <rect
+                                className="cls-16"
+                                x="1"
+                                y="1"
+                                width="50"
+                                height="50"
+                              />
+                            </g>
+                            <path
+                              id="Path_44"
+                              data-name="Path 44"
+                              className="cls-13"
+                              d="M0,0H36V36H0Z"
+                              transform="translate(8 8)"
+                            />
+                            <circle
+                              id="Ellipse_53"
+                              data-name="Ellipse 53"
+                              className="cls-14"
+                              cx="14"
+                              cy="14"
+                              r="14"
+                              transform="translate(12 12)"
+                            />
+                          </svg>
+                        </span>
+                        <span
+                          data-value={dynamicAnsMoney[0][index].partij}
+                          onClick={() =>
+                            handleAnswer(
+                              dynamicAnsMoney[0][index].check,
+                              dynamicAnsMoney[0][index].partij,
+                              dynamicAnsMoney[0][index].id
+                            )
+                          }
+                        >
+                          <svg
+                            id="Artboard_2"
+                            data-name="Artboard â€“ 2"
+                            className="cls-1"
+                          >
+                            <rect className="cls-3" width="52" height="52" />
+                            <path
+                              id="Path_43"
+                              data-name="Path 43"
+                              className="cls-2"
+                              d="M-3011.7,12604.991s11.39-7.488,12.615-5.355-11.808,14.413-7.713,13.893,24.095-19.039,24.095-15.975-24.095,25-24.095,28.232,19.814-14.014,24.095-15.29-6.976,10.194-6.976,10.194"
+                              transform="matrix(0.966, 0.259, -0.259, 0.966, 6184.751, -11378.36)"
+                            />
+                          </svg>
+                        </span>
+                      </>
+                    )}
+                    {quiz[currentQuestion].type === 'kennis' && (
                       <>
                         <span
                           onClick={() =>
@@ -255,8 +332,7 @@ export default function Questions({
                         </span>
                       </>
                     )}
-
-                    {quiz[currentQuestion].type === 'scenario' ? (
+                    {quiz[currentQuestion].type === 'scenario' && (
                       <button
                         data-value={dynamicAns[indexType][index].id}
                         onClick={() =>
@@ -269,7 +345,22 @@ export default function Questions({
                       >
                         {dynamicAns[indexType][index].partij}
                       </button>
-                    ) : (
+                    )}
+                    {quiz[currentQuestion].type === 'gokken' && (
+                      <button
+                        data-value={dynamicAnsMoney[0][index].id}
+                        onClick={() =>
+                          handleAnswer(
+                            dynamicAnsMoney[0][index].check,
+                            dynamicAnsMoney[0][index].partij,
+                            dynamicAnsMoney[0][index].id
+                          )
+                        }
+                      >
+                        {dynamicAnsMoney[0][index].partij}
+                      </button>
+                    )}
+                    {quiz[currentQuestion].type === 'kennis' && (
                       <button
                         data-value={answers.id}
                         onClick={() =>
