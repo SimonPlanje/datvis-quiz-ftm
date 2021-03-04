@@ -19,6 +19,29 @@ import icon9 from './images/icon9.jpg';
 export default function App() {
   const quiz = [
     {
+      question:
+        'Welke partij gaf het meeste uit aan advertenties op Facebook en Google?',
+      answers: [
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+      ],
+      type: 'gokken',
+      indextype: 0,
+      image: icon1,
+    },
+    {
+      question: 'Wie is de runner-up?',
+      answers: [
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+      ],
+      type: 'gokken',
+      indextype: 1,
+      image: icon2,
+    },
+    {
       question: 'Welke partij adverteert niet online?',
       answers: [
         { answer: 'DENK', check: false, id: 'DENK' },
@@ -123,6 +146,7 @@ export default function App() {
   const [antwoorden, setAntwoord] = useState([]);
 
   const [dynamicAns, setDynamicAns] = useState([]);
+  const [dynamicAnsMoney, setDynamicAnsMoney] = useState([]);
 
   //Barchartload state
   const [dataState, setDataState] = useState([]);
@@ -132,7 +156,14 @@ export default function App() {
   useEffect(() => {
     async function getData() {
       const fbData = await fetchData(setTotData);
-      await formatBarData(quiz, dynamicAns, setDynamicAns, fbData, dataState);
+      await formatBarData(
+        quiz,
+        dynamicAns,
+        fbData,
+        dataState,
+        totData,
+        dynamicAnsMoney
+      );
     }
     getData();
   }, []);
@@ -149,6 +180,7 @@ export default function App() {
           antwoorden={antwoorden}
           quiz={quiz}
           dataState={dataState}
+          totData={totData}
           checkIcon={icon5}
         />
       )}

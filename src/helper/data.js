@@ -12,10 +12,10 @@ async function fetchData(setTotData) {
   }
 
   async function getAllData() {
-    const eventData = await getData(fbData);
     const totData = await getData(totaalData);
-
     setTotData(totData);
+
+    const eventData = await getData(fbData);
 
     return eventData;
   }
