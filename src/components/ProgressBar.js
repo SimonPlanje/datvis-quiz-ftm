@@ -1,26 +1,25 @@
 const ProgressBar = (props) => {
-const {barWidth} = props;
+  const { barWidth } = props;
 
-const containerStyles = {
+  const containerStyles = {
     height: 5,
     width: '100%',
     backgroundColor: 'transparent',
-  }
-const bar = {
+  };
+  const bar = {
     transition: 'width 1s ease-in-out',
     height: '100%',
     width: `${barWidth}%`,
-    backgroundColor: "var(--ftm-red)",
+    backgroundColor: 'var(--ftm-red)',
     borderRadius: 'inherit',
-    textAlign: 'right'
-  }
+    textAlign: 'right',
+  };
 
   return (
     <div style={containerStyles} className="ProgressBar">
-        <div style={bar} className='bar'>
-        </div>
+      <div style={bar} className="bar"></div>
     </div>
   );
-}
+};
 
-export default ProgressBar
+export default ProgressBar;

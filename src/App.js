@@ -5,48 +5,95 @@ import Start from './components/Start';
 import fetchData from './helper/data';
 import formatBarData from './helper/formatBarData';
 
-import icon1 from './images/icon1.PNG';
-import icon2 from './images/icon2.PNG';
-import icon3 from './images/icon3.PNG';
-import icon4 from './images/icon4.PNG';
-import icon5 from './images/icon5.PNG';
+import icon1 from './images/icon1.jpg';
+import icon2 from './images/icon2.jpg';
+import icon3 from './images/icon3.jpg';
+import icon4 from './images/icon4.jpg';
+import icon5 from './images/icon5.jpg';
+import icon6 from './images/icon6.jpg';
+import icon7 from './images/icon7.jpg';
+import icon8 from './images/icon8.jpg';
+import icon9 from './images/icon9.jpg';
+// import icon10 from './images/icon10.jpg';
 
 export default function App() {
   const quiz = [
     {
-      question:
-        'Op welk platform konden politieke partijen geen advertenties kopen?',
+      question: 'Welke partij adverteert niet online?',
       answers: [
-        { answer: 'Facebook', check: false },
-        { answer: 'Twitter', check: true },
-        { answer: 'Google', check: false },
+        { answer: 'DENK', check: false, id: 'DENK' },
+        { answer: 'ChristenUnie', check: false, id: 'ChristenUnie' },
+        { answer: 'PvdD', check: false, id: 'PvdD' },
+        { answer: 'SP', check: false, id: 'SP' },
+        { answer: 'SGP', check: false, id: 'SGP' },
+        { answer: 'PVV', check: true, id: 'PVV' },
       ],
-      correct: 'Twitter',
+      correct: 'PVV',
       type: 'kennis',
-      image: icon1,
+      image: icon3,
+    },
+    {
+      question:
+        'Op welke platforms konden politieke partijen geen advertenties kopen?',
+      answers: [
+        { answer: 'LinkedIn & Instagram', check: false, id: 'LI' },
+        { answer: 'Twitter & YouTube', check: false, id: 'TY' },
+        { answer: 'YouTube & Instagram', check: false, id: 'YI' },
+        { answer: 'LinkedIn & Twitter', check: true, id: 'LT' },
+      ],
+      correct: 'LinkedIn & Twitter',
+      type: 'kennis',
+      image: icon4,
     },
     {
       question: 'Welke partij adverteerde online met de campagne #10jaarRutte?',
       answers: [
-        { answer: 'PVV', check: false },
-        { answer: 'VVD', check: false },
-        { answer: 'FvD', check: true },
+        { answer: 'VVD', check: false, id: 'VVD' },
+        { answer: 'FvD', check: true, id: 'FvD' },
+        { answer: 'SP', check: false, id: 'SP' },
+        { answer: 'GroenLinks', check: false, id: 'GroenLinks' },
       ],
       correct: 'FvD',
       type: 'kennis',
-      image: icon2,
+      image: icon5,
     },
     {
       question:
-        'De 27-jarige Sanne uit Groningen houdt ervan om na een lange dag werken bij de gemeente als … om lekker op de bank door haar Facebook-feed te scrollen. Van welke partij komt zij de meeste advertenties tegen tijdens het scrollen?',
+        'Maak de zin af. Wie vorig voorjaar op Google zocht naar "FvD lid worden", kreeg de volgende tekst voorgeschoteld: "FvD lid worden? Psst, word lid van ..."',
       answers: [
-        { answer: 'D66', check: false },
-        { answer: 'GroenLinks', check: true },
-        { answer: 'FvD', check: false },
+        { answer: 'PvdA', check: false, id: 'PvdA' },
+        { answer: 'VVD', check: true, id: 'VVD' },
+        { answer: 'SGP', check: false, id: 'SGP' },
+        { answer: 'D66', check: false, id: 'D66' },
+      ],
+      correct: 'VVD',
+      type: 'kennis',
+      image: icon6,
+    },
+    {
+      question:
+        'Welke partij gaf meer advertentiegeld uit aan het promoten van de persoonlijke pagina van de lijsttrekker, dan aan de pagina van de partij?',
+      answers: [
+        { answer: 'VVD', check: false, id: 'VVD' },
+        { answer: 'CDA', check: true, id: 'CDA' },
+        { answer: 'PvdD', check: false, id: 'PvdD' },
+        { answer: 'ChristenUnie', check: false, id: 'ChristenUnie' },
+      ],
+      correct: 'CDA',
+      type: 'kennis',
+      image: icon7,
+    },
+    {
+      question:
+        'De 27-jarige Sanne uit Groningen houdt ervan om na een lange dag werken lekker op de bank door haar Facebook-feed te scrollen. Van welke partij komt zij de meeste advertenties tegen tijdens het scrollen?',
+      answers: [
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+        { answer: 'dynamic', check: false, id: 'dynamic' },
       ],
       type: 'scenario',
       indextype: 0,
-      image: icon3,
+      image: icon8,
       category: {
         gender: 'vrouw',
         age: '25-34',
@@ -55,15 +102,15 @@ export default function App() {
     },
     {
       question:
-        'De 19-jarige Dennis kijkt op zondag altijd alle voetbalwedstrijden in zijn studentenkamer in Amsterdam. Zo nu en dan pakt hij zijn mobiel en zit hij op Instagram. Van welke partij ziet hij de meeste advertenties voorbij komen tijdens het scrollen?',
+        "De 19-jarige Dennis kijkt op zondag altijd alle voetbal in z'n studentenkamer in Amsterdam. Ondertussen kijkt hij ook Instagram. Van welke partij ziet hij de meeste advertenties voorbij komen tijdens het scrollen?",
       answers: [
-        { answer: 'PVV', check: false },
-        { answer: 'PvdA', check: false },
-        { answer: 'DENK', check: true },
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+        { answer: 'dynamic', check: false, id: 'dynamic' },
+        { answer: 'dynamic', check: false, id: 'dynamic' },
       ],
       type: 'scenario',
       indextype: 1,
-      image: icon4,
+      image: icon9,
       category: {
         gender: 'man',
         age: '18-24',
@@ -79,11 +126,13 @@ export default function App() {
 
   //Barchartload state
   const [dataState, setDataState] = useState([]);
+  //Get the total spend per partij dataset
+  const [totData, setTotData] = useState(null);
 
   useEffect(() => {
     async function getData() {
-      const data = await fetchData(setDataState);
-      await formatBarData(quiz, dynamicAns, setDynamicAns, data, dataState);
+      const fbData = await fetchData(setTotData);
+      await formatBarData(quiz, dynamicAns, setDynamicAns, fbData, dataState);
     }
     getData();
   }, []);

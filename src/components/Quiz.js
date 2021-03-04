@@ -8,6 +8,6 @@ export default function Quiz() {
     <div className="Quiz">
         <Questions />
         <Check />
-    </div>
+      </div>
   );
 }

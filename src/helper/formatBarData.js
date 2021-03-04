@@ -1,13 +1,13 @@
 import * as d3 from "d3"
 import {  group } from "d3"
 
-async function formatBarData(quiz, dynamicAns, setDynamicAns, data, dataState){
+async function formatBarData(quiz, dynamicAns, setDynamicAns, fbData, dataState){
     // const ImportedData = JSON.parse(localStorage.getItem('data'))
 
-quiz.map((d,index) =>{
+quiz.map((d,index)=>{
 
     if(d.type === 'scenario'){
-        const groupGender = group(data, d=> d.gender).get(d.category.gender)
+        const groupGender = group(fbData, d=> d.gender).get(d.category.gender)
         const groupGeo = group(groupGender, d=> d.geo).get(d.category.geo)
         const groupAge = group(groupGeo, d=> d.age).get(d.category.age)
       
@@ -32,13 +32,16 @@ quiz.map((d,index) =>{
     
         dynamicAns.push([
             {'partij': cleanData[0].partij,
-            'check' : true
+            'check' : true,
+            'id': cleanData[0].partij
             },
             {'partij': cleanData[1].partij,
-            'check' : false
+            'check' : false,
+            'id': cleanData[1].partij
             },
             {'partij': cleanData[2].partij,
-            'check' : false
+            'check' : false,
+            'id': cleanData[2].partij
             },
         ])
 

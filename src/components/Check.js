@@ -3,7 +3,7 @@ import Barchart from './checkPart/BarChart';
 import CheckForm from './checkPart/CheckForm';
 import ShowImg from './ShowImg';
 import End from './End';
-import icon5 from '../images/icon5.PNG';
+import icon5 from '../images/icon5.jpg';
 
 export default function Check({ quiz, dataState }) {
   const ans = JSON.parse(localStorage.getItem('antwoorden'));
@@ -44,10 +44,6 @@ export default function Check({ quiz, dataState }) {
 
   function handleChecks() {
     setShowChecks(true);
-  }
-
-  function handleEnd() {
-    setEnd(true);
   }
 
   return (

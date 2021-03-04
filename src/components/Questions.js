@@ -21,7 +21,9 @@ export default function Questions({
 
   const [barWidth, setBarWidth] = useState(completed);
 
-  function handleAnswer(check, answer) {
+  function handleAnswer(check, answer, id) {
+    console.log(dynamicAns);
+    console.log(id);
     if (document.querySelector(`button.clickNext`)) {
       document
         .querySelector(`button.clickNext`)
@@ -33,14 +35,14 @@ export default function Questions({
     } else {
     }
     document
-      .querySelector(`button[data-value=${answer}]`)
+      .querySelector(`button[data-value=${id}]`)
       .classList.toggle('selected');
 
     if (document.querySelector(`span.viewRed`)) {
       document.querySelector(`span.viewRed`).classList.toggle('viewRed');
     }
     document
-      .querySelector(`span[data-value=${answer}]`)
+      .querySelector(`span[data-value=${id}]`)
       .classList.toggle('viewRed');
 
     setCurrentAns({
@@ -80,6 +82,7 @@ export default function Questions({
   console.log(currentQuestion);
   //get the index of the type scenario from the quiz dataset
   const indexType = quiz[currentQuestion].indextype;
+  console.log(indexType);
 
   return (
     <div>
@@ -107,7 +110,8 @@ export default function Questions({
                           onClick={() =>
                             handleAnswer(
                               dynamicAns[indexType][index].check,
-                              dynamicAns[indexType][index].partij
+                              dynamicAns[indexType][index].partij,
+                              dynamicAns[indexType][index].id
                             )
                           }
                         >
@@ -150,11 +154,12 @@ export default function Questions({
                           </svg>
                         </span>
                         <span
-                          data-value={dynamicAns[indexType][index].partij}
+                          data-value={dynamicAns[indexType][index].id}
                           onClick={() =>
                             handleAnswer(
                               dynamicAns[indexType][index].check,
-                              dynamicAns[indexType][index].partij
+                              dynamicAns[indexType][index].partij,
+                              dynamicAns[indexType][index].id
                             )
                           }
                         >
@@ -178,7 +183,11 @@ export default function Questions({
                       <>
                         <span
                           onClick={() =>
-                            handleAnswer(answers.check, answers.answer)
+                            handleAnswer(
+                              answers.check,
+                              answers.answer,
+                              answers.id
+                            )
                           }
                         >
                           <svg
@@ -220,9 +229,13 @@ export default function Questions({
                           </svg>
                         </span>
                         <span
-                          data-value={answers.answer}
+                          data-value={answers.id}
                           onClick={() =>
-                            handleAnswer(answers.check, answers.answer)
+                            handleAnswer(
+                              answers.check,
+                              answers.answer,
+                              answers.id
+                            )
                           }
                         >
                           <svg
@@ -245,11 +258,12 @@ export default function Questions({
 
                     {quiz[currentQuestion].type === 'scenario' ? (
                       <button
-                        data-value={dynamicAns[indexType][index].partij}
+                        data-value={dynamicAns[indexType][index].id}
                         onClick={() =>
                           handleAnswer(
                             dynamicAns[indexType][index].check,
-                            dynamicAns[indexType][index].partij
+                            dynamicAns[indexType][index].partij,
+                            dynamicAns[indexType][index].id
                           )
                         }
                       >
@@ -257,9 +271,13 @@ export default function Questions({
                       </button>
                     ) : (
                       <button
-                        data-value={answers.answer}
+                        data-value={answers.id}
                         onClick={() =>
-                          handleAnswer(answers.check, answers.answer)
+                          handleAnswer(
+                            answers.check,
+                            answers.answer,
+                            answers.id
+                          )
                         }
                       >
                         {answers.answer}

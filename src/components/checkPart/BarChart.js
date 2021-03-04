@@ -86,7 +86,7 @@ svg.selectAll('rect').data(data)
       .call(axisBottom(x));
 
       svg.selectAll('text')
-      .attr("y", 0)
+          .attr("y", 0)
       .attr("x", 9)
       .attr("dy", ".35em")
       .attr("transform", "rotate(90)")

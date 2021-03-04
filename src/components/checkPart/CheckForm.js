@@ -23,7 +23,7 @@ export default function CheckForm({answers}) {
 </svg>
 
 </span>
-<button data-value={answers.answer} >{answers.answer}</button>
+<button data-value={answers.id} >{answers.answer}</button>
 </div>
     </div>
   );
