@@ -1,27 +1,32 @@
 {
   "files": {
-    "main.css": "/datvis-quiz-ftm/static/css/main.c49dce8d.chunk.css",
-    "main.js": "/datvis-quiz-ftm/static/js/main.fd4b7dae.chunk.js",
-    "main.js.map": "/datvis-quiz-ftm/static/js/main.fd4b7dae.chunk.js.map",
-    "runtime-main.js": "/datvis-quiz-ftm/static/js/runtime-main.d9f49629.js",
-    "runtime-main.js.map": "/datvis-quiz-ftm/static/js/runtime-main.d9f49629.js.map",
-    "static/js/2.fc7aa217.chunk.js": "/datvis-quiz-ftm/static/js/2.fc7aa217.chunk.js",
-    "static/js/2.fc7aa217.chunk.js.map": "/datvis-quiz-ftm/static/js/2.fc7aa217.chunk.js.map",
-    "static/js/3.8c061c73.chunk.js": "/datvis-quiz-ftm/static/js/3.8c061c73.chunk.js",
-    "static/js/3.8c061c73.chunk.js.map": "/datvis-quiz-ftm/static/js/3.8c061c73.chunk.js.map",
+    "main.css": "/datvis-quiz-ftm/static/css/main.05c654ac.chunk.css",
+    "main.js": "/datvis-quiz-ftm/static/js/main.56ccb214.chunk.js",
+    "main.js.map": "/datvis-quiz-ftm/static/js/main.56ccb214.chunk.js.map",
+    "runtime-main.js": "/datvis-quiz-ftm/static/js/runtime-main.abd6ab9e.js",
+    "runtime-main.js.map": "/datvis-quiz-ftm/static/js/runtime-main.abd6ab9e.js.map",
+    "static/js/2.be16ac60.chunk.js": "/datvis-quiz-ftm/static/js/2.be16ac60.chunk.js",
+    "static/js/2.be16ac60.chunk.js.map": "/datvis-quiz-ftm/static/js/2.be16ac60.chunk.js.map",
+    "static/js/3.ea8dfae3.chunk.js": "/datvis-quiz-ftm/static/js/3.ea8dfae3.chunk.js",
+    "static/js/3.ea8dfae3.chunk.js.map": "/datvis-quiz-ftm/static/js/3.ea8dfae3.chunk.js.map",
     "index.html": "/datvis-quiz-ftm/index.html",
-    "static/css/main.c49dce8d.chunk.css.map": "/datvis-quiz-ftm/static/css/main.c49dce8d.chunk.css.map",
-    "static/js/2.fc7aa217.chunk.js.LICENSE.txt": "/datvis-quiz-ftm/static/js/2.fc7aa217.chunk.js.LICENSE.txt",
-    "static/media/icon1.216e3b8f.PNG": "/datvis-quiz-ftm/static/media/icon1.216e3b8f.PNG",
-    "static/media/icon2.d31cb951.PNG": "/datvis-quiz-ftm/static/media/icon2.d31cb951.PNG",
-    "static/media/icon3.7a08d16c.PNG": "/datvis-quiz-ftm/static/media/icon3.7a08d16c.PNG",
-    "static/media/icon4.145cb42b.PNG": "/datvis-quiz-ftm/static/media/icon4.145cb42b.PNG",
-    "static/media/icon5.589837df.PNG": "/datvis-quiz-ftm/static/media/icon5.589837df.PNG"
+    "static/css/main.05c654ac.chunk.css.map": "/datvis-quiz-ftm/static/css/main.05c654ac.chunk.css.map",
+    "static/js/2.be16ac60.chunk.js.LICENSE.txt": "/datvis-quiz-ftm/static/js/2.be16ac60.chunk.js.LICENSE.txt",
+    "static/media/icon1.9f89a8fc.jpg": "/datvis-quiz-ftm/static/media/icon1.9f89a8fc.jpg",
+    "static/media/icon2.8b7d66fb.jpg": "/datvis-quiz-ftm/static/media/icon2.8b7d66fb.jpg",
+    "static/media/icon3.78737bb8.jpg": "/datvis-quiz-ftm/static/media/icon3.78737bb8.jpg",
+    "static/media/icon4.e009c62b.jpg": "/datvis-quiz-ftm/static/media/icon4.e009c62b.jpg",
+    "static/media/icon5.f29e9e33.jpg": "/datvis-quiz-ftm/static/media/icon5.f29e9e33.jpg",
+    "static/media/icon6.c46a10ea.jpg": "/datvis-quiz-ftm/static/media/icon6.c46a10ea.jpg",
+    "static/media/icon7.f546b8df.jpg": "/datvis-quiz-ftm/static/media/icon7.f546b8df.jpg",
+    "static/media/icon8.16c13ccc.jpg": "/datvis-quiz-ftm/static/media/icon8.16c13ccc.jpg",
+    "static/media/icon9.65e6efc9.jpg": "/datvis-quiz-ftm/static/media/icon9.65e6efc9.jpg",
+    "static/media/main.119d013b.jpg": "/datvis-quiz-ftm/static/media/main.119d013b.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d9f49629.js",
-    "static/js/2.fc7aa217.chunk.js",
-    "static/css/main.c49dce8d.chunk.css",
-    "static/js/main.fd4b7dae.chunk.js"
+    "static/js/runtime-main.abd6ab9e.js",
+    "static/js/2.be16ac60.chunk.js",
+    "static/css/main.05c654ac.chunk.css",
+    "static/js/main.56ccb214.chunk.js"
   ]
 }
