@@ -5,9 +5,6 @@ import { useEffect } from "react"
 
 
 export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correctAns, plotData}) {
-
-
-
   select('.barchartdiv').selectAll('svg').remove()
 
   useEffect(() => {
@@ -17,18 +14,27 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
   let data = '';
   let yValue = '';
   let xValue = ''
+  let checkYourAns = '';
 
   if(quiz[checkCounter].type === 'gokken'){
     data = plotData
-    yValue = d.midden
   }else if(quiz[checkCounter].type === 'scenario'){
     data = plotData[count]
-    yValue= d.percentageTotaal
   }
+
     const vw = document.querySelector('.CheckAns').offsetWidth
 
     //Create barchart--------------------------------------------------------
     if(data){
+
+      if(quiz[checkCounter].type === 'gokken'){
+        xValue = d => d.partij
+        yValue = d => d.midden
+      }else if(quiz[checkCounter].type === 'scenario'){
+        xValue = d => d.partij
+        yValue = d => d.percentageTotaal
+      }
+    
 
       // set the dimensions and margins of the graph
         const margin = {top: 0, right: 0, bottom: 80, left: 0},
@@ -41,10 +47,10 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
         .range([0, width])
         .padding(0.1);
 
-      // set the ranges
-      const x2 = scaleBand()
-      .range([0, width])
-      .padding(0.1);
+      // // set the ranges
+      // const x2 = scaleBand()
+      // .range([0, width])
+      // .padding(0.1);
 
       const y = scaleLinear()
         .range([height, 0])
@@ -61,23 +67,26 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
               "translate(" + margin.left + "," + margin.top + ")");
 
       // Scale the range of the data in the domains
-      console.log(data)
-      x.domain(data.map(d => d.partij))
-      x2.domain(data.map(d => d.partij))
+      x.domain(data.map(xValue))
+      console.log(x.domain())
+      // x2.domain(data.map(d => d.partij))
 
 
-      y.domain([0, max(data, d => d.percentageTotaal)])
+      y.domain([0, max(data, yValue)])
+      console.log(y.range())
+console.log(ans[checkCounter].antwoord)
+console.log(correctAns)
 
 svg.selectAll('rect').data(data)
       .enter().append("rect")
-      .attr("x", d => x(d.partij))
+      .attr("x", d => x(xValue(d)))
       .attr("width", x.bandwidth())
-      .attr("y", d => y(d.percentageTotaal))
-      .attr("height", d => height - y(d.percentageTotaal))
+      .attr("y", d => y(yValue(d)))
+      .attr("height", d => height - y(yValue(d)))
       .attr("fill", function(d){
-          if(ans[checkCounter].antwoord === d.partij){
+          if(ans[checkCounter].antwoord === xValue){
             return 'var(--ftm-red)'
-          }else if(correctAns === d.partij){
+          }else if(correctAns === xValue){
             return 'green'
           }else{
             return 'var(--form-grey)'
