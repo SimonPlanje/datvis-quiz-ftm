@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/datvis-quiz-ftm/static/css/main.05c654ac.chunk.css",
+    "main.css": "/datvis-quiz-ftm/static/css/main.63e129da.chunk.css",
     "main.js": "/datvis-quiz-ftm/static/js/main.56ccb214.chunk.js",
     "main.js.map": "/datvis-quiz-ftm/static/js/main.56ccb214.chunk.js.map",
     "runtime-main.js": "/datvis-quiz-ftm/static/js/runtime-main.abd6ab9e.js",
@@ -10,7 +10,7 @@
     "static/js/3.ea8dfae3.chunk.js": "/datvis-quiz-ftm/static/js/3.ea8dfae3.chunk.js",
     "static/js/3.ea8dfae3.chunk.js.map": "/datvis-quiz-ftm/static/js/3.ea8dfae3.chunk.js.map",
     "index.html": "/datvis-quiz-ftm/index.html",
-    "static/css/main.05c654ac.chunk.css.map": "/datvis-quiz-ftm/static/css/main.05c654ac.chunk.css.map",
+    "static/css/main.63e129da.chunk.css.map": "/datvis-quiz-ftm/static/css/main.63e129da.chunk.css.map",
     "static/js/2.be16ac60.chunk.js.LICENSE.txt": "/datvis-quiz-ftm/static/js/2.be16ac60.chunk.js.LICENSE.txt",
     "static/media/icon1.9f89a8fc.jpg": "/datvis-quiz-ftm/static/media/icon1.9f89a8fc.jpg",
     "static/media/icon2.8b7d66fb.jpg": "/datvis-quiz-ftm/static/media/icon2.8b7d66fb.jpg",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.abd6ab9e.js",
     "static/js/2.be16ac60.chunk.js",
-    "static/css/main.05c654ac.chunk.css",
+    "static/css/main.63e129da.chunk.css",
     "static/js/main.56ccb214.chunk.js"
   ]
 }
