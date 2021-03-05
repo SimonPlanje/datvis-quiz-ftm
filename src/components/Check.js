@@ -57,11 +57,13 @@ export default function Check({ quiz, dataState, totData }) {
             <div className="answer-section">
               {showScenario === 'kennis' && (
                 <>
-                  {quiz[checkCounter].answers.map((answers) => (
-                    <>
-                      <CheckForm answers={answers} />
-                    </>
-                  ))}
+                  <div className="ans-options">
+                    {quiz[checkCounter].answers.map((answers) => (
+                      <>
+                        <CheckForm answers={answers} />
+                      </>
+                    ))}
+                  </div>
                   <h3>
                     Jouw antwoord was{' '}
                     <span className={`color${ans[checkCounter].check}`}>
