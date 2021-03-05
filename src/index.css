@@ -6,6 +6,7 @@
   --ftm-red-low-opacity: #dd33307c;
   --ftm-green: #198400;
   --ftm-grey: #f6f6f6;
+  --ftm-dark-grey: #292f32;
   --ftm-blue: #d1e8ea;
   --form-grey: #8f8f8f;
 }
@@ -45,6 +46,11 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+
+.ProgressBar {
+  position: fixed;
+  top: 0;
+}
 
 .time {
   text-align: right;
@@ -100,9 +106,8 @@ img {
 .checkBtns {
   display: flex;
   justify-content: space-around;
-  position: fixed;
+  position: relative;
   max-width: 30em;
-  bottom: 3%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -163,12 +168,17 @@ button:focus,
 .button button {
   margin: 0em 0em -0.1em 3em;
   color: var(--form-grey);
-  width: 12em;
+  width: 15em;
   background: transparent;
   border: 2px var(--form-grey) solid;
   padding: 1em 2em;
   text-align: left;
   height: 52px;
+}
+
+.checkBtns {
+  position: absolute;
+  bottom: 3%;
 }
 
 .nextBtn,
@@ -274,23 +284,49 @@ button:focus,
   align-items: center;
 }
 
-@media screen and (min-width: 600px) {
+.answer-section,
+.startSection {
+  padding-bottom: 7em;
+}
+
+.btnSection {
+  position: fixed;
+  background-color: var(--ftm-dark-grey);
+  left: 0;
+  bottom: 0;
+  height: 6em;
+  width: 100%;
+}
+
+@media screen and (min-width: 700px) {
   .Questions,
   .Start {
     margin: 2em 10em 0em 10em;
   }
   .checkBtns {
-    bottom: 20%;
+    bottom: 100%;
   }
-  .nextBtn,
+  /* .nextBtn,
   .clickNext {
-    position: absolute;
-    bottom: 20%;
+    bottom: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } */
   .question-text {
     margin-bottom: 3em;
+  }
+  .btnSection {
+    position: absolute;
+    background-color: transparent;
+    left: 0;
+    bottom: 0;
+    height: 6em;
+    width: 100%;
+  }
+  .ans-options {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 3;
   }
 }
 

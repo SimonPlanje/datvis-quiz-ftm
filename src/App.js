@@ -4,6 +4,7 @@ import Questions from './components/Questions';
 import Start from './components/Start';
 import fetchData from './helper/data';
 import formatBarData from './helper/formatBarData';
+import Loading from './components/Loading';
 
 import icon1 from './images/icon1.jpg';
 import icon2 from './images/icon2.jpg';
@@ -142,6 +143,8 @@ export default function App() {
     },
   ];
 
+  const [loading, setLoading] = useState(false);
+
   const [startQuiz, setStartQuiz] = useState(true);
   const [antwoorden, setAntwoord] = useState([]);
 
@@ -171,25 +174,32 @@ export default function App() {
         dynamicAnsMoney,
         setTotData
       );
+      setLoading(true);
     }
     getData();
   }, []);
 
   return (
     <div className="App">
-      {startQuiz ? (
-        <Start setStartQuiz={setStartQuiz} quiz={quiz} />
+      {loading === false ? (
+        <Loading />
       ) : (
-        <Questions
-          dynamicAns={dynamicAns}
-          dynamicAnsMoney={dynamicAnsMoney}
-          setAntwoord={setAntwoord}
-          antwoorden={antwoorden}
-          quiz={quiz}
-          dataState={dataState}
-          totData={totData}
-          checkIcon={icon5}
-        />
+        <>
+          {startQuiz ? (
+            <Start setStartQuiz={setStartQuiz} quiz={quiz} />
+          ) : (
+            <Questions
+              dynamicAns={dynamicAns}
+              dynamicAnsMoney={dynamicAnsMoney}
+              setAntwoord={setAntwoord}
+              antwoorden={antwoorden}
+              quiz={quiz}
+              dataState={dataState}
+              totData={totData}
+              checkIcon={icon5}
+            />
+          )}
+        </>
       )}
     </div>
   );
