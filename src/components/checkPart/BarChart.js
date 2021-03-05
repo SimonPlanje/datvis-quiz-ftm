@@ -84,17 +84,15 @@ svg.selectAll('rect').data(data)
       .attr("y", d => y(yValue(d)))
       .attr("height", d => height - y(yValue(d)))
       .attr("fill", function(d){
-          if(ans[checkCounter].antwoord === xValue){
+          if(ans[checkCounter].antwoord === d.partij){
             return 'var(--ftm-red)'
-          }else if(correctAns === xValue){
+          }else if(correctAns === d.partij){
             return 'green'
           }else{
             return 'var(--form-grey)'
           }
         })
     
-    
-      
       // add the x Axis
       svg.append("g")
       .attr("transform", "translate(0," + height + ")")

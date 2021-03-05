@@ -1,3 +1,5 @@
+import mainimg from '../images/main.jpg';
+
 export default function Start({ setStartQuiz, quiz }) {
   function handleStart() {
     setStartQuiz(false);
@@ -8,6 +10,7 @@ export default function Start({ setStartQuiz, quiz }) {
         Quiz over uitgaven van politieke partijen aan facebook en google
         advertenties.
       </h1>
+      <img class="mainimg" src={mainimg} alt="Illustratie bij de quiz"></img>
       <div className="time">
         <h2>
           VRAGEN <span className="biggertext">{quiz.length}</span>

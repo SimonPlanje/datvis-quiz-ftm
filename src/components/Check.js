@@ -3,7 +3,7 @@ import Barchart from './checkPart/BarChart';
 import CheckForm from './checkPart/CheckForm';
 import ShowImg from './ShowImg';
 import End from './End';
-import icon5 from '../images/icon5.jpg';
+import mainimg from '../images/main.jpg';
 
 export default function Check({ quiz, dataState, totData }) {
   console.log(dataState);
@@ -145,7 +145,7 @@ export default function Check({ quiz, dataState, totData }) {
           ) : (
             <>
               <div className="gotocheck">
-                <img src={icon5} alt="check icon"></img>
+                <img class="mainimg" src={mainimg} alt="check icon"></img>
                 <h2>
                   Je bent door de vragen heen, nu kan je kijken hoeveel je er
                   goed had!

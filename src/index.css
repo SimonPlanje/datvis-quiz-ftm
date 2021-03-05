@@ -75,6 +75,11 @@ img {
   margin-bottom: 2em;
 }
 
+.mainimg {
+  width: 100%;
+  max-width: none;
+}
+
 .Questions,
 .Start {
   margin: 2em 2em 0em 2em;
