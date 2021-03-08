@@ -338,7 +338,7 @@ button:focus,
   .ans-options {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     max-height: 10em;
     flex-wrap: wrap;
     flex-grow: 3;

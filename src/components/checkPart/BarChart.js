@@ -16,7 +16,7 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
   let xValue = ''
   let checkYourAns = '';
 
-  if(quiz[checkCounter].type === 'gokken'){
+  if(quiz[checkCounter].type === 'schatten'){
     data = plotData
   }else if(quiz[checkCounter].type === 'scenario'){
     data = plotData[count]
@@ -27,7 +27,7 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
     //Create barchart--------------------------------------------------------
     if(data){
 
-      if(quiz[checkCounter].type === 'gokken'){
+      if(quiz[checkCounter].type === 'schatten'){
         xValue = d => d.partij
         yValue = d => d.midden
       }else if(quiz[checkCounter].type === 'scenario'){
