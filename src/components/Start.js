@@ -11,7 +11,7 @@ export default function Start({ setView, quiz }) {
           Quiz over uitgaven van politieke partijen aan facebook en google
           advertenties.
         </h1>
-        <img class="mainimg" src={mainimg} alt="Illustratie bij de quiz"></img>
+        <img className="mainimg" src={mainimg} alt="Illustratie bij de quiz" />
         <div className="time">
           <h2>
             VRAGEN <span className="biggertext">{quiz.length}</span>

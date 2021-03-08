@@ -6,7 +6,7 @@ export default function Loading() {
   return (
     <div className="Loading">
         <RotateLoader className='loader' />
-        <img src={ftmLogo} alt='logo Follow the Money'></img>
+        <img src={ftmLogo} alt='logo Follow the Money' />
       </div>
   );
 }

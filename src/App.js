@@ -208,9 +208,9 @@ export default function App() {
   return (
     <React.Suspense fallback="Laden...">
       <div className="App">
-        {view == 'loading' && <Loading />}
-        {view == 'start' && <Start setView={setView} quiz={quiz} />}
-        {view == 'questions' && (
+        { view == 'loading' && <Loading /> }
+        { view == 'start' && <Start setView={setView} quiz={quiz} /> }
+        { view == 'questions' && (
           <Questions
             dynamicAns={dynamicAns}
             dynamicAnsMoney={dynamicAnsMoney}
@@ -222,10 +222,10 @@ export default function App() {
             totData={totData}
             checkIcon={icon5}
           />
-        )}
-        {view == 'gotocheck' && (
+         )}
+        { view == 'gotocheck' && (
           <div className="gotocheck">
-            <img class="mainimg" src={mainimg} alt="check icon"></img>
+            <img className="mainimg" src={mainimg} alt="check icon" />
             <h2>
               Je bent door de vragen heen, nu kan je kijken hoeveel je er goed
               had!
