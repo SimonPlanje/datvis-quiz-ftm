@@ -17,7 +17,7 @@ export default function Start({ setView, quiz }) {
             VRAGEN <span className="biggertext">{quiz.length}</span>
           </h2>
           <h2>
-            TIJD <span>{quiz.length * 1.5}</span> min
+            TIJD <span>3</span> min
           </h2>
         </div>
         <p>
@@ -28,7 +28,7 @@ export default function Start({ setView, quiz }) {
       </div>
       <div className="btnSection">
         <button className="nextBtn" onClick={handleStart}>
-          Start Quiz
+          Start de quiz!
         </button>
       </div>
     </div>

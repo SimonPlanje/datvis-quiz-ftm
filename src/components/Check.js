@@ -13,7 +13,7 @@ export default function Check({ setView, quiz, dataState, totData }) {
   const [correctAns, setCorrectAns] = useState(null);
 
   const [showScenario, setShowScenario] = useState('gokken');
-  
+
   function handleNext() {
     const nextCheck = checkCounter + 1;
 
@@ -48,6 +48,7 @@ export default function Check({ setView, quiz, dataState, totData }) {
       <ShowImg quiz={quiz} currentQuestion={checkCounter} />
       <div className="question-section">
         <h2 className="question-text">{ans[checkCounter].vraag}</h2>
+        <p>{quiz[checkCounter].addition}</p>
       </div>
       <div className="check-section">
         <div className="answer-section">
@@ -61,7 +62,7 @@ export default function Check({ setView, quiz, dataState, totData }) {
                 ))}
               </div>
               <h3>
-                Jouw antwoord was{' '}
+                Jouw antwoord is{' '}
                 <span className={`color${ans[checkCounter].check}`}>
                   {ans[checkCounter].antwoord}
                 </span>
@@ -70,7 +71,7 @@ export default function Check({ setView, quiz, dataState, totData }) {
                 <h3>Dit is het goede antwoord!</h3>
               ) : (
                 <h3>
-                  Het goede antwoord was{' '}
+                  Het goede antwoord is{' '}
                   <span className="colortrue">{ans[checkCounter].ans}</span>
                 </h3>
               )}
@@ -118,10 +119,7 @@ export default function Check({ setView, quiz, dataState, totData }) {
             Vorige
           </button>
           {showBtn ? (
-            <button
-              className="C-nextBtn"
-              onClick={handleEnd}
-            >
+            <button className="C-nextBtn" onClick={handleEnd}>
               Afronden
             </button>
           ) : (

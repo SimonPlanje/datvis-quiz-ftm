@@ -9,7 +9,7 @@ import fetchData from './helper/data';
 import formatBarData from './helper/formatBarData';
 
 import mainimg from './images/main.jpg';
-import icon1 from './images/icon1.jpg';
+import icon1 from './images/icon1.jpeg';
 import icon2 from './images/icon2.jpg';
 import icon3 from './images/icon3.jpg';
 import icon4 from './images/icon4.jpg';
@@ -18,7 +18,7 @@ import icon6 from './images/icon6.jpg';
 import icon7 from './images/icon7.jpg';
 import icon8 from './images/icon8.jpg';
 import icon9 from './images/icon9.jpg';
-// import icon10 from './images/icon10.jpg';
+import icon10 from './images/icon10.jpeg';
 
 export default function App() {
   const quiz = [
@@ -58,6 +58,8 @@ export default function App() {
       correct: 'PVV',
       type: 'kennis',
       image: icon3,
+      addition:
+        'Tot 2 december 2020 waren er twee partijen die niet online adverteerden. Eén daarvan was 50PLUS.',
     },
     {
       question:
@@ -96,19 +98,23 @@ export default function App() {
       correct: 'VVD',
       type: 'kennis',
       image: icon6,
+      addition:
+        'In de tekst van de advertentie staat verder: "Je wilt toch geen lid worden van FvD? Kom bij de grootste politieke partij en strijd mee. Wij krijgen dingen voor elkaar."',
     },
     {
       question:
         'Welke partij gaf meer advertentiegeld uit aan het promoten van de persoonlijke pagina van de lijsttrekker, dan aan de pagina van de partij?',
       answers: [
         { answer: 'VVD', check: false, id: 'VVD' },
-        { answer: 'CDA', check: true, id: 'CDA' },
+        { answer: 'CDA', check: false, id: 'CDA' },
         { answer: 'PvdD', check: false, id: 'PvdD' },
-        { answer: 'ChristenUnie', check: false, id: 'ChristenUnie' },
+        { answer: 'ChristenUnie', check: true, id: 'ChristenUnie' },
       ],
-      correct: 'CDA',
+      correct: 'ChristenUnie',
       type: 'kennis',
       image: icon7,
+      addition:
+        '‘We merken al jaren dat posts van de pagina van Gert-Jan (Segers, red.) meer mensen bereiken en meer reacties uitlokken dan posts via onze partijpagina,’ zegt een woordvoerder van de partij.',
     },
     {
       question:
@@ -144,6 +150,22 @@ export default function App() {
         geo: 'Noord-Holland',
       },
     },
+    {
+      question:
+        'Welke partij lanceerde in november 2020 maar liefst 777 keer dezelfde advertentie, met precies hetzelfde filmpje, om te testen welke doelgroep er het beste op reageerde? ',
+      answers: [
+        { answer: 'D66', check: false, id: 'D66' },
+        { answer: 'CDA', check: false, id: 'CDA' },
+        { answer: 'VVD', check: false, id: 'VVD' },
+        { answer: 'GroenLinks', check: false, id: 'GroenLinks' },
+        { answer: 'PvdA', check: true, id: 'PvdA' },
+      ],
+      correct: 'PvdA',
+      type: 'kennis',
+      image: icon10,
+      addition:
+        'In februari 2021 verscheen het filmpje opnieuw, dit keer gericht op één specifieke doelgroep en met een groter bereik. De advertentie kostte tussen de 700 en 800 euro en bereikte met name vrouwen op leeftijd.',
+    },
   ];
 
   const [view, setView] = useState('loading');
@@ -160,7 +182,6 @@ export default function App() {
   const [totData, setTotData] = useState(null);
 
   useEffect(() => {
-    
     async function getData() {
       const fbData =
         'https://docs.google.com/spreadsheets/d/119KqNUnKmnSKvQazSW4hv84UF0GgB5hp8ti_n_G4YGU/export?format=csv';
@@ -184,24 +205,26 @@ export default function App() {
     getData();
   }, []);
 
-  
   return (
     <React.Suspense fallback="Laden...">
       <div className="App">
-        { view == 'loading' && <Loading /> }
-        { view == 'start' && <Start setView={setView} quiz={quiz} /> }
-        { view == 'questions' && <Questions
-              dynamicAns={dynamicAns}
-              dynamicAnsMoney={dynamicAnsMoney}
-              setAntwoord={setAntwoord}
-              antwoorden={antwoorden}
-              setView={setView}
-              quiz={quiz}
-              dataState={dataState}
-              totData={totData}
-              checkIcon={icon5}
-            /> }
-        { view == 'gotocheck' && <div className="gotocheck">
+        {view == 'loading' && <Loading />}
+        {view == 'start' && <Start setView={setView} quiz={quiz} />}
+        {view == 'questions' && (
+          <Questions
+            dynamicAns={dynamicAns}
+            dynamicAnsMoney={dynamicAnsMoney}
+            setAntwoord={setAntwoord}
+            antwoorden={antwoorden}
+            setView={setView}
+            quiz={quiz}
+            dataState={dataState}
+            totData={totData}
+            checkIcon={icon5}
+          />
+        )}
+        {view == 'gotocheck' && (
+          <div className="gotocheck">
             <img class="mainimg" src={mainimg} alt="check icon"></img>
             <h2>
               Je bent door de vragen heen, nu kan je kijken hoeveel je er goed
@@ -212,9 +235,17 @@ export default function App() {
                 Checken!
               </button>
             </div>
-          </div> }
-        { view == 'check' && <Check setView={setView} quiz={quiz} dataState={dataState} totData={totData} /> }
-        { view == 'end' && <End /> }
+          </div>
+        )}
+        {view == 'check' && (
+          <Check
+            setView={setView}
+            quiz={quiz}
+            dataState={dataState}
+            totData={totData}
+          />
+        )}
+        {view == 'end' && <End />}
       </div>
     </React.Suspense>
   );
