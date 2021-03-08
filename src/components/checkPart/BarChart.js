@@ -68,14 +68,14 @@ export default function BarChart({ans, checkCounter, quiz, setCorrectAns, correc
 
       // Scale the range of the data in the domains
       x.domain(data.map(xValue))
-      console.log(x.domain())
+      // console.log(x.domain())
       // x2.domain(data.map(d => d.partij))
 
 
       y.domain([0, max(data, yValue)])
-      console.log(y.range())
-console.log(ans[checkCounter].antwoord)
-console.log(correctAns)
+//       console.log(y.range())
+// console.log(ans[checkCounter].antwoord)
+// console.log(correctAns)
 
 svg.selectAll('rect').data(data)
       .enter().append("rect")

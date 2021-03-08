@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 
+import Check from './components/Check';
+import End from './components/End';
+import Loading from './components/Loading';
 import Questions from './components/Questions';
 import Start from './components/Start';
 import fetchData from './helper/data';
 import formatBarData from './helper/formatBarData';
-import Loading from './components/Loading';
 
+import mainimg from './images/main.jpg';
 import icon1 from './images/icon1.jpg';
 import icon2 from './images/icon2.jpg';
 import icon3 from './images/icon3.jpg';
@@ -143,7 +146,7 @@ export default function App() {
     },
   ];
 
-  const [loading, setLoading] = useState(false);
+  const [view, setView] = useState('loading');
 
   const [startQuiz, setStartQuiz] = useState(true);
   const [antwoorden, setAntwoord] = useState([]);
@@ -157,6 +160,7 @@ export default function App() {
   const [totData, setTotData] = useState(null);
 
   useEffect(() => {
+    
     async function getData() {
       const fbData =
         'https://docs.google.com/spreadsheets/d/119KqNUnKmnSKvQazSW4hv84UF0GgB5hp8ti_n_G4YGU/export?format=csv';
@@ -174,33 +178,44 @@ export default function App() {
         dynamicAnsMoney,
         setTotData
       );
-      setLoading(true);
+      // Data is loaded, set initial view
+      setView('start');
     }
     getData();
   }, []);
 
+  
   return (
-    <div className="App">
-      {loading === false ? (
-        <Loading />
-      ) : (
-        <>
-          {startQuiz ? (
-            <Start setStartQuiz={setStartQuiz} quiz={quiz} />
-          ) : (
-            <Questions
+    <React.Suspense fallback="Laden...">
+      <div className="App">
+        { view == 'loading' && <Loading /> }
+        { view == 'start' && <Start setView={setView} quiz={quiz} /> }
+        { view == 'questions' && <Questions
               dynamicAns={dynamicAns}
               dynamicAnsMoney={dynamicAnsMoney}
               setAntwoord={setAntwoord}
               antwoorden={antwoorden}
+              setView={setView}
               quiz={quiz}
               dataState={dataState}
               totData={totData}
               checkIcon={icon5}
-            />
-          )}
-        </>
-      )}
-    </div>
+            /> }
+        { view == 'gotocheck' && <div className="gotocheck">
+            <img class="mainimg" src={mainimg} alt="check icon"></img>
+            <h2>
+              Je bent door de vragen heen, nu kan je kijken hoeveel je er goed
+              had!
+            </h2>
+            <div className="btnSection">
+              <button className="nextBtn" onClick={() => setView('check')}>
+                Checken!
+              </button>
+            </div>
+          </div> }
+        { view == 'check' && <Check setView={setView} quiz={quiz} dataState={dataState} totData={totData} /> }
+        { view == 'end' && <End /> }
+      </div>
+    </React.Suspense>
   );
 }
