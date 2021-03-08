@@ -182,7 +182,7 @@ export default function Questions({
                           </span>
                         </>
                       )}
-                      {quiz[currentQuestion].type === 'schatten' && (
+                      {quiz[currentQuestion].type === 'gokken' && (
                         <>
                           <span
                             onClick={() =>
@@ -356,7 +356,7 @@ export default function Questions({
                           {dynamicAns[indexType][index].partij}
                         </button>
                       )}
-                      {quiz[currentQuestion].type === 'schatten' && (
+                      {quiz[currentQuestion].type === 'gokken' && (
                         <button
                           data-value={dynamicAnsMoney[0][index].id}
                           onClick={() =>
