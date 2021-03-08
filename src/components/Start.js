@@ -1,8 +1,8 @@
 import mainimg from '../images/main.jpg';
 
-export default function Start({ setStartQuiz, quiz }) {
+export default function Start({ setView, quiz }) {
   function handleStart() {
-    setStartQuiz(false);
+    setView('questions');
   }
   return (
     <div className="Start">

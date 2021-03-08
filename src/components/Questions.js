@@ -8,24 +8,24 @@ import formatBarData from '../helper/formatBarData';
 export default function Questions({
   setAntwoord,
   antwoorden,
+  setView,
   quiz,
   dynamicAns,
   dynamicAnsMoney,
   dataState,
   totData,
 }) {
-  console.log(totData);
+  // console.log(totData);
   let completed = 100 / (quiz.length + 1);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [showResult, setShowResult] = useState(false);
   const [currentAns, setCurrentAns] = useState(null);
 
   const [barWidth, setBarWidth] = useState(completed);
 
   function handleAnswer(check, answer, id) {
-    console.log(dynamicAns);
-    console.log(id);
+    // console.log(dynamicAns);
+    // console.log(id);
     if (document.querySelector(`button.clickNext`)) {
       document
         .querySelector(`button.clickNext`)
@@ -75,7 +75,7 @@ export default function Questions({
         setCurrentAns(null);
       } else {
         localStorage.setItem('antwoorden', JSON.stringify(antwoorden));
-        setShowResult(true);
+        setView('gotocheck');
       }
     } else {
       alert('Selecteer eerst een antwoord!');
@@ -89,9 +89,6 @@ export default function Questions({
       <ProgressBar barWidth={barWidth} />
 
       <div className="Questions">
-        {showResult ? (
-          <Check quiz={quiz} dataState={dataState} totData={totData} />
-        ) : (
           <>
             <ShowImg quiz={quiz} currentQuestion={currentQuestion} />
 
@@ -399,7 +396,6 @@ export default function Questions({
               </div>
             </div>
           </>
-        )}
       </div>
     </div>
   );

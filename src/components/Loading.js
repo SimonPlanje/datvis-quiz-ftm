@@ -3,7 +3,6 @@ import {RotateLoader} from 'react-spinners'
 
 export default function Loading() {
 
-
   return (
     <div className="Loading">
         <RotateLoader className='loader' />
