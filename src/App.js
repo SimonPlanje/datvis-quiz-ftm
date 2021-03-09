@@ -112,7 +112,7 @@ export default function App() {
     },
     {
       question:
-        'Welke partij gaf meer geld uit aan het promoten van de Facebookpagina van de lijsttrekker, dan aan de pagina van de pagina zelf?',
+        'Welke partij gaf meer geld uit aan het promoten van de Facebookpagina van de lijsttrekker, dan aan de pagina van de partij zelf?',
       answers: [
         { answer: 'VVD', check: false, id: 'VVD' },
         { answer: 'CDA', check: false, id: 'CDA' },
@@ -170,7 +170,7 @@ export default function App() {
         { answer: 'VVD', check: false, id: 'VVD' },
         { answer: 'GroenLinks', check: false, id: 'GroenLinks' },
         { answer: 'PvdA', check: true, id: 'PvdA' },
-        { answer: 'FvD', check: true, id: 'FvD' },
+        { answer: 'FvD', check: false, id: 'FvD' },
       ],
       correct: 'PvdA',
       type: 'kennis',

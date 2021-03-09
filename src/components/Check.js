@@ -4,7 +4,6 @@ import CheckForm from './checkPart/CheckForm';
 import ShowImg from './ShowImg';
 
 export default function Check({ setView, quiz, dataState, totData }) {
-  // console.log(dataState);
   const ans = JSON.parse(localStorage.getItem('antwoorden'));
   const [checkCounter, setCheckCounter] = useState(0);
   const [showBtn, setShowBtn] = useState(false);
@@ -17,7 +16,6 @@ export default function Check({ setView, quiz, dataState, totData }) {
     const nextCheck = checkCounter + 1;
 
     if (nextCheck < ans.length - 1) {
-      console.log(showScenario);
       setShowScenario(quiz[checkCounter + 1].type);
       setCheckCounter(checkCounter + 1);
     } else {
@@ -52,8 +50,6 @@ export default function Check({ setView, quiz, dataState, totData }) {
   function makeCap(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
-
-  // console.log(ans);
   return (
     <div className='CheckAns'>
       <ShowImg quiz={quiz} currentQuestion={checkCounter} />
@@ -66,7 +62,7 @@ export default function Check({ setView, quiz, dataState, totData }) {
           <p>
             {totData[quiz[checkCounter].indextype].partij} gaf sinds 22 augustus
             2020 €{formatNumber(totData[quiz[checkCounter].indextype].midden)}{' '}
-            uit
+            uit.
           </p>
         )}
         {quiz[checkCounter].type === 'scenario' && (
@@ -78,7 +74,7 @@ export default function Check({ setView, quiz, dataState, totData }) {
             in de leeftijdsgroep{' '}
             {dataState[quiz[checkCounter].indextype][0].age} jaar uit{' '}
             {dataState[quiz[checkCounter].indextype][0].geo} worden het meest
-            benaderd door {dataState[quiz[checkCounter].indextype][0].partij}
+            benaderd door {dataState[quiz[checkCounter].indextype][0].partij}.
           </p>
         )}
       </div>
@@ -146,18 +142,20 @@ export default function Check({ setView, quiz, dataState, totData }) {
         </div>
       </div>
       <div className='btnSection'>
-        <button className='prevBtn' onClick={handlePrevious}>
-          Vorige
-        </button>
-        {showBtn ? (
-          <button className='C-nextBtn' onClick={handleEnd}>
-            Afronden
+        <div className='checkBtns'>
+          <button className='prevBtn' onClick={handlePrevious}>
+            Vorige
           </button>
-        ) : (
-          <button className='C-nextBtn' onClick={handleNext}>
-            Volgende
-          </button>
-        )}
+          {showBtn ? (
+            <button className='C-nextBtn' onClick={handleEnd}>
+              Afronden
+            </button>
+          ) : (
+            <button className='C-nextBtn' onClick={handleNext}>
+              Volgende
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
