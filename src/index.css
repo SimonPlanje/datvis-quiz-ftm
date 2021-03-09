@@ -505,3 +505,19 @@ LEGENDA STYLING BARCHART
   background-color: var(--ftm-red);
   margin-right: 0.5em;
 }
+
+.img1 {
+  text-align: center;
+  /* background-image: url(./images/icon1.jpeg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  height: 22em;
+  width: 18em;
+}
+
+.img1 img {
+  height: 100%;
+  width: auto;
+}
