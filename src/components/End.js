@@ -69,50 +69,51 @@ class End extends Component {
           </h1>
           <div className='share'>
             <p>Deel je score:</p>
-            <a
-              className='facebook'
-              href='https://www.facebook.com/dialog/share?app_id=1641639456124709&amp;display=popup&amp;href=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dfacebook&amp;redirect_uri=https%3A%2F%2Fftm.local%2Fapp_dev.php%2Fartikelen%2Frabobank-investeert-miljarden-in-amerikaanse-vleesgigant-tyson%3Futm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dfacebook'
-              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
-            >
-              <i className='fa fa-facebook'></i>
-            </a>
-            <a
-              className='twitter'
-              href='https://twitter.com/intent/tweet?text=&amp;url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dtwitter&amp;via=ftm_nl'
-              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
-            >
-              <i className='fa fa-twitter'></i>
-            </a>
-            <a
-              className='linkedin'
-              href='https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dlinkedin&amp;title=&amp;source=Follow%20The%20Money'
-              onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
-            >
-              <i className='fa fa-linkedin'></i>
-            </a>
-            <a
-              className='mail'
-              href='mailto:?to=&amp;body=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dmail &amp;subject='
-              target='_blank'
-            >
-              <i className='fa fa-envelope'></i>
-            </a>
-            <a
-              className='whatsapp'
-              href='whatsapp://send?text=%20https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dwhatsapp'
-              target='_blank'
-            >
-              <i className='fa fa-whatsapp'></i>
-            </a>
-            <a
-              className='link'
-              href='https://www.ftm.nl/partijfinanciering-quiz%26utm_medium=social&amp;utm_campaign=sharebuttonleden&amp;utm_source=linkbutton'
-              onclick='javascript:return false;'
-            >
-              <i className='fa fa-link'></i>
-            </a>
+            <div className='socialIcons'>
+              <a
+                className='facebook'
+                href='https://www.facebook.com/dialog/share?app_id=1641639456124709&amp;display=popup&amp;href=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dfacebook&amp;redirect_uri=https%3A%2F%2Fftm.local%2Fapp_dev.php%2Fartikelen%2Frabobank-investeert-miljarden-in-amerikaanse-vleesgigant-tyson%3Futm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dfacebook'
+                onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+              >
+                <i className='fa fa-facebook'></i>
+              </a>
+              <a
+                className='twitter'
+                href='https://twitter.com/intent/tweet?text=&amp;url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dtwitter&amp;via=ftm_nl'
+                onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+              >
+                <i className='fa fa-twitter'></i>
+              </a>
+              <a
+                className='linkedin'
+                href='https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dlinkedin&amp;title=&amp;source=Follow%20The%20Money'
+                onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
+              >
+                <i className='fa fa-linkedin'></i>
+              </a>
+              <a
+                className='mail'
+                href='mailto:?to=&amp;body=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dmail &amp;subject='
+                target='_blank'
+              >
+                <i className='fa fa-envelope'></i>
+              </a>
+              <a
+                className='whatsapp'
+                href='whatsapp://send?text=%20https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dwhatsapp'
+                target='_blank'
+              >
+                <i className='fa fa-whatsapp'></i>
+              </a>
+              <a
+                className='link'
+                href='https://www.ftm.nl/partijfinanciering-quiz%26utm_medium=social&amp;utm_campaign=sharebuttonleden&amp;utm_source=linkbutton'
+                onclick='javascript:return false;'
+              >
+                <i className='fa fa-link'></i>
+              </a>
+            </div>
           </div>
-
           <hr />
 
           <h3>Wil je meer lezen over partijfinanciering?</h3>
