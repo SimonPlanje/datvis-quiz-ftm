@@ -237,8 +237,7 @@ button:focus,
 }
 
 .checkBtns {
-  position: absolute;
-  bottom: 3%;
+  position: relative;
 }
 
 .nextBtn,
@@ -380,6 +379,9 @@ button:focus,
 }
 
 @media screen and (min-width: 700px) {
+  .answer-section {
+    padding-bottom: 2.5em;
+  }
   .Questions,
   .startSection,
   .checkSection {
@@ -401,6 +403,9 @@ button:focus,
 
   .question-text {
     margin-bottom: 2em;
+  }
+  .barchartdiv {
+    margin-bottom: 5em;
   }
   .btnSection {
     position: relative;
