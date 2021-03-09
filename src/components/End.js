@@ -6,6 +6,7 @@ class End extends Component {
     this.state = {
       automationForm: null,
       submitUrl: null,
+      correctCount: 0,
     };
   }
 
@@ -45,27 +46,23 @@ class End extends Component {
           window.FTM.automationCampaignPagePart.init();
         }
       });
+
+    if (localStorage.getItem('antwoorden')) {
+      const getAns = JSON.parse(localStorage.getItem('antwoorden'));
+
+      let count = 0;
+      getAns.forEach((e) => (e.check === true ? count++ : ''));
+      this.setState({ correctCount: count });
+    }
   }
 
   render(countCorrect, setCountCorrect) {
-    const getAns = JSON.parse(localStorage.getItem('antwoorden'));
-    let correctCount = 0;
-
-    getAns.map(function (d) {
-      if (d.check === true) {
-        correctCount = correctCount + 1;
-        console.log('plus');
-      } else {
-        return correctCount;
-      }
-    });
-
     return (
       <div className='End'>
         <div className='endSection'>
           <h1>
-            Van de {this.props.quiz.length} vragen had je er {correctCount}{' '}
-            goed!
+            Van de {this.props.quiz.length} vragen had je er{' '}
+            {this.state.correctCount} goed!
           </h1>
           <div className='share'>
             <p>Deel je score:</p>
@@ -116,10 +113,13 @@ class End extends Component {
           <hr />
 
           <h3>Wil je meer lezen over partijfinanciering?</h3>
-          <p>Abonneer je op onze gids, je krijgt dan 6 stukken in je mail</p>
+          <p>
+            Abonneer je op onze gids, we sturen je de komende maand de beste
+            artikelen over partijfinanciering.
+          </p>
           <div
             id='form'
-            class='automation-campaign-pp'
+            className='automation-campaign-pp'
             dangerouslySetInnerHTML={{ __html: this.state.automationForm }}
           ></div>
         </div>
