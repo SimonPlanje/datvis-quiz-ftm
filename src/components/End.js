@@ -13,7 +13,7 @@ class End extends Component {
     // Test urls
     // fetch('http://ftm.local/app_dev.php/automation/aanmelden/33437')
     // fetch('https://staging.followthemoney.nl/automation/aanmelden/32039')
-    fetch('https://wwww.ftm.nl/automation_campaign/aanmelden/33641')
+    fetch('https://wwww.ftm.nl/automation/aanmelden/33641')
       .then(
         (result) => {
           return result.text();
@@ -63,12 +63,12 @@ class End extends Component {
     return (
       <div className='End'>
         <div className='endSection'>
-          <h2>
+          <h1>
             Van de {this.props.quiz.length} vragen had je er {correctCount}{' '}
             goed!
-          </h2>
-          <p>Deel je score:</p>
+          </h1>
           <div className='share'>
+            <p>Deel je score:</p>
             <a
               className='facebook'
               href='https://www.facebook.com/dialog/share?app_id=1641639456124709&amp;display=popup&amp;href=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dfacebook&amp;redirect_uri=https%3A%2F%2Fftm.local%2Fapp_dev.php%2Fartikelen%2Frabobank-investeert-miljarden-in-amerikaanse-vleesgigant-tyson%3Futm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dfacebook'
@@ -115,7 +115,7 @@ class End extends Component {
 
           <hr />
 
-          <h2>Wil je meer lezen over partijfinanciering?</h2>
+          <h3>Wil je meer lezen over partijfinanciering?</h3>
           <p>Abonneer je op onze gids, je krijgt dan 6 stukken in je mail</p>
           <div
             id='form'
