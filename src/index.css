@@ -224,6 +224,9 @@ h3 {
 }
 
 @media (max-width: 800px) {
+  .time span {
+    font-size: 2.5em;
+  }
   h1 {
     font-size: 1.5em;
   }
