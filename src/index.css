@@ -162,7 +162,7 @@ img {
 .startSection,
 .checkSection,
 .endSection {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.93);
   overflow: hidden;
 }
 
