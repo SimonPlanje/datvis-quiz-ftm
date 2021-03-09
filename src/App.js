@@ -244,7 +244,7 @@ export default function App() {
             totData={totData}
           />
         )}
-        {view == 'end' && <End />}
+        {view == 'end' && <End quiz={quiz} />}
       </div>
     </React.Suspense>
   );

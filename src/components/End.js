@@ -1,15 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
 class End extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
       automationForm: null,
       submitUrl: null,
     };
+
+
+
   }
 
+
+
   componentDidMount() {
+
+
     // Test urls
     // fetch('http://ftm.local/app_dev.php/automation/aanmelden/33437')
     // fetch('https://staging.followthemoney.nl/automation/aanmelden/32039')
@@ -47,10 +55,19 @@ class End extends Component {
       });
   }
 
-  render() {
+
+  render(countCorrect, setCountCorrect) {
+    const getAns = JSON.parse(localStorage.getItem('antwoorden'));
+    let correctCount = 0;
+  
+    getAns.map(function(d){ if(d.check === true){
+      correctCount = correctCount + 1
+      console.log('plus')
+    }else{return correctCount} })
+
     return (
-      <div className='end'>
-        <h2>Je had X/X vragen goed!</h2>
+        <div className='end'>
+        <h2>Je had {correctCount} van de{this.props.quiz.length} vragen goed!</h2>
         <p>Deel je score:</p>
         <div className='share'>
           <a

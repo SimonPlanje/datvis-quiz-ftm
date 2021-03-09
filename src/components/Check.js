@@ -6,7 +6,6 @@ import ShowImg from './ShowImg';
 export default function Check({ setView, quiz, dataState, totData }) {
   // console.log(dataState);
   const ans = JSON.parse(localStorage.getItem('antwoorden'));
-
   const [checkCounter, setCheckCounter] = useState(0);
   const [showBtn, setShowBtn] = useState(false);
 
@@ -51,10 +50,10 @@ export default function Check({ setView, quiz, dataState, totData }) {
   }
 
   return (
-    <div className="CheckAns">
+    <div className='CheckAns'>
       <ShowImg quiz={quiz} currentQuestion={checkCounter} />
-      <div className="question-section">
-        <h2 className="question-text">{ans[checkCounter].vraag}</h2>
+      <div className='question-section'>
+        <h2 className='question-text'>{ans[checkCounter].vraag}</h2>
         {quiz[checkCounter].type === 'kennis' && (
           <p>{quiz[checkCounter].addition}</p>
         )}
@@ -66,11 +65,11 @@ export default function Check({ setView, quiz, dataState, totData }) {
           </p>
         )}
       </div>
-      <div className="check-section">
-        <div className="answer-section">
+      <div className='check-section'>
+        <div className='answer-section'>
           {showScenario === 'kennis' && (
             <>
-              <div className="ans-options">
+              <div className='ans-options'>
                 {quiz[checkCounter].answers.map((answers) => (
                   <>
                     <CheckForm answers={answers} />
@@ -88,15 +87,15 @@ export default function Check({ setView, quiz, dataState, totData }) {
               ) : (
                 <h3>
                   Het goede antwoord is{' '}
-                  <span className="colortrue">{ans[checkCounter].ans}</span>
+                  <span className='colortrue'>{ans[checkCounter].ans}</span>
                 </h3>
               )}
             </>
           )}{' '}
           {showScenario === 'scenario' && (
             <>
-              <div className="legenda">
-                <div className="legenda-rect"></div>
+              <div className='legenda'>
+                <div className='legenda-rect'></div>
                 <p>Jouw keuze: {ans[checkCounter].antwoord}</p>
               </div>
 
@@ -112,8 +111,8 @@ export default function Check({ setView, quiz, dataState, totData }) {
           )}
           {showScenario === 'gokken' && (
             <>
-              <div className="legenda">
-                <div className="legenda-rect"></div>
+              <div className='legenda'>
+                <div className='legenda-rect'></div>
                 <p>Jouw keuze: {ans[checkCounter].antwoord}</p>
               </div>
 
@@ -129,17 +128,17 @@ export default function Check({ setView, quiz, dataState, totData }) {
           )}
         </div>
       </div>
-      <div className="btnSection">
-        <div className="checkBtns">
-          <button className="prevBtn" onClick={handlePrevious}>
+      <div className='btnSection'>
+        <div className='checkBtns'>
+          <button className='prevBtn' onClick={handlePrevious}>
             Vorige
           </button>
           {showBtn ? (
-            <button className="C-nextBtn" onClick={handleEnd}>
+            <button className='C-nextBtn' onClick={handleEnd}>
               Afronden
             </button>
           ) : (
-            <button className="C-nextBtn" onClick={handleNext}>
+            <button className='C-nextBtn' onClick={handleNext}>
               Volgende
             </button>
           )}
