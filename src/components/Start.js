@@ -5,30 +5,31 @@ export default function Start({ setView, quiz }) {
     setView('questions');
   }
   return (
-    <div className="Start">
-      <div className="startSection">
+    <div className='Start'>
+      <div className='startSection'>
         <h1>
-          Quiz over uitgaven van politieke partijen aan facebook en google
-          advertenties.
+          Quiz: weet jij hoe politieke partijen online jouw stem proberen te
+          winnen?
         </h1>
-        <div className="time">
+        <div className='time'>
           <h2>
-            VRAGEN <span className="biggertext">{quiz.length}</span>
+            VRAGEN <span className='biggertext'>{quiz.length}</span>
           </h2>
           <h2>
             TIJD <span>3</span> min
           </h2>
         </div>
         <p>
-          Op google en facebook kunnen advertenties worden geplaatst gefocust op
-          een specifieke doelgroep. Weet jij welke partijen jouw als belangrijke
-          doelgroep zien? Doe de korte quiz...
+          De stille strijd om jouw stem is in volle gang. Weet jij hoe politieke
+          partijen hun publiek proberen te bereiken? Doe de test! Deze quiz is
+          gemaakt op basis van vrijgegeven data van Google en Facebook over
+          online advertenties. Daaruit wordt duidelijk hoe er campagne wordt
+          gevoerd op deze platforms. De data gaat terug tot augustus 2020.
         </p>
-        <button className="nextBtn" onClick={handleStart}>
-          Start de quiz!
+        <button className='nextBtn' onClick={handleStart}>
+          Start de quiz
         </button>
       </div>
-     
     </div>
   );
 }

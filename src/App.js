@@ -25,7 +25,7 @@ export default function App() {
   const quiz = [
     {
       question:
-        'Welke partij gaf het meeste uit aan advertenties op Facebook en Google?',
+        'Welke partij gaf in totaal het meeste uit aan advertenties op Facebook en Google?',
       answers: [
         { answer: 'dynamic', check: false, id: 'dynamic' },
         { answer: 'dynamic', check: false, id: 'dynamic' },
@@ -36,7 +36,7 @@ export default function App() {
       image: icon1,
     },
     {
-      question: 'Wie is de runner-up?',
+      question: 'Welke partij gaf daarna het meeste geld uit?',
       answers: [
         { answer: 'dynamic', check: false, id: 'dynamic' },
         { answer: 'dynamic', check: false, id: 'dynamic' },
@@ -47,7 +47,8 @@ export default function App() {
       image: icon2,
     },
     {
-      question: 'Welke partij adverteert niet online?',
+      question:
+        'Welke partij plaatste sinds augustus 2020 geen online advertenties?',
       answers: [
         { answer: 'DENK', check: false, id: 'DENK' },
         { answer: 'ChristenUnie', check: false, id: 'ChristenUnie' },
@@ -64,18 +65,17 @@ export default function App() {
     },
     {
       question:
-        'Op welke platforms konden politieke partijen geen advertenties kopen?',
+        'Op welke platforms kunnen politieke partijen geen advertenties kopen?',
       answers: [
         { answer: 'LinkedIn & Instagram', check: false, id: 'LI' },
         { answer: 'Twitter & YouTube', check: false, id: 'TY' },
-        { answer: 'YouTube & Instagram', check: false, id: 'YI' },
         { answer: 'LinkedIn & Twitter', check: true, id: 'LT' },
       ],
       correct: 'LinkedIn & Twitter',
       type: 'kennis',
       image: icon4,
       addition:
-        'Zelf zegt Twitter hierover: ‘Wij hebben dit besloten op basis van onze overtuiging dat politieke berichten hun bereik moeten verdienen, niet kopen.’ LinkedIn geeft ook duidelijk aan dat politieke advertenties verboden zijn, zonder daar verder op in te gaan.',
+        'Twitter zegt dit besluit te baseren op de overtuiging ‘dat een politieke boodschap zijn bereik moeten verdienen, niet kopen.’ LinkedIn stelt in zijn advertentierichtlijnen duidelijk dat het platform geen politieke advertenties toestaat, maar gaat niet in op de reden voor het verbod.',
     },
     {
       question: 'Welke partij adverteerde online met de campagne #10jaarRutte?',
@@ -84,6 +84,8 @@ export default function App() {
         { answer: 'FvD', check: true, id: 'FvD' },
         { answer: 'SP', check: false, id: 'SP' },
         { answer: 'GroenLinks', check: false, id: 'GroenLinks' },
+        { answer: 'PvdA', check: false, id: 'PvdA' },
+        { answer: 'PvdD', check: false, id: 'PvdD' },
       ],
       correct: 'FvD',
       type: 'kennis',
@@ -93,37 +95,41 @@ export default function App() {
     },
     {
       question:
-        'Maak de zin af. Wie vorig voorjaar op Google zocht naar "FvD lid worden", kreeg de volgende tekst voorgeschoteld: "FvD lid worden? Psst, word lid van ..."',
+        'Maak de zin af: ‘Wie vorig voorjaar op Google zocht naar “FvD lid worden”, kreeg de volgende boodschap te zien: “Psst, word lid van …”’',
       answers: [
         { answer: 'PvdA', check: false, id: 'PvdA' },
         { answer: 'VVD', check: true, id: 'VVD' },
         { answer: 'SGP', check: false, id: 'SGP' },
         { answer: 'D66', check: false, id: 'D66' },
+        { answer: 'SP', check: false, id: 'SP' },
+        { answer: 'CDA', check: false, id: 'CDA' },
       ],
       correct: 'VVD',
       type: 'kennis',
       image: icon6,
       addition:
-        'In de tekst van de advertentie staat verder: "Je wilt toch geen lid worden van FvD? Kom bij de grootste politieke partij en strijd mee. Wij krijgen dingen voor elkaar."',
+        "In de tekst van de advertentie staat verder: 'Je wilt toch geen lid worden van FvD? Kom bij de grootste politieke partij en strijd mee. Wij krijgen dingen voor elkaar.'",
     },
     {
       question:
-        'Welke partij gaf meer advertentiegeld uit aan het promoten van de persoonlijke pagina van de lijsttrekker, dan aan de pagina van de partij?',
+        'Welke partij gaf meer geld uit aan het promoten van de Facebookpagina van de lijsttrekker, dan aan de pagina van de pagina zelf?',
       answers: [
         { answer: 'VVD', check: false, id: 'VVD' },
         { answer: 'CDA', check: false, id: 'CDA' },
         { answer: 'PvdD', check: false, id: 'PvdD' },
         { answer: 'ChristenUnie', check: true, id: 'ChristenUnie' },
+        { answer: 'FvD', check: false, id: 'FvD' },
+        { answer: 'GroenLinks', check: false, id: 'GroenLinks' },
       ],
       correct: 'ChristenUnie',
       type: 'kennis',
       image: icon7,
       addition:
-        '‘We merken al jaren dat posts van de pagina van Gert-Jan (Segers, red.) meer mensen bereiken en meer reacties uitlokken dan posts via onze partijpagina,’ zegt een woordvoerder van de partij.',
+        '‘We merken al jaren dat posts van de pagina van Gert-Jan (Segers, red.) meer mensen bereiken en meer reacties uitlokken dan posts via onze partijpagina,’ vertelt een woordvoerder van de partij.',
     },
     {
       question:
-        'De 27-jarige Sanne uit Groningen houdt ervan om na een lange dag werken lekker op de bank door haar Facebook-feed te scrollen. Van welke partij komt zij de meeste advertenties tegen tijdens het scrollen?',
+        'De 27-jarige Sanne uit Groningen houdt ervan om na een lange dag werken op de bank door haar Facebook-feed te scrollen. Van welke partij zal Sanne de meeste advertenties tegenkomen?',
       answers: [
         { answer: 'dynamic', check: false, id: 'dynamic' },
         { answer: 'dynamic', check: false, id: 'dynamic' },
@@ -140,7 +146,7 @@ export default function App() {
     },
     {
       question:
-        "De 19-jarige Dennis kijkt op zondag altijd alle voetbal in z'n studentenkamer in Amsterdam. Ondertussen kijkt hij ook Instagram. Van welke partij ziet hij de meeste advertenties voorbij komen tijdens het scrollen?",
+        'De 19-jarige Dennis kijkt op zondag altijd voetbal in zijn Amsterdamse studentenkamer. Ook kijkt hij regelmatig op Instagram. Van welke partij ziet Dennis tijdens het scrollen de meeste advertenties voorbijkomen?',
       answers: [
         { answer: 'dynamic', check: false, id: 'dynamic' },
         { answer: 'dynamic', check: false, id: 'dynamic' },
@@ -157,19 +163,20 @@ export default function App() {
     },
     {
       question:
-        'Welke partij lanceerde in november 2020 maar liefst 777 keer dezelfde advertentie, met precies hetzelfde filmpje, om te testen welke doelgroep er het beste op reageerde? ',
+        'Welke partij lanceerde in november 2020 maar liefst 777 keer dezelfde advertentie, met hetzelfde filmpje, om te testen welke doelgroep er het beste op reageerde?',
       answers: [
         { answer: 'D66', check: false, id: 'D66' },
         { answer: 'CDA', check: false, id: 'CDA' },
         { answer: 'VVD', check: false, id: 'VVD' },
         { answer: 'GroenLinks', check: false, id: 'GroenLinks' },
         { answer: 'PvdA', check: true, id: 'PvdA' },
+        { answer: 'FvD', check: true, id: 'FvD' },
       ],
       correct: 'PvdA',
       type: 'kennis',
       image: icon10,
       addition:
-        'In februari 2021 verscheen het filmpje opnieuw, dit keer gericht op één specifieke doelgroep en met een groter bereik. De advertentie kostte tussen de 700 en 800 euro en bereikte met name vrouwen op leeftijd.',
+        'In februari 2021 verscheen het filmpje opnieuw, dit keer gericht op één specifieke doelgroep (vrouwen op leeftijd) en met een groter bereik. De advertentie kostte tussen de 700 en 800 euro.',
     },
   ];
 
@@ -206,7 +213,7 @@ export default function App() {
         setTotData
       );
       // Data is loaded, set initial view
-      setView('end');
+      setView('start');
     }
     getData();
   }, []);

@@ -49,6 +49,11 @@ export default function Check({ setView, quiz, dataState, totData }) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
   }
 
+  function makeCap(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  // console.log(ans);
   return (
     <div className='CheckAns'>
       <ShowImg quiz={quiz} currentQuestion={checkCounter} />
@@ -62,6 +67,18 @@ export default function Check({ setView, quiz, dataState, totData }) {
             {totData[quiz[checkCounter].indextype].partij} gaf sinds 22 augustus
             2020 €{formatNumber(totData[quiz[checkCounter].indextype].midden)}{' '}
             uit
+          </p>
+        )}
+        {quiz[checkCounter].type === 'scenario' && (
+          <p>
+            {makeCap(dataState[quiz[checkCounter].indextype][0].gender)}
+            {dataState[quiz[checkCounter].indextype][0].gender === 'man'
+              ? 'nen'
+              : 'en'}{' '}
+            in de leeftijdsgroep{' '}
+            {dataState[quiz[checkCounter].indextype][0].age} jaar uit{' '}
+            {dataState[quiz[checkCounter].indextype][0].geo} worden het meest
+            benaderd door {dataState[quiz[checkCounter].indextype][0].partij}
           </p>
         )}
       </div>
