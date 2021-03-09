@@ -379,21 +379,6 @@ button:focus,
   width: 100%;
 }
 
-@media screen and (min-height: 700px) {
-  .answer-section,
-  .startSection,
-  .checkSection {
-    padding-bottom: 0em;
-  }
-  .btnSection {
-    position: fixed;
-    background-color: var(--ftm-dark-grey);
-    left: 0;
-    bottom: 0;
-    height: 15%;
-    width: 100%;
-  }
-}
 @media screen and (min-width: 700px) {
   .Questions,
   .startSection,
@@ -407,21 +392,22 @@ button:focus,
   .checkBtns {
     bottom: 100%;
   }
-  /* .nextBtn,
+
+  .nextBtn,
   .clickNext {
-    bottom: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
+    margin-top: 4em;
+    position: relative;
+  }
+
   .question-text {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
   }
   .btnSection {
-    position: absolute;
+    position: relative;
     background-color: transparent;
-    left: 0;
-    bottom: 0;
-    height: 15%;
+    left: none;
+    bottom: none;
+    height: 0%;
     width: 100%;
   }
   .ans-options {
@@ -429,10 +415,9 @@ button:focus,
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-height: 10em;
-    max-width: 10em;
+    width: 100%;
+    max-height: 100%;
     flex-wrap: wrap;
-    flex-grow: 3;
   }
 }
 
@@ -457,8 +442,13 @@ button:focus,
     margin: 2em 20em 0em 20em;
   }
 
-  .Check .nextBtn,
-  .clickNext {
+  .Check .nextBtn {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .Check .nextBtn {
     position: absolute;
     bottom: 30%;
     left: 50%;
@@ -506,18 +496,13 @@ LEGENDA STYLING BARCHART
   margin-right: 0.5em;
 }
 
-.img1 {
+.imgPart {
   text-align: center;
-  /* background-image: url(./images/icon1.jpeg); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-  height: 22em;
-  width: 18em;
+  height: 20em;
+  width: 100%;
 }
 
-.img1 img {
+.imgPart img {
   height: 100%;
   width: auto;
 }
