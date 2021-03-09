@@ -13,7 +13,7 @@ class End extends Component {
     // Test urls
     // fetch('http://ftm.local/app_dev.php/automation/aanmelden/33437')
     // fetch('https://staging.followthemoney.nl/automation/aanmelden/32039')
-    fetch('https://wwww.ftm.nl/automation/aanmelden/33641')
+    fetch('https://www.ftm.nl/automation/aanmelden/33641')
       .then(
         (result) => {
           return result.text();
@@ -78,28 +78,28 @@ class End extends Component {
             </a>
             <a
               className='twitter'
-              href='https://twitter.com/intent/tweet?text=Rabobank%20investeert%20miljarden%20in%20%E2%80%98America%E2%80%99s%20worst%20company%E2%80%99&amp;url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dtwitter&amp;via=ftm_nl'
+              href='https://twitter.com/intent/tweet?text=&amp;url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dtwitter&amp;via=ftm_nl'
               onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
             >
               <i className='fa fa-twitter'></i>
             </a>
             <a
               className='linkedin'
-              href='https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dlinkedin&amp;title=Rabobank%20investeert%20miljarden%20in%20%E2%80%98America%E2%80%99s%20worst%20company%E2%80%99&amp;summary=Vleesgigant%20Tyson%20Foods%20wil%20de%20Europese%20markt%20verder%20veroveren%20en%20zijn%20vestiging%20in%20Nederland%20uitbreiden.%20In%20de%20Verenigde%20Staten%20is%20het%20al%20een%20van%20de%20grootste%20vleesproducenten.%20Maar%20de%20gigant%20kwam%20meerdere%20malen%20in%20opspraak%20wegens%20dierenmishandeling%20en%20mensenuitbuiting.%20%E2%80%98Tyson%20behandelt%20zijn%20werknemers%20als%20machines.%E2%80%99%20Wat%20voor%20bedrijf%20is%20dit%2C%20waar%20de%20Rabobank%20miljarden%20in%20steekt%3F&amp;source=Follow%20The%20Money'
+              href='https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dlinkedin&amp;title=&amp;source=Follow%20The%20Money'
               onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"
             >
               <i className='fa fa-linkedin'></i>
             </a>
             <a
               className='mail'
-              href='mailto:?to=&amp;body=Ik%20kwam%20het%20volgende%20bericht%20tegen%20op%20Follow%20the%20Money%20en%20denk%20dat%20dit%20voor%20jou%20interessant%20is%3A https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dmail %0A%0A%28Met%20deze%20link%20kun%20je%20het%20artikel%20binnen%2024%20uur%20gratis%20lezen%29.%0AWil%20je%20op%20een%20later%20moment%20verder%20lezen%20of%20het%20hele%20FTM-archief%20ontdekken%3F%0AProbeer%20FTM%20dan%20nu%20een%20maand%20gratis%20uit.%20De%20proefmaand%20verloopt%20automatisch%2C%20je%20hoeft%20hier%20dus%20niets%20voor%20te%20doen.&amp;subject=Rabobank%20investeert%20miljarden%20in%20%E2%80%98America%E2%80%99s%20worst%20company%E2%80%99'
+              href='mailto:?to=&amp;body=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dmail &amp;subject='
               target='_blank'
             >
               <i className='fa fa-envelope'></i>
             </a>
             <a
               className='whatsapp'
-              href='whatsapp://send?text=Rabobank%20investeert%20miljarden%20in%20%E2%80%98America%E2%80%99s%20worst%20company%E2%80%99%20https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dwhatsapp'
+              href='whatsapp://send?text=%20https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%26utm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dwhatsapp'
               target='_blank'
             >
               <i className='fa fa-whatsapp'></i>
