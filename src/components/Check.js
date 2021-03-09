@@ -18,9 +18,11 @@ export default function Check({ setView, quiz, dataState, totData }) {
     const nextCheck = checkCounter + 1;
 
     if (nextCheck < ans.length - 1) {
+      console.log(showScenario);
       setShowScenario(quiz[checkCounter + 1].type);
       setCheckCounter(checkCounter + 1);
     } else {
+      setShowScenario('kennis');
       setCheckCounter(checkCounter + 1);
       setShowBtn(true);
     }

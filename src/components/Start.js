@@ -11,7 +11,7 @@ export default function Start({ setView, quiz }) {
           Quiz over uitgaven van politieke partijen aan facebook en google
           advertenties.
         </h1>
-        <img class="mainimg" src={mainimg} alt="Illustratie bij de quiz"></img>
+        {/* <img class="mainimg" src={mainimg} alt="Illustratie bij de quiz"></img> */}
         <div className="time">
           <h2>
             VRAGEN <span className="biggertext">{quiz.length}</span>
@@ -25,12 +25,11 @@ export default function Start({ setView, quiz }) {
           een specifieke doelgroep. Weet jij welke partijen jouw als belangrijke
           doelgroep zien? Doe de korte quiz...
         </p>
-      </div>
-      <div className="btnSection">
         <button className="nextBtn" onClick={handleStart}>
           Start de quiz!
         </button>
       </div>
+     
     </div>
   );
 }
