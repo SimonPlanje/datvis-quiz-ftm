@@ -579,3 +579,63 @@ button:focus,
   height: 100%;
   width: auto;
 }
+
+/*------------------------
+- FORM STYLING
+---------------------------*/
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-2020 label {
+  max-width: 100%;
+  font-weight: 700;
+  display: block;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.radio {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.form-2020 input[type='radio'] {
+  width: auto;
+  margin-right: 5px;
+}
+
+.form-2020 .form-row {
+  margin: 10px 0;
+}
+
+.input2020,
+.form-2020 input,
+.form-2020 textarea {
+  background: white;
+  border: 1px solid rgba(41, 47, 50, 0.3);
+  border-left-color: rgba(41, 47, 50, 0.3);
+  border-left-style: solid;
+  border-left-width: 1px;
+  padding: 12px;
+  border-radius: 5px 5px 0 0;
+  font-family: 'Open Sans', sans-serif, sans-serif;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-line-left input[type='text'],
+.form-line-left input[type='email'],
+.form-line-left input[type='password'],
+.form-line-left select {
+  border-left: 5px solid #dd3230;
+  border-radius: 4px;
+}
+
+.quick-subscribe-content {
+  display: none;
+}
