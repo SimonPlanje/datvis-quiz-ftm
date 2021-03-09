@@ -377,7 +377,7 @@ export default function Questions({
               ))}{' '}
             </div>
 
-            <div class='btnSection'>
+            <div className='btnSection'>
               <button className='clickNext' onClick={handleNext}>
                 Volgende
               </button>

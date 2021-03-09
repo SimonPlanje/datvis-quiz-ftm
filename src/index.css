@@ -277,13 +277,18 @@ button:focus,
 
 .nextBtn,
 .clickNext,
-.C-nextBtn {
+.C-nextBtn,
+.btn {
   text-transform: uppercase;
   background-color: var(--ftm-red);
   color: white;
   width: 10em;
   font-weight: bold;
   margin-top: 2em;
+}
+
+.btn {
+  width: auto;
 }
 
 .clickNext {

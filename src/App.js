@@ -195,7 +195,7 @@ export default function App() {
 
       const data1 = await fetchData(fbData);
       const data2 = await fetchData(totaalData);
-      console.log(data2);
+
       await formatBarData(
         quiz,
         dynamicAns,
