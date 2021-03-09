@@ -185,20 +185,6 @@ img {
   flex-direction: column;
 }
 
-.checkBtns {
-  display: flex;
-  justify-content: space-around;
-  position: absolute;
-  bottom: 0;
-  max-width: 30em;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.checkBtns button,
-.checkBtns .btn {
-  margin: 0em 1em;
-}
-
 p,
 h2 {
   font-family: 'IBM Plex Sans';
@@ -275,21 +261,14 @@ button:focus,
 }
 
 .nextBtn,
-.clickNext {
-  position: fixed;
-  bottom: 0;
-}
-
-.nextBtn,
 .clickNext,
 .C-nextBtn,
 .btn {
   text-transform: uppercase;
   background-color: var(--ftm-red);
   color: white;
-  width: 10em;
   font-weight: bold;
-  margin-top: 2em;
+  cursor: pointer;
 }
 
 .btn {
@@ -305,7 +284,6 @@ button:focus,
 }
 
 .endBtn {
-  width: 10em;
   margin-top: 2em;
 }
 
@@ -316,9 +294,7 @@ button:focus,
 .prevBtn {
   text-transform: uppercase;
   color: white;
-  width: 10em;
   background-color: var(--form-grey);
-  margin-top: 2em;
 }
 
 /* GO TO CHECK PAGE */
@@ -385,9 +361,8 @@ button:focus,
   padding: 0 2em 7em;
 }
 
-.Start,
-.Check button {
-  position: relative;
+.startSection .btnSection {
+  background: transparent;
 }
 
 .Start p {
@@ -403,9 +378,13 @@ button:focus,
   background-color: var(--ftm-dark-grey);
   left: 0;
   bottom: 0;
-  height: 13%;
+  height: 80px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
+
 .endSection h1 {
   text-align: center;
 }
@@ -497,10 +476,6 @@ button:focus,
   }
   .CheckAns {
     margin: 0em 15em 0em 15em;
-  }
-
-  .checkBtns {
-    position: relative;
   }
 
   .check-section {
@@ -659,22 +634,22 @@ button:focus,
 @keyframes shake {
   10%,
   90% {
-    transform: translate(-1px, 0);
+    transform: translate(-2px, 0);
   }
 
   20%,
   80% {
-    transform: translate(2px, 0);
+    transform: translate(4px, 0);
   }
 
   30%,
   50%,
   70% {
-    transform: translate(-4px, 0);
+    transform: translate(-8px, 0);
   }
 
   40%,
   60% {
-    transform: translate(4px, 0);
+    transform: translate(8px, 0);
   }
 }

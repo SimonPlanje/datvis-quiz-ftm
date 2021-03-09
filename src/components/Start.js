@@ -26,9 +26,11 @@ export default function Start({ setView, quiz }) {
           online advertenties. Daaruit wordt duidelijk hoe er campagne wordt
           gevoerd op deze platforms. De data gaat terug tot augustus 2020.
         </p>
-        <button className='nextBtn' onClick={handleStart}>
-          Start de quiz
-        </button>
+        <div className='btnSection'>
+          <button className='nextBtn' onClick={handleStart}>
+            Start de quiz
+          </button>
+        </div>
       </div>
     </div>
   );
