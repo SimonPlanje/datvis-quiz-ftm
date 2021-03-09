@@ -206,7 +206,7 @@ export default function App() {
         setTotData
       );
       // Data is loaded, set initial view
-      setView('end');
+      setView('start');
     }
     getData();
   }, []);
