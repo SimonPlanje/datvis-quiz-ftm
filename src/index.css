@@ -409,9 +409,17 @@ button:focus,
   padding: 10px;
   margin: 2em 0em;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
+}
+.endSection p {
+  margin: 1em;
+}
+
+.endSection .socialIcons {
+  margin: 1em;
 }
 
 .endSection .share a {
