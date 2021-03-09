@@ -213,6 +213,12 @@ export default function App() {
 
   return (
     <React.Suspense fallback='Laden...'>
+      <a className='header'>
+        <img
+          src='https://www.ftm.nl/assets/img/wordmark_black.svg'
+          alt='Follow the Money'
+        />
+      </a>
       <div className='App'>
         {view === 'loading' && <Loading />}
         {view === 'start' && <Start setView={setView} quiz={quiz} />}

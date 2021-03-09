@@ -18,11 +18,31 @@
 }
 
 html,
-.App,
-.Start,
 body,
 #root {
   height: 100%;
+}
+
+.header {
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 20px 10px;
+  border: 0;
+  text-decoration: none;
+}
+
+.header img {
+  height: 40px;
+  margin: 0;
+}
+
+.App,
+.Start,
+.Check,
+.startSection,
+.checkSection {
+  min-height: calc(100vh - 84px);
 }
 
 @font-face {
@@ -129,19 +149,18 @@ img {
 .Check {
   background-image: url(./images/main.jpg);
   background-size: cover;
-  height: 100%;
 }
 
 .startSection,
 .checkSection {
-  height: 100%;
   background-color: rgba(255, 255, 255, 0.8);
   overflow: hidden;
 }
+
 .Questions,
 .startSection,
 .checkSection {
-  padding: 2em 2em 0em 2em;
+  padding: 0 2em 100px 2em;
 }
 
 .colortrue {
@@ -198,6 +217,12 @@ h3 {
   margin-top: 0.5em;
 }
 
+@media (max-width: 800px) {
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
 .question-text {
   display: flex;
   justify-content: center;
@@ -243,7 +268,7 @@ button:focus,
 .nextBtn,
 .clickNext {
   position: fixed;
-  bottom: 2%;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -364,11 +389,6 @@ button:focus,
   padding-bottom: 7em;
 }
 
-.startSection,
-.checkSection {
-  padding-bottom: 0em;
-}
-
 .btnSection {
   position: fixed;
   background-color: var(--ftm-dark-grey);
@@ -385,7 +405,7 @@ button:focus,
   .Questions,
   .startSection,
   .checkSection {
-    margin: 2em 10em 0em 10em;
+    margin: 0em 10em 0em 10em;
   }
   .CheckAns {
     margin: 2em 10em 0em 10em;
@@ -430,7 +450,7 @@ button:focus,
   .Questions,
   .startSection,
   .checkSection {
-    margin: 2em 15em 0em 15em;
+    margin: 0em 15em 0em 15em;
   }
   .CheckAns {
     margin: 2em 15em 0em 15em;
@@ -441,7 +461,7 @@ button:focus,
   .Questions,
   .startSection,
   .checkSection {
-    margin: 2em 20em 0em 20em;
+    margin: 0em 20em 0em 20em;
   }
   .CheckAns {
     margin: 2em 20em 0em 20em;
@@ -465,7 +485,7 @@ button:focus,
   .Questions,
   .startSection,
   .checkSection {
-    margin: 2em 25em 0em 25em;
+    margin: 0em 25em 0em 25em;
   }
   .CheckAns {
     margin: 2em 25em 0em 25em;
@@ -480,34 +500,6 @@ button:focus,
   .Questions,
   .startSection,
   .checkSection {
-    margin: 2em 35em 0em 35em;
+    margin: 0em 35em 0em 35em;
   }
-}
-
-/*------------------------
-LEGENDA STYLING BARCHART
---------------------------*/
-
-.legenda {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2em;
-}
-
-.legenda-rect {
-  height: 1em;
-  width: 1em;
-  background-color: var(--ftm-red);
-  margin-right: 0.5em;
-}
-
-.imgPart {
-  text-align: center;
-  height: 20em;
-  width: 100%;
-}
-
-.imgPart img {
-  height: 100%;
-  width: auto;
 }

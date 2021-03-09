@@ -9,40 +9,14 @@ class End extends Component {
     };
   }
 
-  // submitHandler = (e) => {
-  //   e.preventDefault();
-
-  //   console.log(new URLSearchParams(new FormData(e.target)).toString());
-
-  //   // const submitUrl = this.state.submitUrl;
-  //   const submitUrl =
-  //     'http://ftm.local/app_dev.php/abonnement/quick/automation_campaign/json';
-
-  //   fetch(submitUrl, {
-  //     method: 'post',
-  //     body: new URLSearchParams(new FormData(e.target)).toString(),
-  //   })
-  //     .then(
-  //       (result) => {
-  //         return result.text();
-  //       },
-  //       (error) => {
-  //         console.log('Error submitting form');
-  //       }
-  //     )
-  //     .then((html) => {
-  //       console.log(html);
-  //     });
-  // };
-
   componentDidMount() {
-    // fetch('https://wwww.ftm.nl/automation_campaign/aanmelden/33641')
+    // Test urls
     // fetch('http://ftm.local/app_dev.php/automation/aanmelden/33437')
-    fetch('https://staging.followthemoney.nl/automation/aanmelden/32039')
+    // fetch('https://staging.followthemoney.nl/automation/aanmelden/32039')
+    fetch('https://wwww.ftm.nl/automation_campaign/aanmelden/33641')
       .then(
         (result) => {
           return result.text();
-          // this.setState({ automationForm: result });
         },
         (error) => {
           console.log('error getting automation campaign form');
@@ -63,6 +37,7 @@ class End extends Component {
           submitUrl: doc.querySelector('form').getAttribute('action'),
         });
 
+        // Handle form submission via FTM script
         if (
           typeof window.FTM === 'object' &&
           typeof window.FTM.automationCampaignPagePart === 'object'
@@ -134,11 +109,6 @@ class End extends Component {
       </div>
     );
   }
-  // <form
-  //   id='form'
-  //   onSubmit={this.submitHandler}
-  //   dangerouslySetInnerHTML={{ __html: this.state.automationForm }}
-  // ></form>
 }
 
 export default End;
