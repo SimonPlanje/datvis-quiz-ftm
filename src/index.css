@@ -520,6 +520,12 @@ button:focus,
   width: 100%;
 }
 
+@media (max-width: 800px) {
+  .imgPart {
+    max-height: 12em;
+  }
+}
+
 .imgPart img {
   height: 100%;
   width: auto;
