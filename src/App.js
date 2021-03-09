@@ -7,6 +7,7 @@ import Questions from './components/Questions';
 import Start from './components/Start';
 import fetchData from './helper/data';
 import formatBarData from './helper/formatBarData';
+import GoToCheck from './components/GoToCheck';
 
 import mainimg from './images/main.jpg';
 import icon1 from './images/icon1.jpeg';
@@ -228,20 +229,7 @@ export default function App() {
             checkIcon={icon5}
           />
         )}
-        {view == 'gotocheck' && (
-          <div className="gotocheck">
-            <img class="mainimg" src={mainimg} alt="check icon"></img>
-            <h2>
-              Je bent door de vragen heen, nu kan je kijken hoeveel je er goed
-              had!
-            </h2>
-            <div className="btnSection">
-              <button className="nextBtn" onClick={() => setView('check')}>
-                Checken!
-              </button>
-            </div>
-          </div>
-        )}
+        {view == 'gotocheck' && <GoToCheck setView={setView} />}
         {view == 'check' && (
           <Check
             setView={setView}

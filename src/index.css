@@ -125,16 +125,22 @@ img {
   max-width: none;
 }
 
-.Start {
+.Start,
+.Check {
   background-image: url(./images/main.jpg);
   background-size: cover;
+  height: 100%;
 }
 
-.startSection {
+.startSection,
+.checkSection {
+  height: 100%;
   background-color: rgba(255, 255, 255, 0.691);
+  overflow: hidden;
 }
 .Questions,
-.startSection {
+.startSection,
+.checkSection {
   padding: 2em 2em 0em 2em;
 }
 
@@ -342,7 +348,8 @@ button:focus,
   align-items: center;
 }
 
-.Start button {
+.Start,
+.Check button {
   position: relative;
 }
 
@@ -350,11 +357,16 @@ button:focus,
   margin-bottom: 2em;
 }
 
+.Check h1 {
+  margin-bottom: 2em;
+}
+
 .answer-section {
   padding-bottom: 7em;
 }
 
-.startSection {
+.startSection,
+.checkSection {
   padding-bottom: 0em;
 }
 
@@ -369,7 +381,8 @@ button:focus,
 
 @media screen and (min-height: 700px) {
   .answer-section,
-  .startSection {
+  .startSection,
+  .checkSection {
     padding-bottom: 0em;
   }
   .btnSection {
@@ -383,7 +396,8 @@ button:focus,
 }
 @media screen and (min-width: 700px) {
   .Questions,
-  .startSection {
+  .startSection,
+  .checkSection {
     margin: 2em 10em 0em 10em;
   }
   .CheckAns {
@@ -424,7 +438,8 @@ button:focus,
 
 @media screen and (min-width: 800px) {
   .Questions,
-  .startSection {
+  .startSection,
+  .checkSection {
     margin: 2em 15em 0em 15em;
   }
   .CheckAns {
@@ -434,14 +449,15 @@ button:focus,
 
 @media screen and (min-width: 1000px) {
   .Questions,
-  .startSection {
+  .startSection,
+  .checkSection {
     margin: 2em 20em 0em 20em;
   }
   .CheckAns {
     margin: 2em 20em 0em 20em;
   }
 
-  .nextBtn,
+  .Check .nextBtn,
   .clickNext {
     position: absolute;
     bottom: 30%;
@@ -452,7 +468,8 @@ button:focus,
 
 @media screen and (min-width: 1200px) {
   .Questions,
-  .startSection {
+  .startSection,
+  .checkSection {
     margin: 2em 25em 0em 25em;
   }
   .CheckAns {
@@ -466,7 +483,8 @@ button:focus,
   }
 
   .Questions,
-  .startSection {
+  .startSection,
+  .checkSection {
     margin: 2em 35em 0em 35em;
   }
 }
