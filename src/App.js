@@ -73,6 +73,8 @@ export default function App() {
       correct: 'LinkedIn & Twitter',
       type: 'kennis',
       image: icon4,
+      addition:
+        'Zelf zegt Twitter hierover: ‘Wij hebben dit besloten op basis van onze overtuiging dat politieke berichten hun bereik moeten verdienen, niet kopen.’ LinkedIn geeft ook duidelijk aan dat politieke advertenties verboden zijn, zonder daar verder op in te gaan.',
     },
     {
       question: 'Welke partij adverteerde online met de campagne #10jaarRutte?',
@@ -85,6 +87,8 @@ export default function App() {
       correct: 'FvD',
       type: 'kennis',
       image: icon5,
+      addition:
+        'Sommige advertenties uit deze campagne bevatten statistieken waaruit het falen van het beleid van Rutte zou blijken. De grafieken waren echter misleidend, omdat de partij had geknoeid met de assen van de grafieken.',
     },
     {
       question:
@@ -190,6 +194,7 @@ export default function App() {
 
       const data1 = await fetchData(fbData);
       const data2 = await fetchData(totaalData);
+      console.log(data2);
       await formatBarData(
         quiz,
         dynamicAns,
@@ -208,9 +213,9 @@ export default function App() {
   return (
     <React.Suspense fallback="Laden...">
       <div className="App">
-        {view == 'loading' && <Loading />}
-        {view == 'start' && <Start setView={setView} quiz={quiz} />}
-        {view == 'questions' && (
+        {view === 'loading' && <Loading />}
+        {view === 'start' && <Start setView={setView} quiz={quiz} />}
+        {view === 'questions' && (
           <Questions
             dynamicAns={dynamicAns}
             dynamicAnsMoney={dynamicAnsMoney}

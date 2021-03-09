@@ -45,12 +45,26 @@ export default function Check({ setView, quiz, dataState, totData }) {
     setView('end');
   }
 
+  //https://blog.abelotech.com/posts/number-currency-formatting-javascript/
+  function formatNumber(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+  }
+
   return (
     <div className="CheckAns">
       <ShowImg quiz={quiz} currentQuestion={checkCounter} />
       <div className="question-section">
         <h2 className="question-text">{ans[checkCounter].vraag}</h2>
-        <p>{quiz[checkCounter].addition}</p>
+        {quiz[checkCounter].type === 'kennis' && (
+          <p>{quiz[checkCounter].addition}</p>
+        )}
+        {quiz[checkCounter].type === 'gokken' && (
+          <p>
+            {totData[quiz[checkCounter].indextype].partij} gaf sinds 22 augustus
+            2020 €{formatNumber(totData[quiz[checkCounter].indextype].midden)}{' '}
+            uit
+          </p>
+        )}
       </div>
       <div className="check-section">
         <div className="answer-section">
