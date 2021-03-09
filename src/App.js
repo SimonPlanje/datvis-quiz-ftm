@@ -10,7 +10,7 @@ import formatBarData from './helper/formatBarData';
 import GoToCheck from './components/GoToCheck';
 
 import mainimg from './images/main.jpg';
-import icon1 from './images/icon1.jpeg';
+import icon1 from './images/icon1.jpg';
 import icon2 from './images/icon2.jpg';
 import icon3 from './images/icon3.jpg';
 import icon4 from './images/icon4.jpg';
@@ -212,8 +212,8 @@ export default function App() {
   }, []);
 
   return (
-    <React.Suspense fallback="Laden...">
-      <div className="App">
+    <React.Suspense fallback='Laden...'>
+      <div className='App'>
         {view === 'loading' && <Loading />}
         {view === 'start' && <Start setView={setView} quiz={quiz} />}
         {view === 'questions' && (
