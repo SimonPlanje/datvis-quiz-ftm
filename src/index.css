@@ -367,6 +367,7 @@ button:focus,
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 2em 7em;
 }
 
 .Start,
@@ -392,9 +393,6 @@ button:focus,
 }
 
 @media screen and (min-width: 700px) {
-  .answer-section {
-    padding-bottom: 2.5em;
-  }
   .Questions,
   .startSection,
   .checkSection {
@@ -447,6 +445,10 @@ button:focus,
 
   .checkBtns {
     position: relative;
+  }
+
+  .check-section {
+    padding-bottom: 2em;
   }
 }
 
