@@ -42,7 +42,9 @@ body,
 .Check,
 .startSection,
 .checkSection,
-.CheckAns {
+.CheckAns,
+.End,
+.EndSection {
   min-height: calc(100vh - 84px);
 }
 
@@ -147,20 +149,23 @@ img {
 }
 
 .Start,
-.Check {
+.Check,
+.End {
   background-image: url(./images/main.jpg);
   background-size: cover;
 }
 
 .startSection,
-.checkSection {
+.checkSection,
+.endSection {
   background-color: rgba(255, 255, 255, 0.8);
   overflow: hidden;
 }
 
 .Questions,
 .startSection,
-.checkSection {
+.checkSection,
+.endSection {
   padding: 0 2em 100px 2em;
 }
 
@@ -392,6 +397,35 @@ button:focus,
   width: 100%;
 }
 
+.endSection .share {
+  background: #f6f6f6;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.endSection .share a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-right: 2px;
+  color: white;
+  text-align: center;
+  padding-top: 8px;
+  background: none;
+  color: #9da8af;
+  transition: color 0.2s;
+  font-size: 25px;
+  color: #dd3230;
+}
+
+.endSection hr {
+  margin: 10px 0;
+  border: 1px solid #333;
+}
+
 @media screen and (min-width: 700px) {
   .Questions,
   .startSection,
@@ -449,6 +483,10 @@ button:focus,
 
   .check-section {
     padding-bottom: 2em;
+  }
+
+  .whatsapp {
+    display: none;
   }
 }
 
