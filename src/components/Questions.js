@@ -15,7 +15,6 @@ export default function Questions({
   dataState,
   totData,
 }) {
-  // console.log(totData);
   let completed = 100 / (quiz.length + 1);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -24,8 +23,6 @@ export default function Questions({
   const [barWidth, setBarWidth] = useState(completed);
 
   function handleAnswer(check, answer, id) {
-    // console.log(dynamicAns);
-    // console.log(id);
     if (document.querySelector(`button.clickNext`)) {
       document
         .querySelector(`button.clickNext`)
@@ -78,7 +75,10 @@ export default function Questions({
         setView('gotocheck');
       }
     } else {
-      alert('Selecteer eerst een antwoord!');
+      document.querySelector(`.clickNext`).classList.add('selectAns');
+      setTimeout(function () {
+        document.querySelector(`.clickNext`).classList.toggle('selectAns');
+      }, 500);
     }
   }
   //get the index of the type scenario from the quiz dataset

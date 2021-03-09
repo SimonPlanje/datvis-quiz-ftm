@@ -91,6 +91,10 @@ body,
     U+FEFF, U+FFFD;
 }
 
+.selectAns {
+  animation: shake 0.82s both;
+}
+
 .Loading {
   position: absolute;
   top: 0;
@@ -274,8 +278,6 @@ button:focus,
 .clickNext {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .nextBtn,
@@ -652,4 +654,27 @@ button:focus,
 
 .quick-subscribe-content {
   display: none;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate(-1px, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate(2px, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate(-4px, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate(4px, 0);
+  }
 }
