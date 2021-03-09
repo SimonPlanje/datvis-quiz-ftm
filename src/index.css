@@ -482,7 +482,7 @@ button:focus,
     padding-bottom: 2em;
   }
 
-  .whatsapp {
+  .endSection .share a.whatsapp {
     display: none;
   }
 }
