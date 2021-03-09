@@ -405,7 +405,6 @@ button:focus,
   text-align: center;
 }
 .endSection .share {
-  background: #f6f6f6;
   padding: 10px;
   margin: 2em 0em;
   display: flex;
@@ -416,6 +415,7 @@ button:focus,
 }
 .endSection p {
   margin: 1em;
+  font-weight: bold;
 }
 
 .endSection .socialIcons {
