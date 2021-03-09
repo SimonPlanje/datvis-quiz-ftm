@@ -5,12 +5,40 @@ class End extends Component {
     super(props);
     this.state = {
       automationForm: null,
+      submitUrl: null,
     };
   }
 
+  // submitHandler = (e) => {
+  //   e.preventDefault();
+
+  //   console.log(new URLSearchParams(new FormData(e.target)).toString());
+
+  //   // const submitUrl = this.state.submitUrl;
+  //   const submitUrl =
+  //     'http://ftm.local/app_dev.php/abonnement/quick/automation_campaign/json';
+
+  //   fetch(submitUrl, {
+  //     method: 'post',
+  //     body: new URLSearchParams(new FormData(e.target)).toString(),
+  //   })
+  //     .then(
+  //       (result) => {
+  //         return result.text();
+  //       },
+  //       (error) => {
+  //         console.log('Error submitting form');
+  //       }
+  //     )
+  //     .then((html) => {
+  //       console.log(html);
+  //     });
+  // };
+
   componentDidMount() {
     // fetch('https://wwww.ftm.nl/automation_campaign/aanmelden/33641')
-    fetch('http://ftm.local/app_dev.php/automation/aanmelden/33437')
+    // fetch('http://ftm.local/app_dev.php/automation/aanmelden/33437')
+    fetch('https://staging.followthemoney.nl/automation/aanmelden/32039')
       .then(
         (result) => {
           return result.text();
@@ -21,15 +49,27 @@ class End extends Component {
         }
       )
       .then((html) => {
-        this.setState({ automationForm: html });
-      });
-  }
+        if (html == null) {
+          this.setState({
+            automationForm:
+              '<em class="error">Helaas ging er iets mis bij het ophalen van de gids, probeer het opnieuw door de pagina te vernieuwen</em>',
+          });
+          return;
+        }
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(html, 'text/html');
+        this.setState({
+          automationForm: doc.querySelector('form').outerHTML,
+          submitUrl: doc.querySelector('form').getAttribute('action'),
+        });
 
-  submitForm() {
-    const requestMetadata = {
-      method: 'POST',
-      body: JSON.stringify(),
-    };
+        if (
+          typeof window.FTM === 'object' &&
+          typeof window.FTM.automationCampaignPagePart === 'object'
+        ) {
+          window.FTM.automationCampaignPagePart.init();
+        }
+      });
   }
 
   render() {
@@ -88,11 +128,17 @@ class End extends Component {
         <p>Abonneer je op onze gids, je krijgt dan 6 stukken in je mail</p>
         <div
           id='form'
+          class='automation-campaign-pp'
           dangerouslySetInnerHTML={{ __html: this.state.automationForm }}
         ></div>
       </div>
     );
   }
+  // <form
+  //   id='form'
+  //   onSubmit={this.submitHandler}
+  //   dangerouslySetInnerHTML={{ __html: this.state.automationForm }}
+  // ></form>
 }
 
 export default End;

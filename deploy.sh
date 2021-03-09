@@ -15,6 +15,8 @@ cp build/index.html ../ftm-platform/ftm/src/FTM/FrontBundle/Resources/views/Cont
 # Adjust index.html asset paths
 sed -i 's|/datvis-quiz-ftm/static/\([^"]*\)|{{asset("bundles/ftmfront/content/partijfinanciering/quiz/\1")}}|g' ../ftm-platform/ftm/src/FTM/FrontBundle/Resources/views/Content/partijfinancieringQuiz.html.twig
 sed -i 's|"/datvis-quiz-ftm/"|"./"|g' ../ftm-platform/ftm/src/FTM/FrontBundle/Resources/views/Content/partijfinancieringQuiz.html.twig
+sed -i 's|https://www.ftm.nl/assets/compiled/js/footer.min.js?v2333|{{ asset("assets/compiled/js/footer.min.js")}}|g' ../ftm-platform/ftm/src/FTM/FrontBundle/Resources/views/Content/partijfinancieringQuiz.html.twig
+sed -i 's|https://www.ftm.nl/js/routing?callback=fos.Router.setData&amp;v=v2333|{{ path("fos_js_routing_js", {callback: "fos.Router.setData", v: assets_version}) }}|g' ../ftm-platform/ftm/src/FTM/FrontBundle/Resources/views/Content/partijfinancieringQuiz.html.twig
  
 # CSS paths
 for i in ../ftm-platform/ftm/web/bundles/ftmfront/content/partijfinanciering/quiz/css/*; do
