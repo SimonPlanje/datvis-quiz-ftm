@@ -54,6 +54,15 @@ class End extends Component {
       getAns.forEach((e) => (e.check === true ? count++ : ''));
       this.setState({ correctCount: count });
     }
+
+    if (
+      typeof window.FTM !== 'object' ||
+      typeof window.FTM.user !== 'object' ||
+      window.FTM.user.isMember === false
+    ) {
+      document.querySelector('.recruitment').innerHTML =
+        'Abonneer je op onze gids! Dan krijg je van ons een vrijblijvend proeflidmaatschap cadeau en sturen je tot aan de verkiezingen onze beste artikelen over partijfinanciering.';
+    }
   }
 
   windowOpener(e) {
@@ -122,7 +131,7 @@ class End extends Component {
           <hr />
 
           <h3>Wil je meer lezen over partijfinanciering?</h3>
-          <p>
+          <p className='recruitment'>
             Abonneer je op onze gids, we sturen je de komende maand de beste
             artikelen over partijfinanciering.
           </p>
