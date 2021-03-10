@@ -90,7 +90,7 @@ class End extends Component {
                 href={
                   'https://twitter.com/intent/tweet?text=Ik%20had%20' +
                   this.state.correctCount +
-                  '%20vragen%20goed%20van%20de%20politieke%20advertenties%20quiz.%20Doe%20ook%20mee!&amp;url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%3Futm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dtwitter&amp;via=ftm_nl'
+                  '%20vragen%20goed%20van%20de%20politieke%20advertenties%20quiz.%20Doe%20ook%20mee!&url=https%3A%2F%2Fwww.ftm.nl%2Fpartijfinanciering-quiz%3Futm_medium%3Dsocial%26utm_campaign%3Dsharebuttonleden%26utm_source%3Dtwitter&via=ftm_nl'
                 }
                 onClick={this.windowOpener}
               >
